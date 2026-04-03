@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://5aea8ox8bkmi"]
+
+[ext_resource type="Script" uid="uid://bw0n57r7e0xix" path="res://SCRIPT&SCENES/jantes.gd" id="1_4sqe4"]
+[ext_resource type="Script" uid="uid://go64g2t3k1c8" path="res://SCRIPT&SCENES/voiture.gd" id="2_p4axg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g1xx7"]
+size = Vector2(150, 100)
+
+[node name="Garage" type="Node2D" unique_id=1953690915]
+
+[node name="Jantes" type="CharacterBody2D" parent="." unique_id=1314629988]
+position = Vector2(197, 86)
+script = ExtResource("1_4sqe4")
+poussee_horizontale = 60.0
+poussee_verticale = 15555.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jantes" unique_id=648828827]
+shape = SubResource("RectangleShape2D_g1xx7")
+
+[node name="Voiture" type="Node2D" parent="." unique_id=1629671311]
+position = Vector2(197, 86)
+script = ExtResource("2_p4axg")
