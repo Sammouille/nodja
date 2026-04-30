@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://5aea8ox8bkmi"]
+[gd_scene load_steps=0 format=3 uid="uid://5aea8ox8bkmi"]
 
-[ext_resource type="Script" uid="uid://bw0n57r7e0xix" path="res://SCRIPT&SCENES/jantes.gd" id="1_4sqe4"]
-[ext_resource type="Script" uid="uid://go64g2t3k1c8" path="res://SCRIPT&SCENES/voiture.gd" id="2_p4axg"]
+[ext_resource type="Script" uid="uid://bw0n57r7e0xix" path="res://scripts_et_scenes/jantes.gd" id="1_4sqe4"]
+[ext_resource type="Script" uid="uid://go64g2t3k1c8" path="res://scripts_et_scenes/voiture.gd" id="2_p4axg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g1xx7"]
 size = Vector2(150, 100)
