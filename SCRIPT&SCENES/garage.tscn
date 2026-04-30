@@ -11,12 +11,16 @@ size = Vector2(150, 100)
 [node name="Jantes" type="CharacterBody2D" parent="." unique_id=1314629988]
 position = Vector2(197, 86)
 script = ExtResource("1_4sqe4")
-poussee_horizontale = 60.0
-poussee_verticale = 15555.0
+poussee_horizontale = 12.0
+poussee_verticale = 13.0
+frottements_sol = 2.4
+gravite = 20.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Jantes" unique_id=648828827]
 shape = SubResource("RectangleShape2D_g1xx7")
 
-[node name="Voiture" type="Node2D" parent="." unique_id=1629671311]
+[node name="Voiture" type="Node2D" parent="." unique_id=1629671311 node_paths=PackedStringArray("jantes")]
 position = Vector2(197, 86)
 script = ExtResource("2_p4axg")
+vitesse = 0.3
+jantes = NodePath("../Jantes")

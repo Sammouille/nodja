@@ -3,11 +3,11 @@ extends Node2D
 
 @export var poussee_horizontale:= 4.0
 @export var poussee_verticale:= 30.0
-@export var masse:= 10.0:
+@export var masse:= 1.0:
 	set(value):
 		inv_masse = 1.00/value
 		masse = value
-var inv_masse:= 0.1
+var inv_masse:= 1.0
 @export var frottements_sol:= 0.1
 @export var frottements_air:= 0.01
 
@@ -42,13 +42,13 @@ func appliquer_gravite():
 		au_sol = false
 		acceleration += Vector2(0.0, gravite * masse)
 	else:
+		if !au_sol:
+			position.y = 500
+			velocite.y = 0.0
 		au_sol = true
-		position.y = 500
-		velocite.y = 0.0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	print(velocite)
 	if au_sol:
 		if Input.is_action_pressed("gauche") or Input.is_action_pressed("merde"):
 			var trajectoire_horizontale:= Input.get_axis("gauche", "merde")
@@ -62,6 +62,6 @@ func _process(delta: float) -> void:
 	actualiser_velocite(delta)
 
 func _draw() -> void:
-	draw_circle(Vector2.RIGHT * 60 + Vector2.DOWN * 90, 10.0, Color(0.0, 0.0, 0.0, 1.0), true)
-	draw_circle(Vector2.LEFT * 60 + Vector2.DOWN * 90, 10.0, Color(0.0, 0.0, 0.0, 1.0), true)
+	draw_circle(Vector2.RIGHT * 60 + Vector2.DOWN * 45, 20.0, Color(0.0, 0.0, 0.0, 1.0), true)
+	draw_circle(Vector2.LEFT * 60 + Vector2.DOWN * 45, 20.0, Color(0.0, 0.0, 0.0, 1.0), true)
 	
