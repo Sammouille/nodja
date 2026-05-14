@@ -14,6 +14,9 @@ extends TextureRect
 var is_mouse_in : bool = false
 var is_on_good_pos : bool = false
 
+#Variable qui vérifie la victoire du mini jeu.
+var has_win : bool = false
+
 #Position actuelle de la souris pendant le drag.
 var mouse_drag_pos : Vector2 = Vector2(0.0, 0.0)
 #Position de début de la clé.
@@ -31,6 +34,7 @@ func _input(event: InputEvent) -> void:
 		texture = png_cle_tournee
 		if is_on_good_pos and get_parent().has_scotch:
 			print("voiture demarre")
+			has_win = true
 		else:
 			TimerCle.start()
 	
@@ -43,7 +47,7 @@ func _input(event: InputEvent) -> void:
 			#print(mouse_drag_pos)
 	
 	#Si la souris drag la clé et qu'elle bouge, alors la clé bouge aussi.
-	if is_mouse_in and Input.is_action_pressed("clique_gauche") and event is InputEventMouseMotion:
+	if !has_win and is_mouse_in and Input.is_action_pressed("clique_gauche") and event is InputEventMouseMotion:
 		#Récup de la position de la souris sur l'écran.
 		var temp_current_mouse_pos = get_viewport().get_mouse_position()
 		#On calcule la différence de position entre celle actuelle et la dernière enregistrée.
