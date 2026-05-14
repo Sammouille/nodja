@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://cksqulq2tmghd"]
+
+[ext_resource type="Texture2D" uid="uid://ce0nwxm2r7mcn" path="res://ressource/mj_demarrer_voiture/cle_voiture.png" id="1_d1fk5"]
+[ext_resource type="Texture2D" uid="uid://bcttvrn2sowgs" path="res://ressource/mj_demarrer_voiture/volant_serrure.png" id="2_yicsp"]
+[ext_resource type="Texture2D" uid="uid://brutclvbac64d" path="res://ressource/mj_demarrer_voiture/scotch.png" id="3_vdvoi"]
+[ext_resource type="Script" uid="uid://7wyw2v8scrg6" path="res://scripts_et_scenes/mini-jeux/demarrer_voiture/cle.gd" id="3_yicsp"]
+
+[node name="MjDemarrerVoiture" type="Control" unique_id=2137134670]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VolantSerrure" type="TextureRect" parent="." unique_id=1488782941]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_yicsp")
+expand_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="PosPourTourner" type="Control" parent="." unique_id=1142383083]
+anchors_preset = 0
+offset_left = 285.0
+offset_top = 284.0
+offset_right = 289.0
+offset_bottom = 286.0
+
+[node name="PosMax" type="Control" parent="." unique_id=2051173215]
+anchors_preset = 0
+offset_left = 991.0
+offset_top = 284.0
+offset_right = 995.0
+offset_bottom = 286.0
+
+[node name="Cle" type="TextureRect" parent="." unique_id=225610391 node_paths=PackedStringArray("PosPourTourner", "PosMax")]
+layout_mode = 0
+offset_left = 500.0
+offset_top = 142.0
+offset_right = 928.0
+offset_bottom = 467.0
+texture = ExtResource("1_d1fk5")
+script = ExtResource("3_yicsp")
+PosPourTourner = NodePath("../PosPourTourner")
+PosMax = NodePath("../PosMax")
+
+[node name="TimerCle" type="Timer" parent="Cle" unique_id=1580803193]
+wait_time = 0.2
+one_shot = true
+
+[node name="Scotch" type="TextureRect" parent="." unique_id=2128218286]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_vdvoi")
+expand_mode = 2
+
+[connection signal="mouse_entered" from="Cle" to="Cle" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Cle" to="Cle" method="_on_mouse_exited"]
+[connection signal="timeout" from="Cle/TimerCle" to="Cle" method="_on_timer_cle_timeout"]
