@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://nhtt1tpikb5i"]
+
+[ext_resource type="Script" uid="uid://1nyymav3q0w8" path="res://scripts_et_scenes/carnet/carnet_voyage.gd" id="1_58231"]
+[ext_resource type="Texture2D" uid="uid://dlu4gcuurtt8" path="res://assets/carnet/carnet.png" id="2_0cqng"]
+[ext_resource type="Texture2D" uid="uid://c4hhg8drevwol" path="res://assets/carnet/signet.png" id="2_7vl3t"]
+[ext_resource type="Script" uid="uid://28h8sdal477x" path="res://scripts_et_scenes/carnet/double_page.gd" id="2_evnu1"]
+[ext_resource type="Texture2D" uid="uid://x6no3s4pt1tq" path="res://assets/carnet/premiere_page.png" id="3_4lklj"]
+[ext_resource type="Texture2D" uid="uid://lvc1wjubh23y" path="res://assets/carnet/page.png" id="3_evnu1"]
+
+[node name="CarnetVoyage" type="Control" unique_id=1173689453]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_58231")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1459639798]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_0cqng")
+expand_mode = 5
+
+[node name="PremierePage" type="Control" parent="." unique_id=818951584]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_right = 576.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect2" type="TextureRect" parent="PremierePage" unique_id=1957271306]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_4lklj")
+expand_mode = 5
+
+[node name="DoublePage" type="Control" parent="." unique_id=1777725114 node_paths=PackedStringArray("contenu_visuel", "signet")]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_evnu1")
+contenu_visuel = [NodePath("PageGauche"), NodePath("PageDroite")]
+signet = NodePath("Signet")
+
+[node name="PageGauche" type="Control" parent="DoublePage" unique_id=1348626340]
+visible = false
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -576.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="DoublePage/PageGauche" unique_id=1160618490]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_evnu1")
+expand_mode = 5
+flip_h = true
+flip_v = true
+
+[node name="PageDroite" type="Control" parent="DoublePage" unique_id=528031407]
+visible = false
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_right = 576.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect2" type="TextureRect" parent="DoublePage/PageDroite" unique_id=1682079252]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_evnu1")
+expand_mode = 5
+flip_v = true
+
+[node name="Signet" type="Control" parent="DoublePage" unique_id=244834085]
+anchors_preset = 0
+offset_left = 245.0
+offset_top = -14.0
+offset_right = 348.0
+offset_bottom = 116.0
+
+[node name="TextureRect" type="TextureRect" parent="DoublePage/Signet" unique_id=834821563]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_7vl3t")
+expand_mode = 5
+
+[connection signal="clic_signet" from="DoublePage" to="." method="_on_double_page_clic_signet"]
+[connection signal="mouse_entered" from="DoublePage/Signet" to="DoublePage" method="_on_signet_mouse_entered"]
+[connection signal="mouse_exited" from="DoublePage/Signet" to="DoublePage" method="_on_signet_mouse_exited"]
