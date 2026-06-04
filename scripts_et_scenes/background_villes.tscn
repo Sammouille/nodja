@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://ber48w8erdmsd"]
+
+[ext_resource type="Script" uid="uid://c5pba3ob8sdib" path="res://scripts_et_scenes/background_villes.gd" id="1_06jiw"]
+[ext_resource type="Texture2D" uid="uid://byd8fcjq32ke0" path="res://assets/tests/routes_block_out.png" id="1_ttajb"]
+[ext_resource type="PackedScene" uid="uid://5aea8ox8bkmi" path="res://scripts_et_scenes/garage.tscn" id="2_t5vxg"]
+[ext_resource type="PackedScene" uid="uid://b0ld2gby2vvqf" path="res://scripts_et_scenes/tilemaps.tscn" id="3_t5vxg"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_t5vxg"]
+a = Vector2(-100, 0)
+b = Vector2(6000, 0)
+
+[node name="Background_villes" type="Node2D" node_paths=PackedStringArray("parallax", "garage", "route_asphalt")]
+script = ExtResource("1_06jiw")
+parallax = NodePath("Parallax2D")
+garage = NodePath("Garage")
+route_asphalt = NodePath("Tilemaps/Route_Asphalt")
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+scroll_offset = Vector2(0, 500)
+repeat_size = Vector2(2600, 0)
+autoscroll = Vector2(-8, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+scale = Vector2(0.8315307, 0.6529625)
+texture = ExtResource("1_ttajb")
+
+[node name="Garage" parent="." instance=ExtResource("2_t5vxg")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+position = Vector2(1460, 689)
+scale = Vector2(0.8315307, 0.6529625)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1752.1903, -62.79074)
+scale = Vector2(1.2026014, 1.5314815)
+shape = SubResource("SegmentShape2D_t5vxg")
+disabled = true
+
+[node name="Tilemaps" parent="." instance=ExtResource("3_t5vxg")]
+
+[editable path="Tilemaps"]

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 266 91" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-94.238349,-970.52755)">
+        <g>
+            <g transform="matrix(1,-0,-0,1,94.238349,970.52755)">
+                <use xlink:href="#_Image1" x="0" y="0" width="32px" height="91px"/>
+            </g>
+            <g transform="matrix(1,-0,-0,1,94.238349,970.52755)">
+                <use xlink:href="#_Image2" x="30.926" y="0" width="235px" height="91px"/>
+            </g>
+        </g>
+    </g>
+    <defs>
+        <image id="_Image1" width="32px" height="91px" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAABbCAYAAAASn4f2AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAtElEQVRoge3aMQ4CIRSE4dFwV6/j3TwGDWEpln3hYbUxrDFWuIX/JDRQzBfy6LjEGLsmx921bZuWZVHOWbXW/eh2nV3+LQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8H6H38QRqOG7NK93VMMLPpAHeXmam1JncfAaWU6YDeu8xMtVa11kZASmk6QHrdwtsMrOv6E8CnnP4Mg6T7if2PJ0MTT9g07bq0AAAAAElFTkSuQmCC"/>
+        <image id="_Image2" width="235px" height="91px" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOsAAABbCAYAAACSwHKgAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACD0lEQVR4nO3YQYrTcBjG4S8ltYKQm3gBz+UNvIBH6sYLeAC3LroLtJA0TVyMHXSmo5spmReeB7JJSr5v8+Nf0hTwX4fD4WNVfb/3nHmeaxiG6vu++r6v8/l8ffRpc+/hwOsQK4QQK4QQK4QQK4QQK4QQK4QQK4QQK4QQK4QQK4QQK4QQK4QQK4QQK4QQK4QQK4QQK4Ro9/v9l6ZpPm+32+q6rrquq91uV5uNjuEPP9ZeoP19vV97EXjj3q29gOMTQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogVQogV3phlWWpZlmf32xV2gUi3Anrt98/z/Bjr03ntrR/P83zXpSDRNE13nzHPc53P57pcLi/HuixLTdNU4zhW0zSPF/DgdDrdfcY11nEcnx2abdVDqJfLpcZxrKqqYRiECk8cj8e7z7j+u52m6d8n6zAMNU2TUxVuuB5ma/kr1pe+QgHra6vqW1V9vd4QK9x0bJrmw4rzf/4CcmCUzHsvef8AAAAASUVORK5CYII="/>
+    </defs>
+</svg>
