@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://h2qkle7ft2d2" path="res://scripts_et_scenes/mini-jeux/affiche/droite.gd" id="4_otroj"]
 
 [node name="MjAffiche" type="Control" unique_id=127143870]
+modulate = Color(0.93203104, 0.2617337, 1, 1)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
