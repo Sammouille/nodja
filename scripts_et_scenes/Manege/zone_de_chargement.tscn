@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://3sgwne8seqdl"]
+
+[ext_resource type="Script" uid="uid://vpigxh7qnkub" path="res://scripts_et_scenes/Manege/zone_de_chargement.gd" id="1_xff2d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7luxe"]
+size = Vector2(20, 100)
+
+[node name="ZoneDeChargement" type="Area2D" unique_id=731542611]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_xff2d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2030407861]
+shape = SubResource("RectangleShape2D_7luxe")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

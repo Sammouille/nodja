@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://ber48w8erdmsd"]
+
+[ext_resource type="Script" uid="uid://c5pba3ob8sdib" path="res://scripts_et_scenes/Manege/background_villes.gd" id="1_06jiw"]
+[ext_resource type="PackedScene" uid="uid://5aea8ox8bkmi" path="res://scripts_et_scenes/Manege/garage.tscn" id="2_t5vxg"]
+[ext_resource type="PackedScene" uid="uid://b0ld2gby2vvqf" path="res://scripts_et_scenes/Manege/tilemaps.tscn" id="3_t5vxg"]
+
+[node name="Background_villes" type="Node2D" unique_id=1237811767 node_paths=PackedStringArray("garage", "route_asphalt")]
+script = ExtResource("1_06jiw")
+garage = NodePath("Garage")
+route_asphalt = NodePath("Tilemaps/Route_Asphalt")
+
+[node name="Garage" parent="." unique_id=932554381 instance=ExtResource("2_t5vxg")]
+
+[node name="Tilemaps" parent="." unique_id=1129768613 instance=ExtResource("3_t5vxg")]
+
+[editable path="Tilemaps"]

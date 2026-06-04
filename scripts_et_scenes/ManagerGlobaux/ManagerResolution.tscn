@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://eiuup75i3xu8"]
+
+[ext_resource type="Script" uid="uid://b8isoqjwuxaxt" path="res://scripts_et_scenes/ManagerGlobaux/manager_resolution.gd" id="1_ipo27"]
+
+[node name="ManagerResolution" type="Node" unique_id=1287248262 node_paths=PackedStringArray("control_resolution_list")]
+script = ExtResource("1_ipo27")
+control_resolution_list = NodePath("Control")
+
+[node name="Control" type="Control" parent="." unique_id=548289692]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 62.0
+offset_bottom = 66.0
+
+[node name="Res_list" type="ItemList" parent="Control" unique_id=440297785]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+item_count = 2
+item_0/text = "Res1"
+item_1/text = "Res2"
+
+[connection signal="item_selected" from="Control/Res_list" to="." method="_on_res_list_item_selected"]

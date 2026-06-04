@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-@export var poussee_horizontale:= 300.0
+@export var poussee_horizontale:= 200.0
 @export var poussee_verticale:= 900.0
 @export var masse:= 1.0:
 	set(value):
@@ -77,7 +77,7 @@ func _process(delta: float) -> void:
 			var trajectoire_horizontale:= Input.get_axis("gauche", "droite")
 			appliquer_force(Vector2(trajectoire_horizontale * poussee_horizontale, 0.0))
 		
-		if Input.is_action_just_pressed("saut"):
+		if Input.is_action_just_pressed("saut"): 
 			appliquer_impulsion(Vector2(0.0, -poussee_verticale))
 		
 		

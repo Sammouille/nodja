@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://5aea8ox8bkmi"]
+
+[ext_resource type="Script" uid="uid://bw0n57r7e0xix" path="res://scripts_et_scenes/Manege/jantes.gd" id="1_4sqe4"]
+[ext_resource type="Script" uid="uid://go64g2t3k1c8" path="res://scripts_et_scenes/Manege/voiture.gd" id="2_p4axg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g1xx7"]
+size = Vector2(150, 100)
+
+[node name="Garage" type="Node2D" unique_id=273094417]
+
+[node name="Jantes" type="CharacterBody2D" parent="." unique_id=845951390 node_paths=PackedStringArray("camera", "hauteur_voiture", "voiture_collision")]
+position = Vector2(197, 86)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_4sqe4")
+camera = NodePath("Camera2D")
+hauteur_voiture = NodePath("hauteur_voiture")
+voiture_collision = NodePath("CollisionShape2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Jantes" unique_id=1831562991]
+shape = SubResource("RectangleShape2D_g1xx7")
+
+[node name="Camera2D" type="Camera2D" parent="Jantes" unique_id=2052115009]
+position = Vector2(800, -200)
+zoom = Vector2(0.5, 0.5)
+position_smoothing_enabled = true
+position_smoothing_speed = 30.0
+drag_horizontal_enabled = true
+drag_horizontal_offset = 0.92
+
+[node name="hauteur_voiture" type="RayCast2D" parent="Jantes" unique_id=1185638275]
+target_position = Vector2(0, 1000)
+
+[node name="Voiture" type="Node2D" parent="." unique_id=1474708049 node_paths=PackedStringArray("jantes")]
+position = Vector2(197, 86)
+script = ExtResource("2_p4axg")
+vitesse = 0.3
+jantes = NodePath("../Jantes")
