@@ -1,3 +1,9 @@
 [gd_scene format=3 uid="uid://dur3jvkqs0w7f"]
 
-[node name="MJPhoto" type="Node2D"]
+[ext_resource type="Script" uid="uid://cpivdi5kudsii" path="res://scripts_et_scenes/mini-jeux/briques_interactives/bi_clic.gd" id="1_lhnuw"]
+
+[node name="MJPhoto" type="Node2D" unique_id=1553811068]
+
+[node name="BIClic" type="Node2D" parent="." unique_id=853578252]
+script = ExtResource("1_lhnuw")
+click_cooldown = 2.0

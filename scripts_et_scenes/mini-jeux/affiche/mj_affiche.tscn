@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://b7wth5pynlljm"]
+
+[ext_resource type="Texture2D" uid="uid://64w50anotme4" path="res://ressource/mj_affiche/proto/dessous.png" id="1_jkknn"]
+[ext_resource type="Texture2D" uid="uid://cxqmqxvtmekbw" path="res://ressource/mj_affiche/proto/partie_g.png" id="2_otroj"]
+[ext_resource type="Texture2D" uid="uid://dh6158fgfbetl" path="res://ressource/mj_affiche/proto/partie_d.png" id="3_qtmev"]
+[ext_resource type="Script" uid="uid://h2qkle7ft2d2" path="res://scripts_et_scenes/mini-jeux/affiche/droite.gd" id="4_otroj"]
+
+[node name="MjAffiche" type="Control" unique_id=127143870]
+modulate = Color(0.93203104, 0.2617337, 1, 1)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -806.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dessous" type="TextureRect" parent="." unique_id=1874031750]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_jkknn")
+expand_mode = 4
+
+[node name="Gauche" type="TextureRect" parent="." unique_id=1253417081]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_otroj")
+expand_mode = 4
+
+[node name="Droite" type="TextureRect" parent="." unique_id=1824985321]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_qtmev")
+expand_mode = 4
+script = ExtResource("4_otroj")
+
+[connection signal="mouse_entered" from="Droite" to="Droite" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Droite" to="Droite" method="_on_mouse_exited"]
