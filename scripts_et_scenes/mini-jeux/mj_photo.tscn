@@ -1,9 +1,78 @@
 [gd_scene format=3 uid="uid://dur3jvkqs0w7f"]
 
-[ext_resource type="Script" uid="uid://cpivdi5kudsii" path="res://scripts_et_scenes/mini-jeux/briques_interactives/bi_clic.gd" id="1_lhnuw"]
+[ext_resource type="Script" uid="uid://u5uiqdnac7p7" path="res://scripts_et_scenes/mini-jeux/mj_photo.gd" id="1_qeaok"]
+[ext_resource type="PackedScene" uid="uid://r3hlxfakfpr5" path="res://scripts_et_scenes/mini-jeux/photo/photo_retouchee.tscn" id="2_ki2tg"]
+[ext_resource type="Script" uid="uid://po56h55uogqt" path="res://scripts_et_scenes/mini-jeux/briques_interactives/bi_clicable.gd" id="2_mrrg6"]
+[ext_resource type="Texture2D" uid="uid://8tkskv3vuh14" path="res://icon.svg" id="3_qeaok"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mrrg6"]
 
 [node name="MJPhoto" type="Node2D" unique_id=1553811068]
+script = ExtResource("1_qeaok")
+photo_retouchee = ExtResource("2_ki2tg")
 
-[node name="BIClic" type="Node2D" parent="." unique_id=853578252]
-script = ExtResource("1_lhnuw")
-click_cooldown = 2.0
+[node name="Photo" type="Area2D" parent="." unique_id=794387947]
+position = Vector2(984, 317)
+script = ExtResource("2_mrrg6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Photo" unique_id=2128125188]
+scale = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_mrrg6")
+
+[node name="Sprite2D" type="Sprite2D" parent="Photo" unique_id=458188592]
+texture = ExtResource("3_qeaok")
+
+[node name="Photo2" type="Area2D" parent="." unique_id=520742624]
+position = Vector2(772, 317)
+script = ExtResource("2_mrrg6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Photo2" unique_id=1305097741]
+scale = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_mrrg6")
+
+[node name="Sprite2D" type="Sprite2D" parent="Photo2" unique_id=63122606]
+texture = ExtResource("3_qeaok")
+
+[node name="Photo3" type="Area2D" parent="." unique_id=1998496114]
+position = Vector2(570, 317)
+script = ExtResource("2_mrrg6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Photo3" unique_id=793208329]
+scale = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_mrrg6")
+
+[node name="Sprite2D" type="Sprite2D" parent="Photo3" unique_id=1293802614]
+texture = ExtResource("3_qeaok")
+
+[node name="Photo4" type="Area2D" parent="." unique_id=1900815533]
+position = Vector2(363, 317)
+script = ExtResource("2_mrrg6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Photo4" unique_id=331473570]
+scale = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_mrrg6")
+
+[node name="Sprite2D" type="Sprite2D" parent="Photo4" unique_id=1658563292]
+texture = ExtResource("3_qeaok")
+
+[node name="Photo5" type="Area2D" parent="." unique_id=1462130147]
+position = Vector2(129, 317)
+script = ExtResource("2_mrrg6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Photo5" unique_id=2110532834]
+scale = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_mrrg6")
+
+[node name="Sprite2D" type="Sprite2D" parent="Photo5" unique_id=514902083]
+texture = ExtResource("3_qeaok")
+
+[connection signal="mouse_entered" from="Photo" to="Photo" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Photo" to="Photo" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Photo2" to="Photo2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Photo2" to="Photo2" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Photo3" to="Photo3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Photo3" to="Photo3" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Photo4" to="Photo4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Photo4" to="Photo4" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Photo5" to="Photo5" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Photo5" to="Photo5" method="_on_mouse_exited"]
