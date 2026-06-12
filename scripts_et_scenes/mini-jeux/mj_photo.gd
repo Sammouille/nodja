@@ -3,7 +3,7 @@ extends Node2D
 var nb_tentatives = 0
 @export var photo_retouchee : PackedScene
 @export var sprite_tampon_valide : Texture
-@export var stream : Stream
+@export var stream : Node
 
 func _ready() -> void:
 	for i in get_children():

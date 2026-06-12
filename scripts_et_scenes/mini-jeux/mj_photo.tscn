@@ -14,10 +14,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mrrg6"]
 size = Vector2(32.333332, 40.333336)
 
-[node name="MJPhoto" type="Node2D" unique_id=1553811068]
+[node name="MJPhoto" type="Node2D" unique_id=1553811068 node_paths=PackedStringArray("stream")]
 script = ExtResource("1_qeaok")
 photo_retouchee = ExtResource("2_ki2tg")
 sprite_tampon_valide = ExtResource("3_ipi5a")
+stream = NodePath("Tampon")
 
 [node name="Tampon" type="AudioStreamPlayer" parent="." unique_id=1196813601]
 
