@@ -4,10 +4,13 @@ extends Node2D
 @export var couches_dessous : Area2D
 
 
-@export var route_asphalt : TileMapLayer
+@export var route : TileMapLayer
 
-@export var ville_hauteur_haute := -300.0
+@export var ville_hauteur_haute := 250.0
 @export var ville_hauteur_milieu := 500.0
+
+@export var nom_ville : String
+@export var zone_de_chargement : Area2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

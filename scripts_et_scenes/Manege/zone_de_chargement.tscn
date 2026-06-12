@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://vpigxh7qnkub" path="res://scripts_et_scenes/Manege/zone_de_chargement.gd" id="1_xff2d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7luxe"]
-size = Vector2(20, 100)
+size = Vector2(20, 1000)
 
 [node name="ZoneDeChargement" type="Area2D" unique_id=731542611]
 collision_layer = 2

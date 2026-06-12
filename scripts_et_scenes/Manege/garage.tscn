@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://5aea8ox8bkmi"]
 
 [ext_resource type="Script" uid="uid://bw0n57r7e0xix" path="res://scripts_et_scenes/Manege/jantes.gd" id="1_4sqe4"]
+[ext_resource type="Texture2D" uid="uid://dq4t20vo80ja0" path="res://assets/manege/Calque 214.png" id="2_jh60o"]
 [ext_resource type="Script" uid="uid://go64g2t3k1c8" path="res://scripts_et_scenes/Manege/voiture.gd" id="2_p4axg"]
+[ext_resource type="Texture2D" uid="uid://brpc2j8jdtoiy" path="res://assets/manege/Calque 213.png" id="3_ui4w3"]
+[ext_resource type="Texture2D" uid="uid://b3fntp02qbc66" path="res://assets/manege/elap1.png" id="5_l8hvq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g1xx7"]
 size = Vector2(150, 100)
@@ -21,7 +24,7 @@ voiture_collision = NodePath("CollisionShape2D")
 shape = SubResource("RectangleShape2D_g1xx7")
 
 [node name="Camera2D" type="Camera2D" parent="Jantes" unique_id=2052115009]
-position = Vector2(800, -200)
+position = Vector2(800, -400)
 zoom = Vector2(0.5, 0.5)
 position_smoothing_enabled = true
 position_smoothing_speed = 30.0
@@ -31,8 +34,22 @@ drag_horizontal_offset = 0.92
 [node name="hauteur_voiture" type="RayCast2D" parent="Jantes" unique_id=1185638275]
 target_position = Vector2(0, 1000)
 
+[node name="Roue1" type="Sprite2D" parent="Jantes" unique_id=702382363]
+position = Vector2(-41, 18)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_jh60o")
+
+[node name="Roue2" type="Sprite2D" parent="Jantes" unique_id=819121308]
+position = Vector2(61, 22)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_ui4w3")
+
 [node name="Voiture" type="Node2D" parent="." unique_id=1474708049 node_paths=PackedStringArray("jantes")]
 position = Vector2(197, 86)
 script = ExtResource("2_p4axg")
 vitesse = 0.3
 jantes = NodePath("../Jantes")
+
+[node name="Sprite2D" type="Sprite2D" parent="Voiture" unique_id=1648492085]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_l8hvq")

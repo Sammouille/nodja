@@ -1,8 +1,9 @@
 [gd_scene format=4 uid="uid://lh4mj50ki63r"]
 
 [ext_resource type="Script" uid="uid://bd7yf1at4klrm" path="res://scripts_et_scenes/Manege/tilemaps.gd" id="1_4l413"]
-[ext_resource type="Texture2D" uid="uid://byd8fcjq32ke0" path="res://assets/tests/routes_block_out.png" id="2_31tir"]
+[ext_resource type="Texture2D" uid="uid://bd8v5b155ckia" path="res://assets/manege/essaitoptop2.png" id="2_31tir"]
 [ext_resource type="Texture2D" uid="uid://gxy2wsaft1se" path="res://assets/tests/nodja_road.svg" id="3_e1xn0"]
+[ext_resource type="PackedScene" uid="uid://3sgwne8seqdl" path="res://scripts_et_scenes/Manege/zone_de_chargement.tscn" id="4_31tir"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tqdjm"]
 
@@ -26,16 +27,19 @@ b = Vector2(3426, 5)
 a = Vector2(3349.2441, 39.818542)
 b = Vector2(5718.369, 39.818542)
 
-[node name="Tilemaps" type="Node2D" unique_id=2030232881 node_paths=PackedStringArray("parallax", "couches_dessus", "couches_dessous", "route_asphalt")]
+[node name="Postmodernite" type="Node2D" unique_id=2030232881 node_paths=PackedStringArray("parallax", "couches_dessus", "couches_dessous", "route", "zone_de_chargement")]
 script = ExtResource("1_4l413")
 parallax = NodePath("Parallax2D")
 couches_dessus = NodePath("CouchesDessus")
 couches_dessous = NodePath("CouchesDessous")
-route_asphalt = NodePath("Route_Asphalt")
+route = NodePath("Route_Asphalt")
+nom_ville = "Postmodernite"
+zone_de_chargement = NodePath("ZoneDeChargement")
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=371945855]
-scroll_offset = Vector2(0, 700)
-repeat_size = Vector2(2500, 0)
+z_index = -1
+scale = Vector2(4, 4)
+scroll_offset = Vector2(0, 580)
 autoscroll = Vector2(-8, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=1498365834]
@@ -79,6 +83,9 @@ debug_color = Color(1, 0.6, 0.69803923, 0.83137256)
 position = Vector2(27177.59, -104.14075)
 shape = SubResource("SegmentShape2D_q5rhr")
 debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="ZoneDeChargement" parent="." unique_id=731542611 instance=ExtResource("4_31tir")]
+position = Vector2(59172, 214)
 
 [connection signal="body_entered" from="CouchesDessus" to="." method="_on_couches_dessus_body_entered"]
 [connection signal="body_entered" from="CouchesDessous" to="." method="_on_couches_dessous_body_entered"]

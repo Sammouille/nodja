@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-@export var poussee_horizontale:= 200.0
+@export var poussee_horizontale:= 400.0
 @export var poussee_verticale:= 900.0
 @export var masse:= 1.0:
 	set(value):
@@ -11,7 +11,7 @@ var inv_masse:= 1.0
 @export var frottements_sol:= 0.1
 @export var frottements_air:= 0.01
 
-@export var gravite:= 980.0
+@export var gravite:= 2000.0
 
 var velocite:= Vector2.ZERO
 var acceleration:= Vector2.ZERO
@@ -88,6 +88,7 @@ func _process(delta: float) -> void:
 	move_and_slide()
 
 func _draw() -> void:
-	draw_circle(Vector2.RIGHT * 60 + Vector2.DOWN * 45, 20.0, Color(0.0, 0.0, 0.0, 1.0), true)
-	draw_circle(Vector2.LEFT * 60 + Vector2.DOWN * 45, 20.0, Color(0.0, 0.0, 0.0, 1.0), true)
+	pass
+	#draw_circle(Vector2.RIGHT * 60 + Vector2.DOWN * 45, 20.0, Color(0.0, 0.0, 0.0, 1.0), true)
+	#draw_circle(Vector2.LEFT * 60 + Vector2.DOWN * 45, 20.0, Color(0.0, 0.0, 0.0, 1.0), true)
 	

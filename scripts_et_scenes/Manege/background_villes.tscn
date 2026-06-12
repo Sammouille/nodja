@@ -2,15 +2,24 @@
 
 [ext_resource type="Script" uid="uid://c5pba3ob8sdib" path="res://scripts_et_scenes/Manege/background_villes.gd" id="1_06jiw"]
 [ext_resource type="PackedScene" uid="uid://5aea8ox8bkmi" path="res://scripts_et_scenes/Manege/garage.tscn" id="2_t5vxg"]
-[ext_resource type="PackedScene" uid="uid://b0ld2gby2vvqf" path="res://scripts_et_scenes/Manege/tilemaps.tscn" id="3_t5vxg"]
+[ext_resource type="PackedScene" uid="uid://lh4mj50ki63r" path="res://scripts_et_scenes/Manege/postmodernite.tscn" id="3_da0fq"]
+[ext_resource type="PackedScene" uid="uid://k0hwtetrsqpy" path="res://scripts_et_scenes/Manege/Chargements/Chargements_Villes.tscn" id="4_dlkef"]
 
-[node name="Background_villes" type="Node2D" unique_id=1237811767 node_paths=PackedStringArray("garage", "route_asphalt")]
+[node name="Background_villes" type="Node2D" unique_id=1237811767 node_paths=PackedStringArray("ecran_de_chargement", "garage", "tilemaps")]
 script = ExtResource("1_06jiw")
+ecran_de_chargement = NodePath("CanvasLayer/ChargementsVilles")
 garage = NodePath("Garage")
-route_asphalt = NodePath("Tilemaps/Route_Asphalt")
+tilemaps = NodePath("Tilemaps")
 
 [node name="Garage" parent="." unique_id=932554381 instance=ExtResource("2_t5vxg")]
 
-[node name="Tilemaps" parent="." unique_id=1129768613 instance=ExtResource("3_t5vxg")]
+[node name="Tilemaps" parent="." unique_id=2030232881 instance=ExtResource("3_da0fq")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=835850648]
+
+[node name="ChargementsVilles" parent="CanvasLayer" unique_id=430661739 instance=ExtResource("4_dlkef")]
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [editable path="Tilemaps"]
+[editable path="CanvasLayer/ChargementsVilles"]

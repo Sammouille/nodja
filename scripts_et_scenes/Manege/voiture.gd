@@ -18,4 +18,5 @@ func _process(delta: float) -> void:
 	position.x = jantes.position.x
 
 func _draw() -> void:
-	draw_rect(Rect2(Vector2(-75,-50), Vector2(150,80)), Color(0.584, 0.396, 0.183, 1.0), true)
+	pass
+	#draw_rect(Rect2(Vector2(-75,-50), Vector2(150,80)), Color(0.584, 0.396, 0.183, 1.0), true)
