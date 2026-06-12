@@ -9,16 +9,22 @@ var passee:= false
 
 @export var contenu_visuel: Array[Control]
 
-signal clic_signet(page)
+signal clic_signet(page: Page)
 
 @export var index:= 1
 
 @export var signet: Control
+@export var x_signet:= 100.0
 
 func ouvrir_page():
 	ouverte = true
 	for i in contenu_visuel:
 		i.show()
+
+func fermer_page():
+	ouverte = false
+	for i in contenu_visuel:
+		i.hide()
 
 func _on_signet_mouse_entered() -> void:
 	print("on")
@@ -33,4 +39,4 @@ func _input(event: InputEvent) -> void:
 		if event.button_index == 1 and event.pressed:
 			if signet_hovered:
 				clic_signet.emit(self)
-				ouvrir_page()
+				#ouvrir_page()
