@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b7wth5pynlljm"]
 
-[ext_resource type="Texture2D" uid="uid://6lrci2ya0sdt" path="res://ressource/mj_affiche/proto_2/poule.png" id="1_otroj"]
+[ext_resource type="Texture2D" uid="uid://c0qxo0aoasnve" path="res://ressource/mj_affiche/proto_3/affiche_poule.png" id="1_86i32"]
 [ext_resource type="Texture2D" uid="uid://da72mwc6org6p" path="res://ressource/mj_affiche/proto_3/BoutAffiche1.png" id="2_86i32"]
 [ext_resource type="Texture2D" uid="uid://cdgs3vb7uomjx" path="res://ressource/mj_affiche/proto_3/BoutAffiche2.png" id="3_7hd66"]
 [ext_resource type="Script" uid="uid://h2qkle7ft2d2" path="res://scripts_et_scenes/mini-jeux/affiche/drag_drop_affiche.gd" id="4_otroj"]
@@ -25,7 +25,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_otroj")
+texture = ExtResource("1_86i32")
 expand_mode = 4
 
 [node name="Base" type="TextureRect" parent="." unique_id=1739326356]
