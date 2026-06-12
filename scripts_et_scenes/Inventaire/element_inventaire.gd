@@ -27,8 +27,15 @@ func _input(event: InputEvent) -> void:
 		mouse_drag_pos = temp_current_mouse_pos
 		
 		#On déplace l'affiche.
-		position.x += temp_x *-1
-		position.y += temp_y *-1
+		if position.x + temp_x *-1 < 10:
+			position.x = 10
+		else:
+			position.x += temp_x *-1
+		
+		if position.y + temp_y *-1 < 10:
+			position.y = 10
+		else:
+			position.y += temp_y *-1
 
 #Est appelé quand la souris survole l'affiche.
 func _on_mouse_entered() -> void:

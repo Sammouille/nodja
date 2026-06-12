@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://jfm8js7ln7jw"]
 
 [ext_resource type="Script" uid="uid://brkn1060453di" path="res://scripts_et_scenes/Inventaire/espace_inventaire.gd" id="1_gbipl"]
-[ext_resource type="Texture2D" uid="uid://da58lkdv2smxj" path="res://assets/Inventaire/Interface.png" id="2_sqqrr"]
+[ext_resource type="Texture2D" uid="uid://da58lkdv2smxj" path="res://assets/inventaire/Interface.png" id="2_sqqrr"]
 
 [node name="Inventaire" type="CanvasLayer" unique_id=1765279565]
 

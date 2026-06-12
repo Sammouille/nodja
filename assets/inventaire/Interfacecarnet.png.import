@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvtvd0ir808pd"
-path="res://.godot/imported/Interfaceinventaire.png-f356377227929619b08b73604d2a01e0.ctex"
+uid="uid://db8mql7yqgkj8"
+path="res://.godot/imported/Interfacecarnet.png-8e23f5cea83d2b1d0803c31c0c00e2ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Inventaire/Interfaceinventaire.png"
-dest_files=["res://.godot/imported/Interfaceinventaire.png-f356377227929619b08b73604d2a01e0.ctex"]
+source_file="res://assets/inventaire/Interfacecarnet.png"
+dest_files=["res://.godot/imported/Interfacecarnet.png-8e23f5cea83d2b1d0803c31c0c00e2ea.ctex"]
 
 [params]
 

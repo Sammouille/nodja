@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bcl1liv78vmmh"
-path="res://.godot/imported/Interfacevoiture.png-09ffbc8694e9adc771b28e6925e8546d.ctex"
+path="res://.godot/imported/Interfacevoiture.png-e56b9ec509c6a1288ac8fc3eab93ad8c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Inventaire/Interfacevoiture.png"
-dest_files=["res://.godot/imported/Interfacevoiture.png-09ffbc8694e9adc771b28e6925e8546d.ctex"]
+source_file="res://assets/inventaire/Interfacevoiture.png"
+dest_files=["res://.godot/imported/Interfacevoiture.png-e56b9ec509c6a1288ac8fc3eab93ad8c.ctex"]
 
 [params]
 

@@ -22,6 +22,10 @@ config/icon="res://icon.svg"
 
 ManagerResolution="*uid://eiuup75i3xu8"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/ridiculous_coding/plugin.cfg")
