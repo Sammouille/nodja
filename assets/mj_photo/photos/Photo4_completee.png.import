@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://du2eh3dm2vhxf"
-path="res://.godot/imported/tampon_refus_2.png-9a2dc1af15f14ab57f1ff9cfda8af1d9.ctex"
+uid="uid://l2rt5nd4wa8f"
+path="res://.godot/imported/Photo4_completee.png-69dc1bbcfa67a76c41f37b56f9a4a029.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/mj_photo/tampon_refus_2.png"
-dest_files=["res://.godot/imported/tampon_refus_2.png-9a2dc1af15f14ab57f1ff9cfda8af1d9.ctex"]
+source_file="res://assets/mj_photo/photos/Photo4_completee.png"
+dest_files=["res://.godot/imported/Photo4_completee.png-69dc1bbcfa67a76c41f37b56f9a4a029.ctex"]
 
 [params]
 

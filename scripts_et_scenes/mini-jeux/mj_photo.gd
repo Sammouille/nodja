@@ -2,6 +2,8 @@ extends Node2D
 
 var nb_tentatives = 0
 @export var photo_retouchee : PackedScene
+@export var sprite_tampon_valide : Texture
+@export var stream : Stream
 
 func _ready() -> void:
 	for i in get_children():
@@ -20,6 +22,6 @@ func _on_photo_clicked():
 func _on_photo_retouchee_clicked():
 	print("BRAVO")
 	var sprite_tampon = Sprite2D.new()
-	sprite_tampon.texture = load("res://assets/mj_photo/tampon_valide.png")
+	sprite_tampon.texture = sprite_tampon_valide
 	sprite_tampon.position = get_global_mouse_position()
 	add_child(sprite_tampon)

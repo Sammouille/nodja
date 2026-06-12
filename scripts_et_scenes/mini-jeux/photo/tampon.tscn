@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://8tkskv3vuh14" path="res://icon.svg" id="1_1vinu"]
 [ext_resource type="Script" uid="uid://bcbeogm2u8xqj" path="res://scripts_et_scenes/mini-jeux/photo/tampon.gd" id="1_ao75w"]
-[ext_resource type="Texture2D" uid="uid://hqajkm8riy1s" path="res://assets/mj_photo/tampon_refus_1.png" id="2_g826i"]
-[ext_resource type="Texture2D" uid="uid://du2eh3dm2vhxf" path="res://assets/mj_photo/tampon_refus_2.png" id="3_1vinu"]
-[ext_resource type="Texture2D" uid="uid://v4w4ygk3aia6" path="res://assets/mj_photo/tampon_refus_3.png" id="4_f0q52"]
+[ext_resource type="Texture2D" uid="uid://hqajkm8riy1s" path="res://assets/mj_photo/tampons/tampon_refus_1.png" id="2_g826i"]
+[ext_resource type="Texture2D" uid="uid://du2eh3dm2vhxf" path="res://assets/mj_photo/tampons/tampon_refus_2.png" id="3_1vinu"]
+[ext_resource type="Texture2D" uid="uid://v4w4ygk3aia6" path="res://assets/mj_photo/tampons/tampon_refus_3.png" id="4_f0q52"]
 
 [node name="Tampon" type="Sprite2D" unique_id=808314012]
 texture = ExtResource("1_1vinu")
