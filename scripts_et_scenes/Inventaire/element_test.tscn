@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://byiy0f2qjyd4i"]
+
+[ext_resource type="Texture2D" uid="uid://ce0nwxm2r7mcn" path="res://ressource/mj_demarrer_voiture/cle_voiture.png" id="1_q5oak"]
+
+[node name="ElementTest" type="TextureRect" unique_id=1304320276]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_q5oak")
