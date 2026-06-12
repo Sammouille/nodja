@@ -19,3 +19,7 @@ func _on_photo_clicked():
 
 func _on_photo_retouchee_clicked():
 	print("BRAVO")
+	var sprite_tampon = Sprite2D.new()
+	sprite_tampon.texture = load("res://assets/mj_photo/tampon_valide.png")
+	sprite_tampon.position = get_global_mouse_position()
+	add_child(sprite_tampon)
