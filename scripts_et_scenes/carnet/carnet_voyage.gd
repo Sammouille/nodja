@@ -26,12 +26,13 @@ func actualiser_affichage():
 	for page in pages:
 		if page.index < index_page:
 			if page.signet.position.x > 0.0:
+				#page.signet.position.x = abs(page.x_signet) -30
 				page.signet.position.x = -abs(page.x_signet) -40
 			page.signet.z_index = 2
 		elif page.index > index_page:
 			if page.signet.position.x < 0.0:
 				page.signet.position.x = abs(page.x_signet) 
-			page.signet.z_index = 0
+			page.signet.z_index = 10
 		else:
 			page.signet.position.x = page.x_signet
 			page.signet.z_index = 2

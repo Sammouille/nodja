@@ -49,6 +49,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("3_4lklj")
 expand_mode = 5
 
@@ -121,6 +122,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("3_evnu1")
 expand_mode = 5
 flip_v = true
@@ -196,6 +198,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("3_evnu1")
 expand_mode = 5
 flip_h = true
@@ -231,6 +234,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("3_evnu1")
 expand_mode = 5
 flip_v = true
@@ -305,6 +309,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("3_evnu1")
 expand_mode = 5
 flip_h = true
@@ -340,6 +345,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("3_evnu1")
 expand_mode = 5
 flip_v = true
@@ -380,9 +386,3 @@ texture = ExtResource("7_fgnlk")
 expand_mode = 5
 
 [connection signal="pressed" from="DoublePage/PageDroite/Button" to="DoublePage" method="_on_button_pressed"]
-[connection signal="mouse_entered" from="DoublePage/Signet" to="DoublePage" method="_on_signet_mouse_entered"]
-[connection signal="mouse_exited" from="DoublePage/Signet" to="DoublePage" method="_on_signet_mouse_exited"]
-[connection signal="mouse_entered" from="DoublePageUnlock/Signet" to="DoublePageUnlock" method="_on_signet_mouse_entered"]
-[connection signal="mouse_exited" from="DoublePageUnlock/Signet" to="DoublePageUnlock" method="_on_signet_mouse_exited"]
-[connection signal="mouse_entered" from="DoublePage2/Signet" to="DoublePage2" method="_on_signet_mouse_entered"]
-[connection signal="mouse_exited" from="DoublePage2/Signet" to="DoublePage2" method="_on_signet_mouse_exited"]
