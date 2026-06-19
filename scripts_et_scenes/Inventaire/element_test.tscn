@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://bcxsegco6thgi" path="res://scripts_et_scenes/Inventaire/element_inventaire.gd" id="2_w7ngk"]
 
 [node name="ElementTest" type="TextureRect" unique_id=1304320276]
-offset_right = 82.0
-offset_bottom = 64.0
+offset_right = 62.0
+offset_bottom = 44.0
 texture = ExtResource("1_q5oak")
 expand_mode = 1
 script = ExtResource("2_w7ngk")

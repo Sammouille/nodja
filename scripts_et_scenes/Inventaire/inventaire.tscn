@@ -31,16 +31,16 @@ offset_right = 140.0
 offset_bottom = 497.0
 color = Color(1, 1, 1, 0.5568628)
 
-[node name="Zone2" type="ColorRect" parent="EspaceInventaire" unique_id=1531072609]
-layout_mode = 0
-offset_left = 1012.0
-offset_right = 1152.0
-offset_bottom = 497.0
-color = Color(1, 1, 1, 0.5568628)
-
-[node name="Zone3" type="ColorRect" parent="EspaceInventaire" unique_id=1410295374]
+[node name="Zone2" type="ColorRect" parent="EspaceInventaire" unique_id=1410295374]
 layout_mode = 0
 offset_left = 140.0
 offset_right = 1012.0
 offset_bottom = 76.0
+color = Color(1, 1, 1, 0.5568628)
+
+[node name="Zone3" type="ColorRect" parent="EspaceInventaire" unique_id=1531072609]
+layout_mode = 0
+offset_left = 1012.0
+offset_right = 1152.0
+offset_bottom = 497.0
 color = Color(1, 1, 1, 0.5568628)
