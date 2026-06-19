@@ -10,8 +10,11 @@ func _ready() -> void:
 	actualiser_affichage()
 	for page in pages:
 		page.clic_signet.connect(changer_page)
+	actualiser_affichage()
 
 func changer_page(page_visee: Page):
+	if %PremierePage.visible:
+		%PremierePage.hide()
 	if page_active:
 		page_active.fermer_page()
 	
@@ -26,13 +29,18 @@ func actualiser_affichage():
 	for page in pages:
 		if page.index < index_page:
 			if page.signet.position.x > 0.0:
-				#page.signet.position.x = abs(page.x_signet) -30
-				page.signet.position.x = -abs(page.x_signet) -40
-			page.signet.z_index = 2
+				if page.x_signet < -100:
+					page.signet.position.x = page.x_signet
+				else:
+					page.signet.position.x = -page.x_signet - 100
+			page.signet.z_index = 0
 		elif page.index > index_page:
 			if page.signet.position.x < 0.0:
-				page.signet.position.x = abs(page.x_signet) 
-			page.signet.z_index = 10
+				if page.x_signet < -100:
+					page.signet.position.x = abs(page.x_signet) - 100
+				else:
+					page.signet.position.x = page.x_signet
+			page.signet.z_index = 0
 		else:
 			page.signet.position.x = page.x_signet
 			page.signet.z_index = 2
