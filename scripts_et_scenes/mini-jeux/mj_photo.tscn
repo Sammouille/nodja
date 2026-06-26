@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://denx6y7xkxwi5" path="res://assets/mj_photo/photos/Photo3_completee.png" id="7_t2k53"]
 [ext_resource type="Texture2D" uid="uid://l2rt5nd4wa8f" path="res://assets/mj_photo/photos/Photo4_completee.png" id="8_0s8k6"]
 [ext_resource type="Texture2D" uid="uid://du80cq4s1ssk0" path="res://assets/mj_photo/photos/Photo5_completee.png" id="9_1sewp"]
+[ext_resource type="Texture2D" uid="uid://lblfbj4cpwho" path="res://assets/mj_photo/fond_nodja.png" id="11_t2k53"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mrrg6"]
 size = Vector2(32.333332, 40.333336)
@@ -22,8 +23,8 @@ stream = NodePath("Tampon")
 
 [node name="Tampon" type="AudioStreamPlayer" parent="." unique_id=1196813601]
 
-[node name="Photo" type="Area2D" parent="." unique_id=794387947]
-position = Vector2(1043, 463)
+[node name="Photo" type="Area2D" parent="." unique_id=794387947 groups=["photo"]]
+position = Vector2(1165, 465)
 script = ExtResource("2_mrrg6")
 tampon_refus = ExtResource("4_5m354")
 
@@ -35,8 +36,8 @@ shape = SubResource("RectangleShape2D_mrrg6")
 [node name="Sprite2D" type="Sprite2D" parent="Photo" unique_id=458188592]
 texture = ExtResource("5_nwvwm")
 
-[node name="Photo2" type="Area2D" parent="." unique_id=520742624]
-position = Vector2(857, 173)
+[node name="Photo2" type="Area2D" parent="." unique_id=520742624 groups=["photo"]]
+position = Vector2(980, 175)
 script = ExtResource("2_mrrg6")
 tampon_refus = ExtResource("4_5m354")
 
@@ -48,8 +49,8 @@ shape = SubResource("RectangleShape2D_mrrg6")
 [node name="Sprite2D" type="Sprite2D" parent="Photo2" unique_id=63122606]
 texture = ExtResource("6_ipi5a")
 
-[node name="Photo3" type="Area2D" parent="." unique_id=1998496114]
-position = Vector2(554, 239)
+[node name="Photo3" type="Area2D" parent="." unique_id=1998496114 groups=["photo"]]
+position = Vector2(659, 263)
 script = ExtResource("2_mrrg6")
 tampon_refus = ExtResource("4_5m354")
 
@@ -61,8 +62,8 @@ shape = SubResource("RectangleShape2D_mrrg6")
 [node name="Sprite2D" type="Sprite2D" parent="Photo3" unique_id=1293802614]
 texture = ExtResource("7_t2k53")
 
-[node name="Photo4" type="Area2D" parent="." unique_id=1900815533]
-position = Vector2(256, 173)
+[node name="Photo4" type="Area2D" parent="." unique_id=1900815533 groups=["photo"]]
+position = Vector2(335, 179)
 script = ExtResource("2_mrrg6")
 tampon_refus = ExtResource("4_5m354")
 
@@ -74,7 +75,7 @@ shape = SubResource("RectangleShape2D_mrrg6")
 [node name="Sprite2D" type="Sprite2D" parent="Photo4" unique_id=1658563292]
 texture = ExtResource("8_0s8k6")
 
-[node name="Photo5" type="Area2D" parent="." unique_id=1462130147]
+[node name="Photo5" type="Area2D" parent="." unique_id=1462130147 groups=["photo"]]
 position = Vector2(153, 483)
 script = ExtResource("2_mrrg6")
 tampon_refus = ExtResource("4_5m354")
@@ -86,6 +87,12 @@ shape = SubResource("RectangleShape2D_mrrg6")
 
 [node name="Sprite2D" type="Sprite2D" parent="Photo5" unique_id=514902083]
 texture = ExtResource("9_1sewp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1459252956]
+z_index = -10
+scale = Vector2(0.72, 0.61)
+texture = ExtResource("11_t2k53")
+offset = Vector2(960, 540)
 
 [connection signal="mouse_entered" from="Photo" to="Photo" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Photo" to="Photo" method="_on_mouse_exited"]
