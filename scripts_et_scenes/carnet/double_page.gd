@@ -7,7 +7,7 @@ var ouverte:= false
 
 var passee:= false
 
-@export var contenu_visuel: Array[Control]
+@export var contenu_visuel: Array[Node]
 
 signal clic_signet(page: Page)
 

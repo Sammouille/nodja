@@ -19,12 +19,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_58231")
 pages = [NodePath("Pages/DoublePage"), NodePath("Pages/DoublePage2"), NodePath("Pages/DoublePageUnlock"), NodePath("Pages/DoublePageUnlock2")]
-
-[node name="MJPhoto" parent="." unique_id=1553811068 instance=ExtResource("2_gcbmt")]
-z_index = 10
-position = Vector2(268, 152)
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1459639798]
 z_index = -20
@@ -34,6 +31,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("9_g2mpa")
 expand_mode = 5
 
@@ -43,6 +41,7 @@ offset_left = 268.0
 offset_top = 152.0
 offset_right = 1651.0
 offset_bottom = 810.0
+mouse_filter = 2
 
 [node name="PremierePage" type="Control" parent="Pages" unique_id=818951584]
 unique_name_in_owner = true
@@ -57,6 +56,7 @@ offset_right = -3.0
 offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="TextureRect2" type="TextureRect" parent="Pages/PremierePage" unique_id=1957271306]
 layout_mode = 1
@@ -79,7 +79,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("4_u3f38")
 signet_unlock = NodePath("../DoublePageUnlock/Signet")
-contenu_visuel = [NodePath("PageGauche"), NodePath("PageDroite")]
+contenu_visuel = [NodePath("PageGauche"), NodePath("PageDroite"), NodePath("MJPhoto")]
 signet = NodePath("Signet")
 x_signet = 174.0
 
@@ -105,6 +105,7 @@ offset_top = -21.0
 offset_bottom = 40.4375
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("3_evnu1")
 expand_mode = 4
 flip_h = true
@@ -167,20 +168,6 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "2"
 
-[node name="Button" type="Button" parent="Pages/DoublePage/PageDroite" unique_id=346756845]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 41.5
-offset_top = 243.0
-offset_right = -88.0
-offset_bottom = -115.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 30
-text = "DEBUG Mini-jeu fini"
-
 [node name="Signet" type="Control" parent="Pages/DoublePage" unique_id=244834085]
 layout_mode = 1
 anchors_preset = 9
@@ -204,6 +191,11 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_gcbmt")
 expand_mode = 5
+
+[node name="MJPhoto" parent="Pages/DoublePage" unique_id=1553811068 instance=ExtResource("2_gcbmt")]
+visible = false
+z_index = 10
+position = Vector2(-691.5, 0)
 
 [node name="DoublePageUnlock" type="Control" parent="Pages" unique_id=1153004739 node_paths=PackedStringArray("contenu_visuel", "signet")]
 layout_mode = 1
@@ -584,5 +576,4 @@ grow_vertical = 2
 texture = ExtResource("10_wyfrh")
 expand_mode = 5
 
-[connection signal="pressed" from="Pages/DoublePage/PageDroite/Button" to="Pages/DoublePage" method="_on_button_pressed"]
 [connection signal="pressed" from="Pages/DoublePage2/PageDroite/Button" to="Pages/DoublePage2" method="_on_button_pressed"]
