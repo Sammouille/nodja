@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://di51s3ylpnu3w"]
+
+[ext_resource type="Script" uid="uid://bcxsegco6thgi" path="res://scripts_et_scenes/Inventaire/element_inventaire.gd" id="1_1bi30"]
+[ext_resource type="Texture2D" uid="uid://ce0nwxm2r7mcn" path="res://ressource/mj_demarrer_voiture/cle_voiture.png" id="1_maobd"]
+
+[node name="cle_voiture_inventaire" type="TextureRect" unique_id=1275178487]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_maobd")
+expand_mode = 3
+script = ExtResource("1_1bi30")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

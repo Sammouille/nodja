@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://brkn1060453di" path="res://scripts_et_scenes/Inventaire/espace_inventaire.gd" id="1_gbipl"]
 [ext_resource type="Texture2D" uid="uid://da58lkdv2smxj" path="res://assets/inventaire/Interface.png" id="2_sqqrr"]
 
-[node name="Inventaire" type="CanvasLayer" unique_id=1765279565]
+[node name="Inventaire" type="CanvasLayer" unique_id=1765279565 groups=["Inventaire"]]
 
 [node name="EspaceInventaire" type="Control" parent="." unique_id=1739719327 node_paths=PackedStringArray("tab_inventary_zone")]
 layout_mode = 3
@@ -12,10 +12,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_gbipl")
 tab_inventary_zone = [NodePath("Zone1"), NodePath("Zone2"), NodePath("Zone3")]
 
 [node name="Fond" type="TextureRect" parent="EspaceInventaire" unique_id=1663518322]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

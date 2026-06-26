@@ -2,6 +2,14 @@ extends Control
 
 
 @onready var element_test = preload("res://scripts_et_scenes/Inventaire/element_test.tscn")
+@onready var cle_voiture_inventaire = preload("res://scripts_et_scenes/Inventaire/element_inventaire/cle_voiture_inventaire.tscn")
+@onready var rouleau_scotch_inventaire = preload("res://scripts_et_scenes/Inventaire/element_inventaire/rouleau_scotch_inventaire.tscn")
+
+@onready var dict_str_obj = {
+	"element_test" : element_test,
+	"cle_voiture_inventaire" : cle_voiture_inventaire,
+	"rouleau_scotch_inventaire" : rouleau_scotch_inventaire,
+}
 
 @export var tab_inventary_zone : Array[ColorRect]
 
@@ -14,16 +22,23 @@ var rng = RandomNumberGenerator.new()
 
 
 func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("debug_1"):
-		add_object(element_test)
+	#if Input.is_action_just_pressed("debug_1"):
+		#add_object(element_test)
+		#on_signal_to_add_object_from_str("cle_voiture_inventaire")
+	pass
 
 
 func add_object(object) -> void:
 	#print("en train ajouter element")
 	var tmp = object.instantiate()
+	random_pos_in_inventary(tmp)
 	self.add_child(tmp)
-	tab_elements.append(object)
+	tab_elements.append(tmp)
 	#print("fini ajouter " + tmp.name)
+
+
+func on_signal_to_add_object_from_str(name : String):
+	add_object(dict_str_obj[name])
 
 
 func random_pos_in_inventary(object) -> void:
