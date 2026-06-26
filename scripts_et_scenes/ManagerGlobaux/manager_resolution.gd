@@ -2,7 +2,9 @@ extends Node
 
 var res_horizontal = [1152,1920]
 var res_vertical = [648,1080]
-var res_scale = [1.0,1.66667]
+
+## Finalement peute tre que ça sert à rien de scale les éléments
+var res_scale = [1.0,1.0]
 
 @export var control_resolution_list : Control
 signal adapt_res_scale(resolution_scaling)

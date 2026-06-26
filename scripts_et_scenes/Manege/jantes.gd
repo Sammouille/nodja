@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 
-@export var poussee_horizontale:= 400.0
-@export var poussee_verticale:= 900.0
+@export var poussee_horizontale:= 300.0
+@export var poussee_verticale:= 1200.0
 @export var masse:= 1.0:
 	set(value):
 		inv_masse = 1.00/value
@@ -18,7 +18,6 @@ var acceleration:= Vector2.ZERO
 
 var au_sol:= false
 
-@export var camera : Camera2D
 @export var hauteur_voiture : RayCast2D
 
 @export var voiture_collision : CollisionShape2D
@@ -44,10 +43,6 @@ func appliquer_frottements():
 		appliquer_force(-velocite * frottements_sol)
 	else:
 		appliquer_force(-velocite * frottements_air)
-
-func actualiser_camera_zoom():
-	pass
-
 
 func appliquer_gravite():
 	if !is_on_floor():
@@ -84,7 +79,6 @@ func _process(delta: float) -> void:
 	appliquer_gravite()
 	appliquer_frottements()
 	actualiser_velocite(delta)
-	actualiser_camera_zoom()
 	move_and_slide()
 
 func _draw() -> void:

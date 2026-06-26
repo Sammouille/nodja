@@ -4,15 +4,18 @@
 
 [node name="ManagerResolution" type="Node" unique_id=1287248262 node_paths=PackedStringArray("control_resolution_list")]
 script = ExtResource("1_ipo27")
-control_resolution_list = NodePath("Control")
+control_resolution_list = NodePath("CanvasLayer/Control")
 
-[node name="Control" type="Control" parent="." unique_id=548289692]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1028253500]
+layer = 4
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=548289692]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 62.0
 offset_bottom = 66.0
 
-[node name="Res_list" type="ItemList" parent="Control" unique_id=440297785]
+[node name="Res_list" type="ItemList" parent="CanvasLayer/Control" unique_id=440297785]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -23,4 +26,4 @@ item_count = 2
 item_0/text = "Res1"
 item_1/text = "Res2"
 
-[connection signal="item_selected" from="Control/Res_list" to="." method="_on_res_list_item_selected"]
+[connection signal="item_selected" from="CanvasLayer/Control/Res_list" to="." method="_on_res_list_item_selected"]

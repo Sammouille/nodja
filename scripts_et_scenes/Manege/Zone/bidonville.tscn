@@ -1,14 +1,14 @@
 [gd_scene format=4 uid="uid://r8wmunbqd2wd"]
 
-[ext_resource type="Script" uid="uid://bd7yf1at4klrm" path="res://scripts_et_scenes/Manege/tilemaps.gd" id="1_qtetc"]
-[ext_resource type="Texture2D" uid="uid://byd8fcjq32ke0" path="res://assets/tests/routes_block_out.png" id="2_dnlkv"]
-[ext_resource type="Texture2D" uid="uid://gxy2wsaft1se" path="res://assets/tests/nodja_road.svg" id="3_fmor2"]
-[ext_resource type="PackedScene" uid="uid://3sgwne8seqdl" path="res://scripts_et_scenes/Manege/zone_de_chargement.tscn" id="4_uhsfg"]
+[ext_resource type="Script" uid="uid://bd7yf1at4klrm" path="res://scripts_et_scenes/Manege/Zone/tilemaps.gd" id="1_t1ivb"]
+[ext_resource type="Texture2D" uid="uid://byd8fcjq32ke0" path="res://assets/tests/routes_block_out.png" id="2_um4kt"]
+[ext_resource type="Texture2D" uid="uid://gxy2wsaft1se" path="res://assets/tests/nodja_road.svg" id="3_iajx2"]
+[ext_resource type="PackedScene" uid="uid://3sgwne8seqdl" path="res://scripts_et_scenes/Manege/zone_de_chargement.tscn" id="4_tenny"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tqdjm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wqsis"]
-texture = ExtResource("3_fmor2")
+texture = ExtResource("3_iajx2")
 texture_region_size = Vector2i(265, 90)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-132.5, 0, 132.5, 0, 132.5, 45, -132.5, 45)
@@ -23,11 +23,9 @@ sources/0 = SubResource("TileSetAtlasSource_wqsis")
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_ktfxo"]
 
-[node name="Tilemaps" type="Node2D" unique_id=2030232881 node_paths=PackedStringArray("parallax", "couches_dessus", "couches_dessous", "route", "zone_de_chargement")]
-script = ExtResource("1_qtetc")
+[node name="Tilemaps" type="Node2D" unique_id=2030232881 node_paths=PackedStringArray("parallax", "route", "zone_de_chargement")]
+script = ExtResource("1_t1ivb")
 parallax = NodePath("Parallax2D")
-couches_dessus = NodePath("CouchesDessus")
-couches_dessous = NodePath("CouchesDessous")
 route = NodePath("Route_Asphalt")
 nom_ville = "Bidonville"
 zone_de_chargement = NodePath("ZoneDeChargement")
@@ -38,7 +36,7 @@ repeat_size = Vector2(2500, 0)
 autoscroll = Vector2(-8, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=1498365834]
-texture = ExtResource("2_dnlkv")
+texture = ExtResource("2_um4kt")
 
 [node name="Route_Asphalt" type="TileMapLayer" parent="." unique_id=2097407131]
 position = Vector2(0, 580)
@@ -69,7 +67,7 @@ scale = Vector2(1.2026014, 1.5314815)
 shape = SubResource("SegmentShape2D_ktfxo")
 debug_color = Color(1, 0.6, 0.69803923, 0.83137256)
 
-[node name="ZoneDeChargement" parent="." unique_id=731542611 instance=ExtResource("4_uhsfg")]
+[node name="ZoneDeChargement" parent="." unique_id=731542611 instance=ExtResource("4_tenny")]
 position = Vector2(13818, 804)
 
 [connection signal="body_entered" from="CouchesDessus" to="." method="_on_couches_dessus_body_entered"]
