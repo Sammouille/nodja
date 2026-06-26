@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://b7wth5pynlljm"]
 
-[ext_resource type="Texture2D" uid="uid://6lrci2ya0sdt" path="res://ressource/mj_affiche/proto_2/poule.png" id="1_otroj"]
+[ext_resource type="Texture2D" uid="uid://c0qxo0aoasnve" path="res://ressource/mj_affiche/proto_3/affiche_poule.png" id="1_86i32"]
+[ext_resource type="Texture2D" uid="uid://da72mwc6org6p" path="res://ressource/mj_affiche/proto_3/BoutAffiche1.png" id="2_86i32"]
+[ext_resource type="Texture2D" uid="uid://cdgs3vb7uomjx" path="res://ressource/mj_affiche/proto_3/BoutAffiche2.png" id="3_7hd66"]
 [ext_resource type="Script" uid="uid://h2qkle7ft2d2" path="res://scripts_et_scenes/mini-jeux/affiche/drag_drop_affiche.gd" id="4_otroj"]
-[ext_resource type="Texture2D" uid="uid://cwqn8vpje3wc7" path="res://ressource/mj_affiche/proto_2/base.png" id="5_7hd66"]
-[ext_resource type="Texture2D" uid="uid://bs76fousxnb1j" path="res://ressource/mj_affiche/proto_2/chaine_1.png" id="6_n54y4"]
-[ext_resource type="Texture2D" uid="uid://bgm2fpdnxwix1" path="res://ressource/mj_affiche/proto_2/chaine_2.png" id="7_voquk"]
-[ext_resource type="Texture2D" uid="uid://dvj84m3v427tp" path="res://ressource/mj_affiche/proto_2/chaine_3.png" id="8_lomgq"]
+[ext_resource type="Texture2D" uid="uid://b3wcmgq6tifnd" path="res://ressource/mj_affiche/proto_3/BoutAffiche3.png" id="5_n54y4"]
+[ext_resource type="Texture2D" uid="uid://bnq4wrq13llh1" path="res://ressource/mj_affiche/proto_3/BoutAffiche4.png" id="6_voquk"]
+[ext_resource type="Texture2D" uid="uid://b3xvh8tbeky3" path="res://ressource/mj_affiche/proto_3/BoutAffiche5.png" id="7_lomgq"]
 
 [node name="MjAffiche" type="Control" unique_id=127143870]
 layout_mode = 3
@@ -24,7 +25,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_otroj")
+texture = ExtResource("1_86i32")
 expand_mode = 4
 
 [node name="Base" type="TextureRect" parent="." unique_id=1739326356]
@@ -34,7 +35,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("5_7hd66")
+texture = ExtResource("2_86i32")
 expand_mode = 4
 
 [node name="Chaine1" type="TextureRect" parent="." unique_id=957412328]
@@ -44,7 +45,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("6_n54y4")
+texture = ExtResource("3_7hd66")
 expand_mode = 4
 script = ExtResource("4_otroj")
 
@@ -55,7 +56,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("7_voquk")
+texture = ExtResource("5_n54y4")
 expand_mode = 4
 script = ExtResource("4_otroj")
 
@@ -66,7 +67,18 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("8_lomgq")
+texture = ExtResource("6_voquk")
+expand_mode = 4
+script = ExtResource("4_otroj")
+
+[node name="Chaine4" type="TextureRect" parent="." unique_id=1876210060]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_lomgq")
 expand_mode = 4
 script = ExtResource("4_otroj")
 
@@ -76,3 +88,5 @@ script = ExtResource("4_otroj")
 [connection signal="mouse_exited" from="Chaine2" to="Chaine2" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Chaine3" to="Chaine3" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Chaine3" to="Chaine3" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Chaine4" to="Chaine4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Chaine4" to="Chaine4" method="_on_mouse_exited"]

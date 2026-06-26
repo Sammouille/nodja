@@ -3,8 +3,15 @@ class_name clicable
 
 signal photo_clicked
 
+@export var tampon_refus : PackedScene
+
 var hovered = false
 var used = false
+
+func _ready() -> void:
+	rotation_degrees += randi_range(-20,20)
+	position.x += randi_range(-20,20)
+	position.y += randi_range(-20,20)
 
 func _on_mouse_entered() -> void:
 	hovered = true
@@ -20,5 +27,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			#print("clicgoch")
 			if !used:
 				print("photo refusée")
+				var nv_instance = tampon_refus.instantiate()
+				add_child(nv_instance)
 				photo_clicked.emit()
 				used = true

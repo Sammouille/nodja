@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://nhtt1tpikb5i"]
 
 [ext_resource type="Script" uid="uid://1nyymav3q0w8" path="res://scripts_et_scenes/carnet/carnet_voyage.gd" id="1_58231"]
-[ext_resource type="Texture2D" uid="uid://dlu4gcuurtt8" path="res://assets/carnet/carnet.png" id="2_0cqng"]
 [ext_resource type="Texture2D" uid="uid://c4hhg8drevwol" path="res://assets/carnet/signet.png" id="2_7vl3t"]
 [ext_resource type="Script" uid="uid://28h8sdal477x" path="res://scripts_et_scenes/carnet/double_page.gd" id="2_evnu1"]
 [ext_resource type="Texture2D" uid="uid://x6no3s4pt1tq" path="res://assets/carnet/premiere_page.png" id="3_4lklj"]
@@ -9,6 +8,8 @@
 [ext_resource type="Script" uid="uid://5s6atf1yfedf" path="res://scripts_et_scenes/carnet/page_mj_debug.gd" id="4_u3f38"]
 [ext_resource type="Texture2D" uid="uid://sgvkyt058lti" path="res://assets/carnet/signet4.png" id="7_fgnlk"]
 [ext_resource type="Texture2D" uid="uid://6251tlovxhff" path="res://assets/carnet/signet3.png" id="8_g2mpa"]
+[ext_resource type="Texture2D" uid="uid://dcp6tqmdyx6tl" path="res://assets/main/carnet.png" id="9_g2mpa"]
+[ext_resource type="Texture2D" uid="uid://leflcj837hec" path="res://assets/carnet/signet2.png" id="10_wyfrh"]
 
 [node name="CarnetVoyage" type="Control" unique_id=1173689453 node_paths=PackedStringArray("pages")]
 layout_mode = 3
@@ -18,7 +19,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_58231")
-pages = [NodePath("DoublePage"), NodePath("DoublePage2"), NodePath("DoublePageUnlock")]
+pages = [NodePath("Pages/DoublePage"), NodePath("Pages/DoublePage2"), NodePath("Pages/DoublePageUnlock"), NodePath("Pages/DoublePageUnlock2")]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1459639798]
 z_index = -20
@@ -28,31 +29,42 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_0cqng")
+texture = ExtResource("9_g2mpa")
 expand_mode = 5
 
-[node name="PremierePage" type="Control" parent="." unique_id=818951584]
+[node name="Pages" type="Control" parent="." unique_id=1813942317]
+anchors_preset = 0
+offset_left = 152.0
+offset_top = 81.0
+offset_right = 1001.0
+offset_bottom = 496.0
+
+[node name="PremierePage" type="Control" parent="Pages" unique_id=818951584]
+unique_name_in_owner = true
 z_index = 1
 layout_mode = 1
-anchors_preset = 13
 anchor_left = 0.5
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 576.0
+offset_left = -0.5
+offset_top = 2.0
+offset_right = -3.0
+offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect2" type="TextureRect" parent="PremierePage" unique_id=1957271306]
+[node name="TextureRect2" type="TextureRect" parent="Pages/PremierePage" unique_id=1957271306]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("3_4lklj")
 expand_mode = 5
 
-[node name="DoublePage" type="Control" parent="." unique_id=1777725114 node_paths=PackedStringArray("signet_unlock", "contenu_visuel", "signet")]
+[node name="DoublePage" type="Control" parent="Pages" unique_id=1777725114 node_paths=PackedStringArray("signet_unlock", "contenu_visuel", "signet")]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -64,26 +76,28 @@ script = ExtResource("4_u3f38")
 signet_unlock = NodePath("../DoublePageUnlock/Signet")
 contenu_visuel = [NodePath("PageGauche"), NodePath("PageDroite")]
 signet = NodePath("Signet")
-x_signet = 307.0
+x_signet = 246.0
 
-[node name="PageGauche" type="Control" parent="DoublePage" unique_id=1348626340]
+[node name="PageGauche" type="Control" parent="Pages/DoublePage" unique_id=1348626340]
 visible = false
 z_index = 1
 layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -576.0
+offset_left = -423.5
+offset_top = -3.0
+offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="TextureRect" type="TextureRect" parent="DoublePage/PageGauche" unique_id=1160618490]
+[node name="TextureRect" type="TextureRect" parent="Pages/DoublePage/PageGauche" unique_id=1160618490]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -21.0
+offset_bottom = 40.4375
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_evnu1")
@@ -91,68 +105,84 @@ expand_mode = 5
 flip_h = true
 flip_v = true
 
-[node name="Label" type="Label" parent="DoublePage/PageGauche" unique_id=392137633]
-layout_mode = 0
-offset_left = 120.0
-offset_top = 489.0
-offset_right = 160.0
-offset_bottom = 558.0
+[node name="Label" type="Label" parent="Pages/DoublePage/PageGauche" unique_id=392137633]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 89.0
+offset_top = 324.0
+offset_right = -294.5
+offset_bottom = -22.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "1"
 
-[node name="PageDroite" type="Control" parent="DoublePage" unique_id=528031407]
+[node name="PageDroite" type="Control" parent="Pages/DoublePage" unique_id=528031407]
 visible = false
 z_index = 1
 layout_mode = 1
-anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_right = 576.0
+offset_top = 6.0
+offset_right = 420.5
+offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="TextureRect2" type="TextureRect" parent="DoublePage/PageDroite" unique_id=1682079252]
+[node name="TextureRect2" type="TextureRect" parent="Pages/DoublePage/PageDroite" unique_id=1682079252]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("3_evnu1")
 expand_mode = 5
 flip_v = true
 
-[node name="Label" type="Label" parent="DoublePage/PageDroite" unique_id=248436443]
-layout_mode = 0
-offset_left = 426.0
-offset_top = 485.0
-offset_right = 466.0
-offset_bottom = 554.0
+[node name="Label" type="Label" parent="Pages/DoublePage/PageDroite" unique_id=248436443]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 306.5
+offset_top = 312.0
+offset_right = -65.5
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "2"
 
-[node name="Button" type="Button" parent="DoublePage/PageDroite" unique_id=346756845]
-layout_mode = 0
-offset_left = 88.0
-offset_top = 497.0
-offset_right = 379.0
-offset_bottom = 547.0
+[node name="Button" type="Button" parent="Pages/DoublePage/PageDroite" unique_id=346756845]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 41.5
+offset_top = 243.0
+offset_right = -88.0
+offset_bottom = -115.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/font_size = 30
 text = "DEBUG Mini-jeu fini"
 
-[node name="Signet" type="Control" parent="DoublePage" unique_id=244834085]
-anchors_preset = 0
-offset_left = 307.0
-offset_top = -15.0
-offset_right = 410.0
-offset_bottom = 115.0
+[node name="Signet" type="Control" parent="Pages/DoublePage" unique_id=244834085]
+layout_mode = 1
+anchor_bottom = 1.0
+offset_left = 174.5
+offset_top = -59.0
+offset_right = 277.5
+offset_bottom = -344.0
 pivot_offset_ratio = Vector2(0.5, 0.5)
 
-[node name="TextureRect" type="TextureRect" parent="DoublePage/Signet" unique_id=834821563]
+[node name="TextureRect" type="TextureRect" parent="Pages/DoublePage/Signet" unique_id=834821563]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -162,7 +192,7 @@ grow_vertical = 2
 texture = ExtResource("2_7vl3t")
 expand_mode = 5
 
-[node name="DoublePageUnlock" type="Control" parent="." unique_id=1153004739 node_paths=PackedStringArray("contenu_visuel", "signet")]
+[node name="DoublePageUnlock" type="Control" parent="Pages" unique_id=1153004739 node_paths=PackedStringArray("contenu_visuel", "signet")]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -174,9 +204,9 @@ script = ExtResource("2_evnu1")
 contenu_visuel = [NodePath("PageGauche"), NodePath("PageDroite")]
 index = 2
 signet = NodePath("Signet")
-x_signet = 389.0
+x_signet = 142.5
 
-[node name="PageGauche" type="Control" parent="DoublePageUnlock" unique_id=1034586337]
+[node name="PageGauche" type="Control" parent="Pages/DoublePageUnlock" unique_id=1034586337]
 visible = false
 z_index = 1
 layout_mode = 1
@@ -184,34 +214,40 @@ anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -576.0
+offset_left = -424.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="TextureRect" type="TextureRect" parent="DoublePageUnlock/PageGauche" unique_id=569634089]
+[node name="TextureRect" type="TextureRect" parent="Pages/DoublePageUnlock/PageGauche" unique_id=569634089]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("3_evnu1")
 expand_mode = 5
 flip_h = true
 flip_v = true
 
-[node name="Label" type="Label" parent="DoublePageUnlock/PageGauche" unique_id=2095091101]
-layout_mode = 0
-offset_left = 120.0
-offset_top = 489.0
-offset_right = 160.0
-offset_bottom = 558.0
+[node name="Label" type="Label" parent="Pages/DoublePageUnlock/PageGauche" unique_id=2095091101]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 84.0
+offset_top = 310.0
+offset_right = -300.5
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "3"
 
-[node name="PageDroite" type="Control" parent="DoublePageUnlock" unique_id=897569927]
+[node name="PageDroite" type="Control" parent="Pages/DoublePageUnlock" unique_id=897569927]
 visible = false
 z_index = 1
 layout_mode = 1
@@ -219,48 +255,54 @@ anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_right = 576.0
+offset_right = 422.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="TextureRect2" type="TextureRect" parent="DoublePageUnlock/PageDroite" unique_id=580404785]
+[node name="TextureRect2" type="TextureRect" parent="Pages/DoublePageUnlock/PageDroite" unique_id=580404785]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("3_evnu1")
 expand_mode = 5
 flip_v = true
 
-[node name="Label" type="Label" parent="DoublePageUnlock/PageDroite" unique_id=262571889]
-layout_mode = 0
-offset_left = 426.0
-offset_top = 485.0
-offset_right = 466.0
-offset_bottom = 554.0
+[node name="Label" type="Label" parent="Pages/DoublePageUnlock/PageDroite" unique_id=262571889]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 309.5
+offset_top = 306.0
+offset_right = -73.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "4"
 
-[node name="Signet" type="Control" parent="DoublePageUnlock" unique_id=827273055]
+[node name="Signet" type="Control" parent="Pages/DoublePageUnlock" unique_id=827273055]
 visible = false
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 389.0
-offset_top = -35.0
-offset_right = 505.0
-offset_bottom = -529.0
+offset_left = 142.5
+offset_top = -51.0
+offset_right = 258.5
+offset_bottom = -321.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(58, 77)
 
-[node name="TextureRect" type="TextureRect" parent="DoublePageUnlock/Signet" unique_id=579971288]
+[node name="TextureRect" type="TextureRect" parent="Pages/DoublePageUnlock/Signet" unique_id=579971288]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -271,7 +313,7 @@ grow_vertical = 2
 texture = ExtResource("8_g2mpa")
 expand_mode = 5
 
-[node name="DoublePage2" type="Control" parent="." unique_id=120834702 node_paths=PackedStringArray("contenu_visuel", "signet")]
+[node name="DoublePage2" type="Control" parent="Pages" unique_id=120834702 node_paths=PackedStringArray("signet_unlock", "contenu_visuel", "signet")]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -279,13 +321,14 @@ anchor_right = 0.5
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("2_evnu1")
+script = ExtResource("4_u3f38")
+signet_unlock = NodePath("../DoublePageUnlock2/Signet")
 contenu_visuel = [NodePath("PageGauche"), NodePath("PageDroite")]
 index = 3
 signet = NodePath("Signet")
-x_signet = 479.0
+x_signet = -401.0
 
-[node name="PageGauche" type="Control" parent="DoublePage2" unique_id=676350390]
+[node name="PageGauche" type="Control" parent="Pages/DoublePage2" unique_id=676350390]
 visible = false
 z_index = 1
 layout_mode = 1
@@ -293,34 +336,40 @@ anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -576.0
+offset_left = -423.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="TextureRect" type="TextureRect" parent="DoublePage2/PageGauche" unique_id=200435401]
+[node name="TextureRect" type="TextureRect" parent="Pages/DoublePage2/PageGauche" unique_id=200435401]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("3_evnu1")
 expand_mode = 5
 flip_h = true
 flip_v = true
 
-[node name="Label" type="Label" parent="DoublePage2/PageGauche" unique_id=232671267]
-layout_mode = 0
-offset_left = 120.0
-offset_top = 489.0
-offset_right = 160.0
-offset_bottom = 558.0
+[node name="Label" type="Label" parent="Pages/DoublePage2/PageGauche" unique_id=232671267]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 87.0
+offset_top = 311.0
+offset_right = -296.5
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "5"
 
-[node name="PageDroite" type="Control" parent="DoublePage2" unique_id=1335472258]
+[node name="PageDroite" type="Control" parent="Pages/DoublePage2" unique_id=1335472258]
 visible = false
 z_index = 1
 layout_mode = 1
@@ -328,48 +377,68 @@ anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_right = 576.0
+offset_right = 422.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="TextureRect2" type="TextureRect" parent="DoublePage2/PageDroite" unique_id=752061706]
+[node name="TextureRect2" type="TextureRect" parent="Pages/DoublePage2/PageDroite" unique_id=752061706]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("3_evnu1")
 expand_mode = 5
 flip_v = true
 
-[node name="Label" type="Label" parent="DoublePage2/PageDroite" unique_id=1433951645]
-layout_mode = 0
-offset_left = 426.0
-offset_top = 485.0
-offset_right = 466.0
-offset_bottom = 554.0
+[node name="Label" type="Label" parent="Pages/DoublePage2/PageDroite" unique_id=1433951645]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 308.5
+offset_top = 312.0
+offset_right = -74.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "6"
 
-[node name="Signet" type="Control" parent="DoublePage2" unique_id=502901700]
+[node name="Button" type="Button" parent="Pages/DoublePage2/PageDroite" unique_id=1878868992]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 41.5
+offset_top = 84.0
+offset_right = -88.0
+offset_bottom = -274.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "DEBUG Mini-jeu fini"
+
+[node name="Signet" type="Control" parent="Pages/DoublePage2" unique_id=502901700]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 479.0
-offset_top = 109.0
-offset_right = 595.0
-offset_bottom = -385.0
+offset_left = 301.5
+offset_top = 163.0
+offset_right = 417.5
+offset_bottom = -120.915405
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -4.712389
 pivot_offset = Vector2(58, 77)
 
-[node name="TextureRect" type="TextureRect" parent="DoublePage2/Signet" unique_id=724751947]
+[node name="TextureRect" type="TextureRect" parent="Pages/DoublePage2/Signet" unique_id=724751947]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -379,10 +448,128 @@ grow_vertical = 2
 texture = ExtResource("7_fgnlk")
 expand_mode = 5
 
-[connection signal="pressed" from="DoublePage/PageDroite/Button" to="DoublePage" method="_on_button_pressed"]
-[connection signal="mouse_entered" from="DoublePage/Signet" to="DoublePage" method="_on_signet_mouse_entered"]
-[connection signal="mouse_exited" from="DoublePage/Signet" to="DoublePage" method="_on_signet_mouse_exited"]
-[connection signal="mouse_entered" from="DoublePageUnlock/Signet" to="DoublePageUnlock" method="_on_signet_mouse_entered"]
-[connection signal="mouse_exited" from="DoublePageUnlock/Signet" to="DoublePageUnlock" method="_on_signet_mouse_exited"]
-[connection signal="mouse_entered" from="DoublePage2/Signet" to="DoublePage2" method="_on_signet_mouse_entered"]
-[connection signal="mouse_exited" from="DoublePage2/Signet" to="DoublePage2" method="_on_signet_mouse_exited"]
+[node name="DoublePageUnlock2" type="Control" parent="Pages" unique_id=444353377 node_paths=PackedStringArray("contenu_visuel", "signet")]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_evnu1")
+contenu_visuel = [NodePath("PageGauche"), NodePath("PageDroite")]
+index = 4
+signet = NodePath("Signet")
+x_signet = 309.0
+
+[node name="PageGauche" type="Control" parent="Pages/DoublePageUnlock2" unique_id=12877838]
+visible = false
+z_index = 1
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -424.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Pages/DoublePageUnlock2/PageGauche" unique_id=1032410778]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_evnu1")
+expand_mode = 5
+flip_h = true
+flip_v = true
+
+[node name="Label" type="Label" parent="Pages/DoublePageUnlock2/PageGauche" unique_id=1515696902]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 84.0
+offset_top = 310.0
+offset_right = -300.5
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "7"
+
+[node name="PageDroite" type="Control" parent="Pages/DoublePageUnlock2" unique_id=2081339438]
+visible = false
+z_index = 1
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_right = 422.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Pages/DoublePageUnlock2/PageDroite" unique_id=663831114]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_evnu1")
+expand_mode = 5
+flip_v = true
+
+[node name="Label" type="Label" parent="Pages/DoublePageUnlock2/PageDroite" unique_id=1821251657]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 309.5
+offset_top = 306.0
+offset_right = -73.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "8
+"
+
+[node name="Signet" type="Control" parent="Pages/DoublePageUnlock2" unique_id=1718536825]
+visible = false
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 309.5
+offset_top = 269.0
+offset_right = 425.5
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5707964
+pivot_offset = Vector2(58, 77)
+
+[node name="TextureRect" type="TextureRect" parent="Pages/DoublePageUnlock2/Signet" unique_id=1723758290]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1.5258789e-05
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_wyfrh")
+expand_mode = 5
+
+[connection signal="pressed" from="Pages/DoublePage/PageDroite/Button" to="Pages/DoublePage" method="_on_button_pressed"]
+[connection signal="pressed" from="Pages/DoublePage2/PageDroite/Button" to="Pages/DoublePage2" method="_on_button_pressed"]

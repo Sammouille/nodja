@@ -1,17 +1,19 @@
 [gd_scene format=3 uid="uid://r3hlxfakfpr5"]
 
-[ext_resource type="Texture2D" uid="uid://8tkskv3vuh14" path="res://icon.svg" id="1_g2yxc"]
 [ext_resource type="Script" uid="uid://d3fibnqbqqb14" path="res://scripts_et_scenes/mini-jeux/photo/photo_retouchee.gd" id="1_urhsd"]
+[ext_resource type="Texture2D" uid="uid://30uvlkt6q3xy" path="res://assets/mj_photo/photos/PhotoRetouchee_completee.png" id="2_urhsd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_urhsd"]
+size = Vector2(32.500004, 39.666668)
 
 [node name="PhotoRetouchee" type="Area2D" unique_id=1307944790]
 script = ExtResource("1_urhsd")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1088746285]
-texture = ExtResource("1_g2yxc")
+texture = ExtResource("2_urhsd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1535597226]
+position = Vector2(-23.500006, 1.9073486e-06)
 scale = Vector2(6, 6)
 shape = SubResource("RectangleShape2D_urhsd")
 

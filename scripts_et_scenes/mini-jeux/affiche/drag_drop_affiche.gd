@@ -32,6 +32,7 @@ func _input(event: InputEvent) -> void:
 	
 	if is_mouse_in and Input.is_action_just_released("clique_gauche"):
 		print("go inventaire ou faire un truc")
+		is_mouse_in = false
 		self.queue_free()
 
 
@@ -44,4 +45,5 @@ func _on_mouse_entered() -> void:
 #Est appelé quand la souris ne survole plus l'affiche.
 func _on_mouse_exited() -> void:
 	#print("mouse out")
-	is_mouse_in = false
+	#is_mouse_in = false
+	pass
