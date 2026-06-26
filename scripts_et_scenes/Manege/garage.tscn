@@ -11,12 +11,11 @@ size = Vector2(150, 100)
 
 [node name="Garage" type="Node2D" unique_id=273094417]
 
-[node name="Jantes" type="CharacterBody2D" parent="." unique_id=845951390 node_paths=PackedStringArray("hauteur_voiture", "voiture_collision")]
+[node name="Jantes" type="CharacterBody2D" parent="." unique_id=845951390 node_paths=PackedStringArray("voiture_collision")]
 position = Vector2(197, 86)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_4sqe4")
-hauteur_voiture = NodePath("hauteur_voiture")
 voiture_collision = NodePath("CollisionShape2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Jantes" unique_id=1831562991]
@@ -26,13 +25,13 @@ shape = SubResource("RectangleShape2D_g1xx7")
 target_position = Vector2(0, 1000)
 
 [node name="Roue1" type="Sprite2D" parent="Jantes" unique_id=702382363]
-position = Vector2(-72, 33)
-scale = Vector2(0.5, 0.5)
+position = Vector2(-81, 37)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_jh60o")
 
 [node name="Roue2" type="Sprite2D" parent="Jantes" unique_id=819121308]
-position = Vector2(101, 43)
-scale = Vector2(0.5, 0.5)
+position = Vector2(127, 50)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_ui4w3")
 
 [node name="Voiture" type="Node2D" parent="." unique_id=1474708049 node_paths=PackedStringArray("jantes")]
@@ -42,5 +41,5 @@ vitesse = 0.3
 jantes = NodePath("../Jantes")
 
 [node name="Sprite2D" type="Sprite2D" parent="Voiture" unique_id=1648492085]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("5_l8hvq")

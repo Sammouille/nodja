@@ -4,8 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://blq7qxsdctpru" path="res://assets/main/InterieurVoiture.png" id="2_uv2y5"]
 [ext_resource type="Texture2D" uid="uid://dcp6tqmdyx6tl" path="res://assets/main/carnet.png" id="3_lnwke"]
 [ext_resource type="Texture2D" uid="uid://sjkmea80fxoh" path="res://assets/main/volant.png" id="4_k5sb2"]
+[ext_resource type="PackedScene" uid="uid://ber48w8erdmsd" path="res://scripts_et_scenes/Manege/background_villes.tscn" id="5_uv2y5"]
 
 [node name="Main" type="CanvasLayer" unique_id=280795415]
+
+[node name="Background_villes" parent="." unique_id=1237811767 instance=ExtResource("5_uv2y5")]
 
 [node name="InterfacePrincipal" type="Control" parent="." unique_id=1428956146]
 layout_mode = 3

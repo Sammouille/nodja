@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 @export var poussee_horizontale:= 300.0
-@export var poussee_verticale:= 1200.0
+@export var poussee_verticale:= 1000.0
 @export var masse:= 1.0:
 	set(value):
 		inv_masse = 1.00/value
@@ -18,9 +18,10 @@ var acceleration:= Vector2.ZERO
 
 var au_sol:= false
 
-@export var hauteur_voiture : RayCast2D
-
 @export var voiture_collision : CollisionShape2D
+
+@export var  boost_vitesse := 600.0
+@export var vitesse_x_max := 600.0
 const SOL = 500
 const VITESSE_PERPETUELLE = 100.0
 const VITESSE_HORIZONTALE_MINIMALE = 10.0
@@ -29,8 +30,10 @@ func actualiser_velocite(delta: float):
 	assurer_voiture_avance()
 	velocite += acceleration * delta
 	
+	velocite.x = clamp(velocite.x,0.0,vitesse_x_max)
 	acceleration = Vector2.ZERO
 	velocity = velocite
+	print(velocity, velocite)
 
 func appliquer_force(force: Vector2):
 	acceleration += force * inv_masse
@@ -65,6 +68,9 @@ func assurer_voiture_avance():
 		velocite.x = VITESSE_HORIZONTALE_MINIMALE
 		appliquer_force(Vector2(VITESSE_PERPETUELLE,0.0))
 
+func changer_vitesse(value):
+	vitesse_x_max = vitesse_x_max + boost_vitesse * value
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if au_sol:
@@ -74,7 +80,9 @@ func _process(delta: float) -> void:
 		
 		if Input.is_action_just_pressed("saut"): 
 			appliquer_impulsion(Vector2(0.0, -poussee_verticale))
-		
+		if Input.is_action_just_pressed("clique_gauche"):
+			changer_vitesse(+1)
+			appliquer_impulsion(Vector2(boost_vitesse,0.0))
 		
 	appliquer_gravite()
 	appliquer_frottements()

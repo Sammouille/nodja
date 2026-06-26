@@ -16,8 +16,12 @@ var dist_moyenne_voiture_cam_x
 ## Pour rajouter des nouvelles villes, mettre ici une variable nommée :
 ## "chemin_fichier_<nom_de_la_ville>", et lui donner le chemin dans le projet 
 ## de la scène associée
-var chemin_fichier_postmodernite = "res://scripts_et_scenes/Manege/postmodernite.tscn"
-var chemin_fichier_bidonville = "res://scripts_et_scenes/Manege/bidonville.tscn"
+var chemin_fichier_postmodernite = "res://scripts_et_scenes/Manege/Zone/postmodernite.tscn"
+var chemin_fichier_bidonville = "res://scripts_et_scenes/Manege/Zone/bidonville.tscn"
+var chemin_fichier_modernite_ancree = "res://scripts_et_scenes/Manege/Zone/modernite_ancree.tscn"
+var chemin_fichier_manifestations = "res://scripts_et_scenes/Manege/Zone/manifestations.tscn"
+var chemin_fichier_revolution_joyeuse = "res://scripts_et_scenes/Manege/Zone/revolution_joyeuse.tscn"
+
 
 
 # Called when the node enters the scene tree for the first time.
@@ -50,7 +54,13 @@ func charge_ville_suivante():
 		"Postmodernite":
 			chemin_fichier = chemin_fichier_bidonville
 		"Bidonville":
-			chemin_fichier = chemin_fichier_bidonville
+			chemin_fichier = chemin_fichier_modernite_ancree
+		"Moderniteancree":
+			chemin_fichier = chemin_fichier_manifestations
+		"Manifestations":
+			chemin_fichier = chemin_fichier_revolution_joyeuse
+		"Revolutionjoyeuse":
+			chemin_fichier = chemin_fichier_postmodernite
 	tilemaps.queue_free()
 	var scene_charge = load(chemin_fichier)
 	tilemaps = scene_charge.instantiate()
