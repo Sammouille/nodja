@@ -8,6 +8,11 @@ extends Node2D
 @export var height_route_asphalt := 580.0
 @onready var jantes := garage.get_child(0)
 
+@export var camera : Camera2D
+@export var cam_distance_y := 1350
+var dist_moyenne_voiture_cam_x
+
+
 ## Pour rajouter des nouvelles villes, mettre ici une variable nommée :
 ## "chemin_fichier_<nom_de_la_ville>", et lui donner le chemin dans le projet 
 ## de la scène associée
@@ -17,13 +22,17 @@ var chemin_fichier_bidonville = "res://scripts_et_scenes/Manege/bidonville.tscn"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	dist_moyenne_voiture_cam_x = jantes.position.x - camera.position.x
 	tilemaps.route.position.y = height_route_asphalt
 	ManagerResolution.adapt_res_scale.connect(adapt_display.bind())
 	chargement_disparait()
 	tilemaps.zone_de_chargement.load_zone.connect(charge_ville_suivante.bind())
+	tilemaps.vers_couche.connect(change_camera_height.bind())
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	actualiser_camera()
 	pass
 	#if jantes.position.y >= route_asphalt.position.y:
 		##parallax.scroll_offset.y = jantes.position.y - 580.0
@@ -63,3 +72,11 @@ func chargement_apparait() -> void:
 func chargement_disparait() -> void:
 	var tween_chargement = get_tree().create_tween()
 	tween_chargement.tween_property(ecran_de_chargement,"modulate:a",0.0,1.0)
+
+func change_camera_height(couche,hauteur_ville):
+	var cam_tween = get_tree().create_tween()
+	cam_tween.tween_property(camera,"position:y",hauteur_ville - cam_distance_y,1.0)
+
+func actualiser_camera():
+	camera.position.x = jantes.position.x - dist_moyenne_voiture_cam_x
+	

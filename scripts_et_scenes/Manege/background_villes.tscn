@@ -2,14 +2,15 @@
 
 [ext_resource type="Script" uid="uid://c5pba3ob8sdib" path="res://scripts_et_scenes/Manege/background_villes.gd" id="1_06jiw"]
 [ext_resource type="PackedScene" uid="uid://5aea8ox8bkmi" path="res://scripts_et_scenes/Manege/garage.tscn" id="2_t5vxg"]
-[ext_resource type="PackedScene" uid="uid://lh4mj50ki63r" path="res://scripts_et_scenes/Manege/postmodernite.tscn" id="3_da0fq"]
+[ext_resource type="PackedScene" uid="uid://lh4mj50ki63r" path="res://scripts_et_scenes/Manege/Zone/postmodernite.tscn" id="3_da0fq"]
 [ext_resource type="PackedScene" uid="uid://k0hwtetrsqpy" path="res://scripts_et_scenes/Manege/Chargements/Chargements_Villes.tscn" id="4_dlkef"]
 
-[node name="Background_villes" type="Node2D" unique_id=1237811767 node_paths=PackedStringArray("ecran_de_chargement", "garage", "tilemaps")]
+[node name="Background_villes" type="Node2D" unique_id=1237811767 node_paths=PackedStringArray("ecran_de_chargement", "garage", "tilemaps", "camera")]
 script = ExtResource("1_06jiw")
 ecran_de_chargement = NodePath("CanvasLayer/ChargementsVilles")
 garage = NodePath("Garage")
 tilemaps = NodePath("Tilemaps")
+camera = NodePath("Camera2D")
 
 [node name="Garage" parent="." unique_id=932554381 instance=ExtResource("2_t5vxg")]
 
@@ -20,6 +21,17 @@ tilemaps = NodePath("Tilemaps")
 [node name="ChargementsVilles" parent="CanvasLayer" unique_id=430661739 instance=ExtResource("4_dlkef")]
 size_flags_horizontal = 3
 size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" parent="CanvasLayer/ChargementsVilles" index="0" unique_id=1391984743]
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" parent="CanvasLayer/ChargementsVilles" index="1" unique_id=1974002693]
+metadata/_edit_use_anchors_ = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1720856311]
+position = Vector2(2000, -674)
+zoom = Vector2(0.4, 0.4)
 
 [editable path="Tilemaps"]
 [editable path="CanvasLayer/ChargementsVilles"]
