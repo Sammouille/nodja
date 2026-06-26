@@ -16,21 +16,25 @@ layer = 0
 [node name="Control" type="Control" parent="Carnet" unique_id=1510828774]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 140.0
-offset_top = 76.0
-offset_right = 1014.0
-offset_bottom = 501.0
+offset_left = 228.0
+offset_top = 125.0
+offset_right = 1688.0
+offset_bottom = 833.0
 
 [node name="MjAffiche" parent="Carnet/Control" unique_id=127143870 instance=ExtResource("3_5xw6r")]
 visible = false
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 0.0
-offset_bottom = 0.0
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -189.0
+offset_top = 1.0
+offset_right = 205.0
+offset_bottom = 1.0
 grow_horizontal = 2
 
 [node name="MjDemarrerVoiture" parent="Carnet/Control" unique_id=2137134670 instance=ExtResource("4_57lis")]
+visible = false
 layout_mode = 1
+offset_right = 3.0
+offset_bottom = 3.0

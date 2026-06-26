@@ -17,26 +17,36 @@ script = ExtResource("1_vdvoi")
 has_key = false
 
 [node name="PosPourTourner" type="Control" parent="." unique_id=1142383083]
-anchors_preset = 0
-offset_left = 285.0
-offset_top = 284.0
-offset_right = 289.0
-offset_bottom = 286.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 600.0
+offset_top = 495.0
+offset_right = -1316.0
+offset_bottom = -583.0
 
 [node name="PosMax" type="Control" parent="." unique_id=2051173215]
-anchors_preset = 0
-offset_left = 991.0
-offset_top = 284.0
-offset_right = 995.0
-offset_bottom = 286.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1400.0
+offset_top = 495.0
+offset_right = -516.0
+offset_bottom = -583.0
 
 [node name="Cle" type="TextureRect" parent="." unique_id=225610391 node_paths=PackedStringArray("PosPourTourner", "PosMax")]
-visible = false
-layout_mode = 0
-offset_left = 500.0
-offset_top = 142.0
-offset_right = 928.0
-offset_bottom = 467.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 950.0
+offset_top = 340.0
+offset_right = -542.0
+offset_bottom = -415.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_d1fk5")
 script = ExtResource("3_yicsp")
 PosPourTourner = NodePath("../PosPourTourner")
