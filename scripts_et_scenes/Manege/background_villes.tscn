@@ -21,12 +21,15 @@ camera = NodePath("Camera2D")
 [node name="ChargementsVilles" parent="CanvasLayer" unique_id=430661739 instance=ExtResource("4_dlkef")]
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" parent="CanvasLayer/ChargementsVilles" index="0" unique_id=1391984743]
+mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel" parent="CanvasLayer/ChargementsVilles" index="1" unique_id=1974002693]
+mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1720856311]
