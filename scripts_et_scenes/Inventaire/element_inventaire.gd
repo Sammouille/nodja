@@ -15,11 +15,13 @@ func _input(event: InputEvent) -> void:
 			#Sauvegarde alors la position de la souris ce qui évite un décalage de position pour la suite.
 			mouse_drag_pos = get_viewport().get_mouse_position()
 			#print(mouse_drag_pos)
+			Global.draging_element_inventaire = self.name
 
 	if is_mouse_in and Input.is_action_just_released("clique_gauche"):
 		is_mouse_in = false
 		get_parent().is_draging = false
 		get_parent().element_drag = null
+		Global.draging_element_inventaire = "null"
 		if !get_parent().is_in_inventary(self):
 			get_parent().random_pos_in_inventary(self)
 

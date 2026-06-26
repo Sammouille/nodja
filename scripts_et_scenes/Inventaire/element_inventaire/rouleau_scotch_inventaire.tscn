@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://b4dpwullwm76o"]
+
+[ext_resource type="Texture2D" uid="uid://cx3ljtnl05es7" path="res://ressource/mj_affiche/proto_3/RouleauScotch.png" id="1_qwa4g"]
+[ext_resource type="Script" uid="uid://bcxsegco6thgi" path="res://scripts_et_scenes/Inventaire/element_inventaire.gd" id="2_uxcm0"]
+
+[node name="rouleau_scotch_inventaire" type="TextureRect" unique_id=1070976149]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_qwa4g")
+expand_mode = 3
+script = ExtResource("2_uxcm0")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

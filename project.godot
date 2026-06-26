@@ -21,6 +21,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 ManagerResolution="*uid://eiuup75i3xu8"
+Global="*uid://48lv66o5qq8g"
 
 [display]
 
@@ -32,6 +33,10 @@ window/stretch/aspect="expand"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/ridiculous_coding/plugin.cfg")
+
+[global_group]
+
+Inventaire=""
 
 [input]
 

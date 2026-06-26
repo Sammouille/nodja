@@ -1,10 +1,16 @@
 [gd_scene format=3 uid="uid://dkftvuphecjfu"]
 
 [ext_resource type="Texture2D" uid="uid://v5th8qhkid1j" path="res://assets/main/fond.png" id="1_5uyc5"]
+[ext_resource type="PackedScene" uid="uid://ber48w8erdmsd" path="res://scripts_et_scenes/Manege/background_villes.tscn" id="2_lnwke"]
 [ext_resource type="Texture2D" uid="uid://blq7qxsdctpru" path="res://assets/main/InterieurVoiture.png" id="2_uv2y5"]
 [ext_resource type="Texture2D" uid="uid://dcp6tqmdyx6tl" path="res://assets/main/carnet.png" id="3_lnwke"]
 [ext_resource type="Texture2D" uid="uid://sjkmea80fxoh" path="res://assets/main/volant.png" id="4_k5sb2"]
 [ext_resource type="PackedScene" uid="uid://ber48w8erdmsd" path="res://scripts_et_scenes/Manege/background_villes.tscn" id="5_uv2y5"]
+[ext_resource type="PackedScene" uid="uid://nhtt1tpikb5i" path="res://scripts_et_scenes/carnet/carnet_voyage.tscn" id="4_uv2y5"]
+
+[node name="Main" type="CanvasLayer" unique_id=280795415]
+
+[node name="FondRoadGame" type="CanvasLayer" parent="." unique_id=94566647]
 
 [node name="Main" type="CanvasLayer" unique_id=280795415]
 
@@ -18,42 +24,53 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Fond" type="TextureRect" parent="InterfacePrincipal" unique_id=142920068]
-layout_mode = 1
+[node name="Fond" type="TextureRect" parent="FondRoadGame" unique_id=142920068]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("1_5uyc5")
 expand_mode = 1
 
-[node name="Voiture" type="TextureRect" parent="InterfacePrincipal" unique_id=1951080013]
-layout_mode = 1
+[node name="Voiture" type="TextureRect" parent="FondRoadGame" unique_id=1951080013]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("2_uv2y5")
 expand_mode = 1
 
-[node name="Carnet" type="TextureRect" parent="InterfacePrincipal" unique_id=254542236]
-layout_mode = 1
+[node name="Background_villes" parent="FondRoadGame" unique_id=1237811767 instance=ExtResource("2_lnwke")]
+z_index = 5
+position = Vector2(0, 404)
+
+[node name="Carnet" type="CanvasLayer" parent="." unique_id=974716366]
+layer = 2
+
+[node name="Carnet" type="TextureRect" parent="Carnet" unique_id=254542236]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("3_lnwke")
 expand_mode = 1
 
-[node name="Volant" type="TextureRect" parent="InterfacePrincipal" unique_id=373635942]
-layout_mode = 1
+[node name="CarnetVoyage" parent="Carnet" unique_id=1173689453 instance=ExtResource("4_uv2y5")]
+
+[node name="Volant" type="TextureRect" parent="Carnet" unique_id=373635942]
+z_index = 500
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("4_k5sb2")
 expand_mode = 1

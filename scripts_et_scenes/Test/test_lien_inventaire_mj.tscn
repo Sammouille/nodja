@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cvv27hff4a6r5"]
+
+[ext_resource type="Script" uid="uid://dpefcajmmk6ym" path="res://scripts_et_scenes/Test/test_lien_inventaire_mj.gd" id="1_qceqg"]
+[ext_resource type="PackedScene" uid="uid://jfm8js7ln7jw" path="res://scripts_et_scenes/Inventaire/inventaire.tscn" id="2_swnwg"]
+[ext_resource type="PackedScene" uid="uid://b7wth5pynlljm" path="res://scripts_et_scenes/mini-jeux/affiche/mj_affiche.tscn" id="3_5xw6r"]
+[ext_resource type="PackedScene" uid="uid://cksqulq2tmghd" path="res://scripts_et_scenes/mini-jeux/demarrer_voiture/mj_demarrer_voiture.tscn" id="4_57lis"]
+
+[node name="TestLienInventaireMJ" type="CanvasLayer" unique_id=1940099993]
+script = ExtResource("1_qceqg")
+
+[node name="Inventaire" parent="." unique_id=1765279565 instance=ExtResource("2_swnwg")]
+layer = 0
+
+[node name="Carnet" type="CanvasLayer" parent="." unique_id=1607693715]
+
+[node name="Control" type="Control" parent="Carnet" unique_id=1510828774]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 228.0
+offset_top = 125.0
+offset_right = 1688.0
+offset_bottom = 833.0
+
+[node name="MjAffiche" parent="Carnet/Control" unique_id=127143870 instance=ExtResource("3_5xw6r")]
+visible = false
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -189.0
+offset_top = 1.0
+offset_right = 205.0
+offset_bottom = 1.0
+grow_horizontal = 2
+
+[node name="MjDemarrerVoiture" parent="Carnet/Control" unique_id=2137134670 instance=ExtResource("4_57lis")]
+visible = false
+layout_mode = 1
+offset_right = 3.0
+offset_bottom = 3.0
