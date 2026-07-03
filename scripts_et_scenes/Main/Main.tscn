@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dcp6tqmdyx6tl" path="res://assets/main/carnet.png" id="3_lnwke"]
 [ext_resource type="Texture2D" uid="uid://sjkmea80fxoh" path="res://assets/main/volant.png" id="4_k5sb2"]
 [ext_resource type="PackedScene" uid="uid://nhtt1tpikb5i" path="res://scripts_et_scenes/carnet/carnet_voyage.tscn" id="4_uv2y5"]
+[ext_resource type="PackedScene" uid="uid://jfm8js7ln7jw" path="res://scripts_et_scenes/Inventaire/inventaire.tscn" id="7_k5sb2"]
 
 [node name="Main" type="CanvasLayer" unique_id=280795415]
 
@@ -61,3 +62,6 @@ grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("4_k5sb2")
 expand_mode = 1
+
+[node name="Inventaire" parent="." unique_id=1765279565 instance=ExtResource("7_k5sb2")]
+key_in_inventory = true
