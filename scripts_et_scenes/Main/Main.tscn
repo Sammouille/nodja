@@ -32,7 +32,10 @@ mouse_filter = 2
 texture = ExtResource("2_uv2y5")
 expand_mode = 1
 
-[node name="Background_villes" parent="FondRoadGame" unique_id=1237811767 instance=ExtResource("2_lnwke")]
+[node name="RoadGame" type="CanvasLayer" parent="FondRoadGame" unique_id=427456328]
+follow_viewport_enabled = true
+
+[node name="Background_villes" parent="FondRoadGame/RoadGame" unique_id=1237811767 instance=ExtResource("2_lnwke")]
 z_index = 5
 position = Vector2(0, 404)
 
