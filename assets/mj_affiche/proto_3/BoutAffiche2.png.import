@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cx3ljtnl05es7"
-path="res://.godot/imported/RouleauScotch.png-fd1ac8afe0c1063dc938b90d854702e9.ctex"
+uid="uid://cdgs3vb7uomjx"
+path="res://.godot/imported/BoutAffiche2.png-55f147b95ad52652bfed614f18c81fb7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ressource/mj_affiche/proto_3/RouleauScotch.png"
-dest_files=["res://.godot/imported/RouleauScotch.png-fd1ac8afe0c1063dc938b90d854702e9.ctex"]
+source_file="res://assets/mj_affiche/proto_3/BoutAffiche2.png"
+dest_files=["res://.godot/imported/BoutAffiche2.png-55f147b95ad52652bfed614f18c81fb7.ctex"]
 
 [params]
 

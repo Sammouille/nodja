@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3xvh8tbeky3"
-path="res://.godot/imported/BoutAffiche5.png-234f8c36dc2e7a0b0d9681beac22b77d.ctex"
+uid="uid://6lrci2ya0sdt"
+path="res://.godot/imported/poule.png-1f9b0c78bd670ec68930d86dec0046ec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ressource/mj_affiche/proto_3/BoutAffiche5.png"
-dest_files=["res://.godot/imported/BoutAffiche5.png-234f8c36dc2e7a0b0d9681beac22b77d.ctex"]
+source_file="res://assets/mj_affiche/proto_2/poule.png"
+dest_files=["res://.godot/imported/poule.png-1f9b0c78bd670ec68930d86dec0046ec.ctex"]
 
 [params]
 

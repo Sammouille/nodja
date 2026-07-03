@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3dab7c0tla6h"
-path="res://.godot/imported/cle_voiture_tournee.png-191cab9fd6711f78d217cd5025a6565e.ctex"
+uid="uid://b3wcmgq6tifnd"
+path="res://.godot/imported/BoutAffiche3.png-fe8d0d9d8bedfada179306879e215ada.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ressource/mj_demarrer_voiture/cle_voiture_tournee.png"
-dest_files=["res://.godot/imported/cle_voiture_tournee.png-191cab9fd6711f78d217cd5025a6565e.ctex"]
+source_file="res://assets/mj_affiche/proto_3/BoutAffiche3.png"
+dest_files=["res://.godot/imported/BoutAffiche3.png-fe8d0d9d8bedfada179306879e215ada.ctex"]
 
 [params]
 

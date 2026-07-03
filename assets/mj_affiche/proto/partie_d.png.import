@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcttvrn2sowgs"
-path="res://.godot/imported/volant_serrure.png-0c94e6c5e9e8286eee9d1f5f82424ff4.ctex"
+uid="uid://dh6158fgfbetl"
+path="res://.godot/imported/partie_d.png-3155172d99f044359319f7308f014727.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ressource/mj_demarrer_voiture/volant_serrure.png"
-dest_files=["res://.godot/imported/volant_serrure.png-0c94e6c5e9e8286eee9d1f5f82424ff4.ctex"]
+source_file="res://assets/mj_affiche/proto/partie_d.png"
+dest_files=["res://.godot/imported/partie_d.png-3155172d99f044359319f7308f014727.ctex"]
 
 [params]
 

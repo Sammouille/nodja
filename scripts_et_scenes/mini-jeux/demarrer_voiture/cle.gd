@@ -1,7 +1,7 @@
 extends TextureRect
 
-@onready var png_cle = preload("res://ressource/mj_demarrer_voiture/cle_voiture.png")
-@onready var png_cle_tournee = preload("res://ressource/mj_demarrer_voiture/cle_voiture_tournee.png")
+@onready var png_cle = preload("res://assets/mj_demarrer_voiture/cle_voiture.png")
+@onready var png_cle_tournee = preload("res://assets/mj_demarrer_voiture/cle_voiture_tournee.png")
 
 #Timer qui permet de réinitialiser la position de la clé
 @onready var TimerCle = $TimerCle

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwqn8vpje3wc7"
-path="res://.godot/imported/base.png-15a37f75d41e9018c28302e2ef2fb4fc.ctex"
+uid="uid://64w50anotme4"
+path="res://.godot/imported/dessous.png-8e54adf4521daa3d41defe891b790538.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ressource/mj_affiche/proto_2/base.png"
-dest_files=["res://.godot/imported/base.png-15a37f75d41e9018c28302e2ef2fb4fc.ctex"]
+source_file="res://assets/mj_affiche/proto/dessous.png"
+dest_files=["res://.godot/imported/dessous.png-8e54adf4521daa3d41defe891b790538.ctex"]
 
 [params]
 

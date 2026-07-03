@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6lrci2ya0sdt"
-path="res://.godot/imported/poule.png-d09b4bb382c8d8925b62e562b7b006fb.ctex"
+uid="uid://bgm2fpdnxwix1"
+path="res://.godot/imported/chaine_2.png-52493403ecebea9d74ecc574f069e121.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ressource/mj_affiche/proto_2/poule.png"
-dest_files=["res://.godot/imported/poule.png-d09b4bb382c8d8925b62e562b7b006fb.ctex"]
+source_file="res://assets/mj_affiche/proto_2/chaine_2.png"
+dest_files=["res://.godot/imported/chaine_2.png-52493403ecebea9d74ecc574f069e121.ctex"]
 
 [params]
 
