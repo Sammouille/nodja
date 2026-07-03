@@ -28,6 +28,7 @@ var jumped_once := false
 const SOL = 500
 const VITESSE_PERPETUELLE = 100.0
 const VITESSE_HORIZONTALE_MINIMALE = 10.0
+var moteur_allume = false
 
 func actualiser_velocite(delta: float):
 	assurer_voiture_avance()
@@ -72,7 +73,7 @@ func appliquer_gravite(delta):
 			#velocite.y = 0.0
 		#au_sol = true
 func assurer_voiture_avance():
-	if velocite.x <= VITESSE_HORIZONTALE_MINIMALE and au_sol:
+	if velocite.x <= VITESSE_HORIZONTALE_MINIMALE and au_sol and moteur_allume:
 		velocite.x = VITESSE_HORIZONTALE_MINIMALE
 		appliquer_force(Vector2(VITESSE_PERPETUELLE,0.0))
 
@@ -80,6 +81,9 @@ func changer_vitesse(value):
 	vitesse_x_max = clamp(vitesse_x_max + boost_vitesse * value,boost_vitesse, boost_vitesse * 20.0)
 	if vitesse_x_max != boost_vitesse:
 		appliquer_impulsion(Vector2(boost_vitesse * value,0.0))
+
+func demarrer_voiture():
+	moteur_allume = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
