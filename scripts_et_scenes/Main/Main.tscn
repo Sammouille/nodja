@@ -74,3 +74,4 @@ key_in_inventory = true
 
 [node name="Options" parent="." unique_id=994255866 instance=ExtResource("8_d108c")]
 layer = 3
+visible = false

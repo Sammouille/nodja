@@ -30,6 +30,11 @@ const VITESSE_PERPETUELLE = 100.0
 const VITESSE_HORIZONTALE_MINIMALE = 10.0
 var moteur_allume = false
 
+
+func _ready() -> void:
+	Global.je_suis_voiture_jante = self
+
+
 func actualiser_velocite(delta: float):
 	assurer_voiture_avance()
 	velocite += acceleration * delta
@@ -87,7 +92,7 @@ func demarrer_voiture():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if au_sol:
+	if au_sol and moteur_allume:
 		if Input.is_action_pressed("gauche") or Input.is_action_pressed("droite"):
 			var trajectoire_horizontale:= Input.get_axis("gauche", "droite")
 			appliquer_force(Vector2(trajectoire_horizontale * poussee_horizontale, 0.0))
