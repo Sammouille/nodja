@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://bfn4wp8r1hmng"]
+
+[ext_resource type="Script" uid="uid://1luc4ivkw23g" path="res://scripts_et_scenes/Menu/menu.gd" id="1_idxpr"]
+[ext_resource type="Theme" uid="uid://b4dohoj4c1cip" path="res://assets/resource/menu_64_police.tres" id="2_in3sp"]
+[ext_resource type="PackedScene" uid="uid://dqm843vwqheo5" path="res://scripts_et_scenes/Menu/options.tscn" id="3_3acy0"]
+
+[node name="Menu" type="CanvasLayer" unique_id=1214447837 node_paths=PackedStringArray("tab_menu_hide_show")]
+script = ExtResource("1_idxpr")
+tab_menu_hide_show = [NodePath("Control/VBoxChoice"), NodePath("Options"), NodePath("Control/VBoxCredits")]
+
+[node name="Control" type="Control" parent="." unique_id=2085930324]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_in3sp")
+
+[node name="VBoxChoice" type="VBoxContainer" parent="Control" unique_id=1540555405]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.5
+offset_top = -198.0
+offset_right = 113.5
+offset_bottom = 198.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+
+[node name="Play" type="Button" parent="Control/VBoxChoice" unique_id=674038940]
+layout_mode = 2
+text = "Play"
+
+[node name="Option" type="Button" parent="Control/VBoxChoice" unique_id=1049370135]
+layout_mode = 2
+text = "Option"
+
+[node name="Credits" type="Button" parent="Control/VBoxChoice" unique_id=441601512]
+layout_mode = 2
+text = "Credits"
+
+[node name="Quit" type="Button" parent="Control/VBoxChoice" unique_id=813549856]
+layout_mode = 2
+text = "Quit"
+
+[node name="VBoxCredits" type="VBoxContainer" parent="Control" unique_id=1613319137]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -364.0
+offset_top = -94.0
+offset_right = 364.0
+offset_bottom = 94.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="Control/VBoxCredits" unique_id=1718660463]
+layout_mode = 2
+text = "Tout le monde ah ah ah"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackCredits" type="Button" parent="Control/VBoxCredits" unique_id=1016559180]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Back"
+
+[node name="Options" parent="." unique_id=994255866 instance=ExtResource("3_3acy0")]
+visible = false
+
+[connection signal="pressed" from="Control/VBoxChoice/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Control/VBoxChoice/Option" to="." method="_on_option_pressed"]
+[connection signal="pressed" from="Control/VBoxChoice/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Control/VBoxChoice/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Control/VBoxCredits/BackCredits" to="." method="_on_back_credits_pressed"]
+[connection signal="back_option" from="Options" to="." method="_on_options_back_option"]
