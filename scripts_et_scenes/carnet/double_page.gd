@@ -11,6 +11,9 @@ var passee:= false
 
 signal clic_signet(page: Page)
 
+signal page_ouverte
+signal page_fermee
+
 @export var index:= 1
 
 @export var signet: Control
@@ -26,11 +29,13 @@ func _ready() -> void:
 
 func ouvrir_page():
 	ouverte = true
+	page_ouverte.emit()
 	for i in contenu_visuel:
 		i.show()
 
 func fermer_page():
 	ouverte = false
+	page_fermee.emit()
 	for i in contenu_visuel:
 		i.hide()
 
