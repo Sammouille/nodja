@@ -32,6 +32,8 @@ func _ready() -> void:
 	chargement_disparait()
 	tilemaps.zone_de_chargement.load_zone.connect(charge_ville_suivante.bind())
 	tilemaps.vers_couche.connect(change_camera_height.bind())
+	for m in tilemaps.asperite_hitbox:
+		m.body_entered.connect(asperites_collision.bind())
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -67,6 +69,7 @@ func charge_ville_suivante():
 	add_child(tilemaps)
 	chargement_disparait()
 	tilemaps.zone_de_chargement.load_zone.connect(charge_ville_suivante.bind())
+	tilemaps.vers_couche.connect(change_camera_height.bind())
 	jantes.position = Vector2.ZERO
 	jantes.velocite = Vector2.ZERO
 			
@@ -90,3 +93,8 @@ func change_camera_height(couche,hauteur_ville):
 func actualiser_camera():
 	camera.position.x = jantes.position.x - dist_moyenne_voiture_cam_x
 	
+func asperites_collision(useless):
+	if jantes.jumping :
+		jantes.changer_vitesse(+1)
+	else : 
+		jantes.changer_vitesse(-1)

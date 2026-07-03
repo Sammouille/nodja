@@ -5,24 +5,12 @@
 [ext_resource type="Texture2D" uid="uid://blq7qxsdctpru" path="res://assets/main/InterieurVoiture.png" id="2_uv2y5"]
 [ext_resource type="Texture2D" uid="uid://dcp6tqmdyx6tl" path="res://assets/main/carnet.png" id="3_lnwke"]
 [ext_resource type="Texture2D" uid="uid://sjkmea80fxoh" path="res://assets/main/volant.png" id="4_k5sb2"]
-[ext_resource type="PackedScene" uid="uid://ber48w8erdmsd" path="res://scripts_et_scenes/Manege/background_villes.tscn" id="5_uv2y5"]
 [ext_resource type="PackedScene" uid="uid://nhtt1tpikb5i" path="res://scripts_et_scenes/carnet/carnet_voyage.tscn" id="4_uv2y5"]
+[ext_resource type="PackedScene" uid="uid://jfm8js7ln7jw" path="res://scripts_et_scenes/Inventaire/inventaire.tscn" id="7_k5sb2"]
 
 [node name="Main" type="CanvasLayer" unique_id=280795415]
 
 [node name="FondRoadGame" type="CanvasLayer" parent="." unique_id=94566647]
-
-[node name="Main" type="CanvasLayer" unique_id=280795415]
-
-[node name="Background_villes" parent="." unique_id=1237811767 instance=ExtResource("5_uv2y5")]
-
-[node name="InterfacePrincipal" type="Control" parent="." unique_id=1428956146]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="Fond" type="TextureRect" parent="FondRoadGame" unique_id=142920068]
 anchors_preset = 15
@@ -44,7 +32,10 @@ mouse_filter = 2
 texture = ExtResource("2_uv2y5")
 expand_mode = 1
 
-[node name="Background_villes" parent="FondRoadGame" unique_id=1237811767 instance=ExtResource("2_lnwke")]
+[node name="RoadGame" type="CanvasLayer" parent="FondRoadGame" unique_id=427456328]
+follow_viewport_enabled = true
+
+[node name="Background_villes" parent="FondRoadGame/RoadGame" unique_id=1237811767 instance=ExtResource("2_lnwke")]
 z_index = 5
 position = Vector2(0, 404)
 
@@ -74,3 +65,6 @@ grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("4_k5sb2")
 expand_mode = 1
+
+[node name="Inventaire" parent="." unique_id=1765279565 instance=ExtResource("7_k5sb2")]
+key_in_inventory = true

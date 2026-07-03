@@ -11,12 +11,15 @@ var inv_masse:= 1.0
 @export var frottements_sol:= 0.1
 @export var frottements_air:= 0.01
 
-@export var gravite:= 2000.0
+@export var gravite := 2000.0
+var dynamic_gravite = gravite
 
 var velocite:= Vector2.ZERO
 var acceleration:= Vector2.ZERO
 
 var au_sol:= false
+var jumping := false
+var jumped_once := false
 
 @export var voiture_collision : CollisionShape2D
 
@@ -33,8 +36,7 @@ func actualiser_velocite(delta: float):
 	velocite.x = clamp(velocite.x,0.0,vitesse_x_max)
 	acceleration = Vector2.ZERO
 	velocity = velocite
-	print(velocity, velocite)
-
+	
 func appliquer_force(force: Vector2):
 	acceleration += force * inv_masse
 
@@ -47,14 +49,20 @@ func appliquer_frottements():
 	else:
 		appliquer_force(-velocite * frottements_air)
 
-func appliquer_gravite():
+func appliquer_gravite(delta):
 	if !is_on_floor():
-		acceleration += Vector2(0.0, gravite * masse)
+		dynamic_gravite += dynamic_gravite * delta
+		acceleration += Vector2(0.0, dynamic_gravite * masse)
 		au_sol = false
+		if jumped_once:
+			jumping = true
+			jumped_once = false
 	else :
 		if !au_sol:
 			velocite.y = 0.0
+			dynamic_gravite = gravite
 		au_sol = true
+		jumping = false
 	#if position.y < 500: 
 		#au_sol = false
 		#acceleration += Vector2(0.0, gravite * masse)
@@ -69,7 +77,9 @@ func assurer_voiture_avance():
 		appliquer_force(Vector2(VITESSE_PERPETUELLE,0.0))
 
 func changer_vitesse(value):
-	vitesse_x_max = vitesse_x_max + boost_vitesse * value
+	vitesse_x_max = clamp(vitesse_x_max + boost_vitesse * value,boost_vitesse, boost_vitesse * 20.0)
+	if vitesse_x_max != boost_vitesse:
+		appliquer_impulsion(Vector2(boost_vitesse * value,0.0))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -79,12 +89,13 @@ func _process(delta: float) -> void:
 			appliquer_force(Vector2(trajectoire_horizontale * poussee_horizontale, 0.0))
 		
 		if Input.is_action_just_pressed("saut"): 
+			jumped_once = true
+			dynamic_gravite = 1000.0
 			appliquer_impulsion(Vector2(0.0, -poussee_verticale))
 		if Input.is_action_just_pressed("clique_gauche"):
 			changer_vitesse(+1)
-			appliquer_impulsion(Vector2(boost_vitesse,0.0))
 		
-	appliquer_gravite()
+	appliquer_gravite(delta)
 	appliquer_frottements()
 	actualiser_velocite(delta)
 	move_and_slide()

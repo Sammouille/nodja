@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bd8v5b155ckia" path="res://assets/manege/essaitoptop2.png" id="2_cfo73"]
 [ext_resource type="Texture2D" uid="uid://gxy2wsaft1se" path="res://assets/tests/nodja_road.svg" id="3_smp1h"]
 [ext_resource type="Texture2D" uid="uid://dx534hvxem42s" path="res://assets/manege/route.png" id="4_qa6ps"]
-[ext_resource type="PackedScene" uid="uid://3sgwne8seqdl" path="res://scripts_et_scenes/Manege/zone_de_chargement.tscn" id="5_77xfx"]
+[ext_resource type="PackedScene" uid="uid://3sgwne8seqdl" path="res://scripts_et_scenes/Manege/Outils_Manege/zone_de_chargement.tscn" id="5_77xfx"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tqdjm"]
 
