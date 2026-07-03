@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://byiy0f2qjyd4i"]
 
-[ext_resource type="Texture2D" uid="uid://ce0nwxm2r7mcn" path="res://ressource/mj_demarrer_voiture/cle_voiture.png" id="1_q5oak"]
+[ext_resource type="Texture2D" uid="uid://ce0nwxm2r7mcn" path="res://assets/mj_demarrer_voiture/cle_voiture.png" id="1_q5oak"]
 [ext_resource type="Script" uid="uid://bcxsegco6thgi" path="res://scripts_et_scenes/Inventaire/element_inventaire.gd" id="2_w7ngk"]
 
 [node name="ElementTest" type="TextureRect" unique_id=1304320276]

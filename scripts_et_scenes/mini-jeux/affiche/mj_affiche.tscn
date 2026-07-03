@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://b7wth5pynlljm"]
 
-[ext_resource type="Texture2D" uid="uid://c0qxo0aoasnve" path="res://ressource/mj_affiche/proto_3/affiche_poule.png" id="1_86i32"]
-[ext_resource type="Texture2D" uid="uid://da72mwc6org6p" path="res://ressource/mj_affiche/proto_3/BoutAffiche1.png" id="2_86i32"]
-[ext_resource type="Texture2D" uid="uid://cdgs3vb7uomjx" path="res://ressource/mj_affiche/proto_3/BoutAffiche2.png" id="3_7hd66"]
-[ext_resource type="Texture2D" uid="uid://cx3ljtnl05es7" path="res://ressource/mj_affiche/proto_3/RouleauScotch.png" id="3_n54y4"]
+[ext_resource type="Texture2D" uid="uid://c0qxo0aoasnve" path="res://assets/mj_affiche/proto_3/affiche_poule.png" id="1_86i32"]
+[ext_resource type="Texture2D" uid="uid://da72mwc6org6p" path="res://assets/mj_affiche/proto_3/BoutAffiche1.png" id="2_86i32"]
+[ext_resource type="Texture2D" uid="uid://cdgs3vb7uomjx" path="res://assets/mj_affiche/proto_3/BoutAffiche2.png" id="3_7hd66"]
+[ext_resource type="Texture2D" uid="uid://cx3ljtnl05es7" path="res://assets/mj_affiche/proto_3/RouleauScotch.png" id="3_n54y4"]
 [ext_resource type="Script" uid="uid://cueenqjc0hjwt" path="res://scripts_et_scenes/mini-jeux/affiche/scotch.gd" id="4_n54y4"]
 [ext_resource type="Script" path="res://scripts_et_scenes/mini-jeux/affiche/drag_drop_affiche.gd" id="4_otroj"]
-[ext_resource type="Texture2D" uid="uid://b3wcmgq6tifnd" path="res://ressource/mj_affiche/proto_3/BoutAffiche3.png" id="5_n54y4"]
-[ext_resource type="Texture2D" uid="uid://bnq4wrq13llh1" path="res://ressource/mj_affiche/proto_3/BoutAffiche4.png" id="6_voquk"]
-[ext_resource type="Texture2D" uid="uid://b3xvh8tbeky3" path="res://ressource/mj_affiche/proto_3/BoutAffiche5.png" id="7_lomgq"]
+[ext_resource type="Texture2D" uid="uid://b3wcmgq6tifnd" path="res://assets/mj_affiche/proto_3/BoutAffiche3.png" id="5_n54y4"]
+[ext_resource type="Texture2D" uid="uid://bnq4wrq13llh1" path="res://assets/mj_affiche/proto_3/BoutAffiche4.png" id="6_voquk"]
+[ext_resource type="Texture2D" uid="uid://b3xvh8tbeky3" path="res://assets/mj_affiche/proto_3/BoutAffiche5.png" id="7_lomgq"]
 
 [node name="MjAffiche" type="Control" unique_id=127143870]
 layout_mode = 3

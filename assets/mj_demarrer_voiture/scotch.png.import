@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvj84m3v427tp"
-path="res://.godot/imported/chaine_3.png-960dcbb8fd530cfd96c7daf933a96fb0.ctex"
+uid="uid://brutclvbac64d"
+path="res://.godot/imported/scotch.png-3b263851b36276450400c1fc5a648ffa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ressource/mj_affiche/proto_2/chaine_3.png"
-dest_files=["res://.godot/imported/chaine_3.png-960dcbb8fd530cfd96c7daf933a96fb0.ctex"]
+source_file="res://assets/mj_demarrer_voiture/scotch.png"
+dest_files=["res://.godot/imported/scotch.png-3b263851b36276450400c1fc5a648ffa.ctex"]
 
 [params]
 

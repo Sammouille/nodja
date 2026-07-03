@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdgs3vb7uomjx"
-path="res://.godot/imported/BoutAffiche2.png-a8e4b4546332b865f58f8f13faae59c3.ctex"
+uid="uid://cwqn8vpje3wc7"
+path="res://.godot/imported/base.png-722f261af6e17b26f5cc1a57ae62fa17.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ressource/mj_affiche/proto_3/BoutAffiche2.png"
-dest_files=["res://.godot/imported/BoutAffiche2.png-a8e4b4546332b865f58f8f13faae59c3.ctex"]
+source_file="res://assets/mj_affiche/proto_2/base.png"
+dest_files=["res://.godot/imported/base.png-722f261af6e17b26f5cc1a57ae62fa17.ctex"]
 
 [params]
 
