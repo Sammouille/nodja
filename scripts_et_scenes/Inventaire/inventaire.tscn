@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://jfm8js7ln7jw"]
 
+[ext_resource type="Script" uid="uid://crt3vqadb8qm7" path="res://scripts_et_scenes/Inventaire/inventaire.gd" id="1_3stl3"]
 [ext_resource type="Script" uid="uid://brkn1060453di" path="res://scripts_et_scenes/Inventaire/espace_inventaire.gd" id="1_gbipl"]
 [ext_resource type="Texture2D" uid="uid://da58lkdv2smxj" path="res://assets/inventaire/Interface.png" id="2_sqqrr"]
 
 [node name="Inventaire" type="CanvasLayer" unique_id=1765279565 groups=["Inventaire"]]
+script = ExtResource("1_3stl3")
 
 [node name="EspaceInventaire" type="Control" parent="." unique_id=1739719327 node_paths=PackedStringArray("tab_inventary_zone")]
 layout_mode = 3
@@ -17,6 +19,7 @@ script = ExtResource("1_gbipl")
 tab_inventary_zone = [NodePath("Zone1"), NodePath("Zone2"), NodePath("Zone3")]
 
 [node name="Fond" type="TextureRect" parent="EspaceInventaire" unique_id=1663518322]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -30,18 +33,18 @@ expand_mode = 2
 layout_mode = 0
 offset_right = 232.0
 offset_bottom = 827.0
-color = Color(1, 1, 1, 0.5568628)
+color = Color(1, 1, 1, 0)
 
 [node name="Zone2" type="ColorRect" parent="EspaceInventaire" unique_id=1410295374]
 layout_mode = 0
 offset_left = 231.0
 offset_right = 1686.0
 offset_bottom = 128.0
-color = Color(1, 1, 1, 0.5568628)
+color = Color(1, 1, 1, 0)
 
 [node name="Zone3" type="ColorRect" parent="EspaceInventaire" unique_id=1531072609]
 layout_mode = 0
 offset_left = 1685.0
 offset_right = 1919.0
 offset_bottom = 826.0
-color = Color(1, 1, 1, 0.5568628)
+color = Color(1, 1, 1, 0)
