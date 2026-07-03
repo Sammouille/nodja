@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dfc8v7a2al54p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0sou"]
+size = Vector2(20, 1000)
+
+[node name="Detection_Obstacle" type="Area2D" unique_id=2022951240]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=443099371]
+shape = SubResource("RectangleShape2D_u0sou")

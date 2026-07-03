@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://5aea8ox8bkmi"]
 
-[ext_resource type="Script" uid="uid://bw0n57r7e0xix" path="res://scripts_et_scenes/Manege/jantes.gd" id="1_4sqe4"]
+[ext_resource type="Script" uid="uid://bw0n57r7e0xix" path="res://scripts_et_scenes/Manege/Outils_Manege/jantes.gd" id="1_4sqe4"]
 [ext_resource type="Texture2D" uid="uid://dq4t20vo80ja0" path="res://assets/manege/Calque 214.png" id="2_jh60o"]
-[ext_resource type="Script" uid="uid://go64g2t3k1c8" path="res://scripts_et_scenes/Manege/voiture.gd" id="2_p4axg"]
+[ext_resource type="Script" uid="uid://go64g2t3k1c8" path="res://scripts_et_scenes/Manege/Outils_Manege/voiture.gd" id="2_p4axg"]
 [ext_resource type="Texture2D" uid="uid://brpc2j8jdtoiy" path="res://assets/manege/Calque 213.png" id="3_ui4w3"]
 [ext_resource type="Texture2D" uid="uid://b3fntp02qbc66" path="res://assets/manege/elap1.png" id="5_l8hvq"]
 

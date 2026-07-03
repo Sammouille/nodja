@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ber48w8erdmsd"]
 
 [ext_resource type="Script" uid="uid://c5pba3ob8sdib" path="res://scripts_et_scenes/Manege/background_villes.gd" id="1_06jiw"]
-[ext_resource type="PackedScene" uid="uid://5aea8ox8bkmi" path="res://scripts_et_scenes/Manege/garage.tscn" id="2_t5vxg"]
+[ext_resource type="PackedScene" uid="uid://5aea8ox8bkmi" path="res://scripts_et_scenes/Manege/Outils_Manege/garage.tscn" id="2_t5vxg"]
 [ext_resource type="PackedScene" uid="uid://lh4mj50ki63r" path="res://scripts_et_scenes/Manege/Zone/postmodernite.tscn" id="3_da0fq"]
 [ext_resource type="PackedScene" uid="uid://k0hwtetrsqpy" path="res://scripts_et_scenes/Manege/Chargements/Chargements_Villes.tscn" id="4_dlkef"]
 
