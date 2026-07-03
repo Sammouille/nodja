@@ -1,0 +1,276 @@
+[gd_scene format=3 uid="uid://dqm843vwqheo5"]
+
+[ext_resource type="Script" uid="uid://dlkww16m20sau" path="res://scripts_et_scenes/Menu/options.gd" id="1_ubrlm"]
+[ext_resource type="Theme" uid="uid://b4dohoj4c1cip" path="res://assets/resource/menu_64_police.tres" id="2_imqpw"]
+
+[node name="Options" type="CanvasLayer" unique_id=994255866 node_paths=PackedStringArray("tab_option_hide_show")]
+process_mode = 3
+script = ExtResource("1_ubrlm")
+tab_option_hide_show = [NodePath("ScrollGeneral"), NodePath("ScrollVideo"), NodePath("ScrollSound")]
+
+[node name="Control" type="Control" parent="." unique_id=494694304]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_imqpw")
+
+[node name="ColorRectFond" type="ColorRect" parent="Control" unique_id=645203278]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.3764706, 0.13333334, 0.09411765, 0.65882355)
+
+[node name="VBoxOptions" type="VBoxContainer" parent="Control" unique_id=434172406]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 159.0
+offset_top = -258.0
+offset_right = 410.0
+offset_bottom = 246.0
+grow_vertical = 2
+size_flags_horizontal = 2
+size_flags_vertical = 6
+theme_override_constants/separation = 40
+
+[node name="General" type="Button" parent="Control/VBoxOptions" unique_id=793195937]
+layout_mode = 2
+text = "General"
+
+[node name="Video" type="Button" parent="Control/VBoxOptions" unique_id=1043328660]
+layout_mode = 2
+text = "Video"
+
+[node name="Sound" type="Button" parent="Control/VBoxOptions" unique_id=783553275]
+layout_mode = 2
+text = "Sound"
+
+[node name="Back" type="Button" parent="Control/VBoxOptions" unique_id=1506255680]
+layout_mode = 2
+text = "Back"
+
+[node name="QuitMenu" type="Button" parent="Control/VBoxOptions" unique_id=2120498399]
+layout_mode = 2
+text = "Quit to Menu"
+
+[node name="QuitGame" type="Button" parent="Control/VBoxOptions" unique_id=25598042]
+layout_mode = 2
+text = "Quit to Desktop"
+
+[node name="ScrollGeneral" type="ScrollContainer" parent="." unique_id=67080981]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 730.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_imqpw")
+
+[node name="VBoxGeneral" type="VBoxContainer" parent="ScrollGeneral" unique_id=1686041983]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_constants/separation = 40
+
+[node name="BackParam" type="Button" parent="ScrollGeneral/VBoxGeneral" unique_id=2121920948]
+visible = false
+layout_mode = 2
+text = "Back"
+
+[node name="LabelGeneral" type="Label" parent="ScrollGeneral/VBoxGeneral" unique_id=404849738]
+layout_mode = 2
+text = "Pas de paramètres généraux pour l'instant !"
+
+[node name="ScrollVideo" type="ScrollContainer" parent="." unique_id=1010092411]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 736.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_imqpw")
+
+[node name="VBoxVideo" type="VBoxContainer" parent="ScrollVideo" unique_id=1971940216]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme = ExtResource("2_imqpw")
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="VBoxWindowMode" type="VBoxContainer" parent="ScrollVideo/VBoxVideo" unique_id=1381564620]
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="LabelWindowMode" type="Label" parent="ScrollVideo/VBoxVideo/VBoxWindowMode" unique_id=66853156]
+layout_mode = 2
+text = "Window Mode"
+horizontal_alignment = 1
+
+[node name="HBoxWindowMode" type="HBoxContainer" parent="ScrollVideo/VBoxVideo/VBoxWindowMode" unique_id=1124998131]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Window" type="Button" parent="ScrollVideo/VBoxVideo/VBoxWindowMode/HBoxWindowMode" unique_id=1714914852]
+layout_mode = 2
+text = "Window"
+
+[node name="Fullscreen" type="Button" parent="ScrollVideo/VBoxVideo/VBoxWindowMode/HBoxWindowMode" unique_id=715418487]
+layout_mode = 2
+text = "Fullscreen"
+
+[node name="BackParam" type="Button" parent="ScrollVideo/VBoxVideo" unique_id=733062151]
+visible = false
+layout_mode = 2
+text = "Back"
+
+[node name="ScrollSound" type="ScrollContainer" parent="." unique_id=1331123633]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 679.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme = ExtResource("2_imqpw")
+
+[node name="VBoxSound" type="VBoxContainer" parent="ScrollSound" unique_id=1452473665]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme = ExtResource("2_imqpw")
+theme_override_constants/separation = 40
+
+[node name="VBoxVolume" type="VBoxContainer" parent="ScrollSound/VBoxSound" unique_id=1981889785]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="LabelVolume" type="Label" parent="ScrollSound/VBoxSound/VBoxVolume" unique_id=1023884881]
+layout_mode = 2
+text = "Sound Volume :"
+horizontal_alignment = 1
+
+[node name="VBoxGeneral" type="VBoxContainer" parent="ScrollSound/VBoxSound/VBoxVolume" unique_id=1677281993]
+layout_mode = 2
+
+[node name="LabelGeneral" type="Label" parent="ScrollSound/VBoxSound/VBoxVolume/VBoxGeneral" unique_id=546247982]
+layout_mode = 2
+text = "General"
+horizontal_alignment = 1
+
+[node name="HSliderGeneral" type="HSlider" parent="ScrollSound/VBoxSound/VBoxVolume/VBoxGeneral" unique_id=381861917]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+max_value = 2.0
+step = 0.01
+value = 1.0
+
+[node name="VBoxCarnet" type="VBoxContainer" parent="ScrollSound/VBoxSound/VBoxVolume" unique_id=874041651]
+layout_mode = 2
+
+[node name="LabelCarnet" type="Label" parent="ScrollSound/VBoxSound/VBoxVolume/VBoxCarnet" unique_id=169431655]
+layout_mode = 2
+text = "Carnet"
+horizontal_alignment = 1
+
+[node name="HSliderCarnet" type="HSlider" parent="ScrollSound/VBoxSound/VBoxVolume/VBoxCarnet" unique_id=499658507]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+max_value = 2.0
+step = 0.01
+value = 1.0
+
+[node name="VBoxAmbiance" type="VBoxContainer" parent="ScrollSound/VBoxSound/VBoxVolume" unique_id=1083359770]
+layout_mode = 2
+
+[node name="LabelAmbiance" type="Label" parent="ScrollSound/VBoxSound/VBoxVolume/VBoxAmbiance" unique_id=103587702]
+layout_mode = 2
+text = "Ambiance"
+horizontal_alignment = 1
+
+[node name="HSliderAmbiance" type="HSlider" parent="ScrollSound/VBoxSound/VBoxVolume/VBoxAmbiance" unique_id=764466303]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+max_value = 2.0
+step = 0.01
+value = 1.0
+
+[node name="VBoxManege" type="VBoxContainer" parent="ScrollSound/VBoxSound/VBoxVolume" unique_id=1052834488]
+layout_mode = 2
+
+[node name="LabelManege" type="Label" parent="ScrollSound/VBoxSound/VBoxVolume/VBoxManege" unique_id=1985043122]
+layout_mode = 2
+text = "Manège"
+horizontal_alignment = 1
+
+[node name="HSliderManege" type="HSlider" parent="ScrollSound/VBoxSound/VBoxVolume/VBoxManege" unique_id=708948391]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+max_value = 2.0
+step = 0.01
+value = 1.0
+
+[node name="VBoxMiniJeu" type="VBoxContainer" parent="ScrollSound/VBoxSound/VBoxVolume" unique_id=1846344867]
+layout_mode = 2
+
+[node name="LabelMiniJeu" type="Label" parent="ScrollSound/VBoxSound/VBoxVolume/VBoxMiniJeu" unique_id=865784820]
+layout_mode = 2
+text = "Mini-Jeux"
+horizontal_alignment = 1
+
+[node name="HSliderMiniJeu" type="HSlider" parent="ScrollSound/VBoxSound/VBoxVolume/VBoxMiniJeu" unique_id=1468407411]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+max_value = 2.0
+step = 0.01
+value = 1.0
+
+[node name="VBoxInventaire" type="VBoxContainer" parent="ScrollSound/VBoxSound/VBoxVolume" unique_id=216510658]
+layout_mode = 2
+
+[node name="LabelInventaire" type="Label" parent="ScrollSound/VBoxSound/VBoxVolume/VBoxInventaire" unique_id=410579862]
+layout_mode = 2
+text = "Inventaire"
+horizontal_alignment = 1
+
+[node name="HSliderInventaire" type="HSlider" parent="ScrollSound/VBoxSound/VBoxVolume/VBoxInventaire" unique_id=483642702]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+max_value = 2.0
+step = 0.01
+value = 1.0
+
+[node name="BackParam" type="Button" parent="ScrollSound/VBoxSound" unique_id=2086327000]
+visible = false
+layout_mode = 2
+
+[connection signal="pressed" from="Control/VBoxOptions/General" to="." method="_on_general_pressed"]
+[connection signal="pressed" from="Control/VBoxOptions/Video" to="." method="_on_video_pressed"]
+[connection signal="pressed" from="Control/VBoxOptions/Sound" to="." method="_on_sound_pressed"]
+[connection signal="pressed" from="Control/VBoxOptions/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Control/VBoxOptions/QuitMenu" to="." method="_on_quit_menu_pressed"]
+[connection signal="pressed" from="Control/VBoxOptions/QuitGame" to="." method="_on_quit_game_pressed"]
+[connection signal="pressed" from="ScrollGeneral/VBoxGeneral/BackParam" to="." method="_on_back_param_pressed"]
+[connection signal="pressed" from="ScrollVideo/VBoxVideo/VBoxWindowMode/HBoxWindowMode/Window" to="." method="_on_window_pressed"]
+[connection signal="pressed" from="ScrollVideo/VBoxVideo/VBoxWindowMode/HBoxWindowMode/Fullscreen" to="." method="_on_fullscreen_pressed"]
+[connection signal="pressed" from="ScrollVideo/VBoxVideo/BackParam" to="." method="_on_back_param_pressed"]
+[connection signal="value_changed" from="ScrollSound/VBoxSound/VBoxVolume/VBoxGeneral/HSliderGeneral" to="." method="_on_h_slider_general_value_changed"]
+[connection signal="value_changed" from="ScrollSound/VBoxSound/VBoxVolume/VBoxCarnet/HSliderCarnet" to="." method="_on_h_slider_carnet_value_changed"]
+[connection signal="value_changed" from="ScrollSound/VBoxSound/VBoxVolume/VBoxAmbiance/HSliderAmbiance" to="." method="_on_h_slider_ambiance_value_changed"]
+[connection signal="value_changed" from="ScrollSound/VBoxSound/VBoxVolume/VBoxManege/HSliderManege" to="." method="_on_h_slider_manege_value_changed"]
+[connection signal="value_changed" from="ScrollSound/VBoxSound/VBoxVolume/VBoxMiniJeu/HSliderMiniJeu" to="." method="_on_h_slider_mini_jeu_value_changed"]
+[connection signal="value_changed" from="ScrollSound/VBoxSound/VBoxVolume/VBoxInventaire/HSliderInventaire" to="." method="_on_h_slider_inventaire_value_changed"]
+[connection signal="pressed" from="ScrollSound/VBoxSound/BackParam" to="." method="_on_back_param_pressed"]
