@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://cyxn8bmyig301"]
+
+[ext_resource type="Script" uid="uid://u5uiqdnac7p7" path="res://scripts_et_scenes/mini-jeux/mj_photo.gd" id="1_t7qgo"]
+[ext_resource type="PackedScene" uid="uid://r3hlxfakfpr5" path="res://scripts_et_scenes/mini-jeux/photo/photo_retouchee.tscn" id="2_xngie"]
+[ext_resource type="Texture2D" uid="uid://cynv75jhw23vp" path="res://assets/mj_photo/tampons/tampon_valide.png" id="3_cfijm"]
+[ext_resource type="AudioStream" uid="uid://cwmuhb1bo7h0u" path="res://assets/mj_photo/sons/tampon_refusé.ogg" id="4_vgoti"]
+[ext_resource type="AudioStream" uid="uid://b2xmwtt7vkoex" path="res://assets/mj_photo/sons/tampon_validé.ogg" id="5_jfxt5"]
+[ext_resource type="AudioStream" uid="uid://c60v1nyipingk" path="res://assets/mj_photo/sons/retouche_photo.ogg" id="6_cn6nt"]
+[ext_resource type="Script" uid="uid://po56h55uogqt" path="res://scripts_et_scenes/mini-jeux/briques_interactives/bi_clicable.gd" id="7_13rsi"]
+[ext_resource type="PackedScene" uid="uid://bi21ungb6frhc" path="res://scripts_et_scenes/mini-jeux/photo/tampon.tscn" id="8_las7g"]
+[ext_resource type="Texture2D" uid="uid://cu00kxqdb15s0" path="res://assets/mj_photo/photos/Photo1_completee.png" id="9_y5k6v"]
+[ext_resource type="Texture2D" uid="uid://bqktsefaq4j10" path="res://assets/mj_photo/photos/Photo2_completee.png" id="10_fpxil"]
+[ext_resource type="Texture2D" uid="uid://denx6y7xkxwi5" path="res://assets/mj_photo/photos/Photo3_completee.png" id="11_yk6vj"]
+[ext_resource type="Texture2D" uid="uid://l2rt5nd4wa8f" path="res://assets/mj_photo/photos/Photo4_completee.png" id="12_c48s6"]
+[ext_resource type="Texture2D" uid="uid://du80cq4s1ssk0" path="res://assets/mj_photo/photos/Photo5_completee.png" id="13_sl0y7"]
+[ext_resource type="Texture2D" uid="uid://lblfbj4cpwho" path="res://assets/mj_photo/fond_nodja.png" id="14_3kcay"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mrrg6"]
+size = Vector2(32.333332, 40.333336)
+
+[node name="MJPhoto" type="Node2D" unique_id=1553811068 node_paths=PackedStringArray("stream_tampon", "stream_gribouille")]
+script = ExtResource("1_t7qgo")
+photo_retouchee = ExtResource("2_xngie")
+sprite_tampon_valide = ExtResource("3_cfijm")
+stream_tampon = NodePath("Tampon")
+stream_gribouille = NodePath("Gribouille")
+son_refuse = ExtResource("4_vgoti")
+son_valide = ExtResource("5_jfxt5")
+
+[node name="Tampon" type="AudioStreamPlayer" parent="." unique_id=1196813601]
+stream = ExtResource("4_vgoti")
+bus = &"Mini-Jeu"
+
+[node name="Gribouille" type="AudioStreamPlayer" parent="." unique_id=1893794227]
+stream = ExtResource("6_cn6nt")
+bus = &"Mini-Jeu"
+
+[node name="Photo" type="Area2D" parent="." unique_id=794387947 groups=["photo"]]
+position = Vector2(1165, 465)
+script = ExtResource("7_13rsi")
+tampon_refus = ExtResource("8_las7g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Photo" unique_id=2128125188]
+position = Vector2(-23.000061, 0)
+scale = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_mrrg6")
+
+[node name="Sprite2D" type="Sprite2D" parent="Photo" unique_id=458188592]
+texture = ExtResource("9_y5k6v")
+
+[node name="Photo2" type="Area2D" parent="." unique_id=520742624 groups=["photo"]]
+position = Vector2(980, 175)
+script = ExtResource("7_13rsi")
+tampon_refus = ExtResource("8_las7g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Photo2" unique_id=1305097741]
+position = Vector2(-22.5, 0)
+scale = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_mrrg6")
+
+[node name="Sprite2D" type="Sprite2D" parent="Photo2" unique_id=63122606]
+texture = ExtResource("10_fpxil")
+
+[node name="Photo3" type="Area2D" parent="." unique_id=1998496114 groups=["photo"]]
+position = Vector2(659, 263)
+script = ExtResource("7_13rsi")
+tampon_refus = ExtResource("8_las7g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Photo3" unique_id=793208329]
+position = Vector2(-22, 0)
+scale = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_mrrg6")
+
+[node name="Sprite2D" type="Sprite2D" parent="Photo3" unique_id=1293802614]
+texture = ExtResource("11_yk6vj")
+
+[node name="Photo4" type="Area2D" parent="." unique_id=1900815533 groups=["photo"]]
+position = Vector2(335, 179)
+script = ExtResource("7_13rsi")
+tampon_refus = ExtResource("8_las7g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Photo4" unique_id=331473570]
+position = Vector2(-21, 1.5)
+scale = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_mrrg6")
+
+[node name="Sprite2D" type="Sprite2D" parent="Photo4" unique_id=1658563292]
+texture = ExtResource("12_c48s6")
+
+[node name="Photo5" type="Area2D" parent="." unique_id=1462130147 groups=["photo"]]
+position = Vector2(153, 483)
+script = ExtResource("7_13rsi")
+tampon_refus = ExtResource("8_las7g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Photo5" unique_id=2110532834]
+position = Vector2(-21, 0)
+scale = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_mrrg6")
+
+[node name="Sprite2D" type="Sprite2D" parent="Photo5" unique_id=514902083]
+texture = ExtResource("13_sl0y7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1459252956]
+z_index = -10
+scale = Vector2(0.72, 0.61)
+texture = ExtResource("14_3kcay")
+offset = Vector2(960, 540)
+
+[connection signal="finished" from="Gribouille" to="." method="_instantiate_photo_retouchee"]
+[connection signal="mouse_entered" from="Photo" to="Photo" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Photo" to="Photo" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Photo2" to="Photo2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Photo2" to="Photo2" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Photo3" to="Photo3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Photo3" to="Photo3" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Photo4" to="Photo4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Photo4" to="Photo4" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Photo5" to="Photo5" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Photo5" to="Photo5" method="_on_mouse_exited"]

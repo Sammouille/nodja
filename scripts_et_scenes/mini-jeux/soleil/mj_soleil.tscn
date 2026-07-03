@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://b77hvfhity7l7"]
+
+[ext_resource type="Texture2D" uid="uid://gkp052sd3gea" path="res://assets/mj_soleil/carnet_mini-jeu_3.png" id="1_n4enq"]
+[ext_resource type="Script" uid="uid://dw2x23mda0h36" path="res://scripts_et_scenes/mini-jeux/soleil/mj_soleil.gd" id="1_wxjb8"]
+[ext_resource type="Script" uid="uid://g5qeyqtn2j0u" path="res://scripts_et_scenes/mini-jeux/soleil/dessin.gd" id="2_oqdi6"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_oqdi6"]
+
+[node name="MJ_Soleil" type="Control" unique_id=577902707]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_wxjb8")
+
+[node name="Dessin" type="Sprite2D" parent="." unique_id=1449015000]
+unique_name_in_owner = true
+z_index = 50
+texture = SubResource("ImageTexture_oqdi6")
+offset = Vector2(960, 540)
+script = ExtResource("2_oqdi6")
+paint_size = 5
+
+[node name="Fond" type="TextureRect" parent="." unique_id=1940725719]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_n4enq")
+expand_mode = 1
