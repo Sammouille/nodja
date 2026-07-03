@@ -1,14 +1,17 @@
 [gd_scene format=3 uid="uid://dkftvuphecjfu"]
 
 [ext_resource type="Texture2D" uid="uid://v5th8qhkid1j" path="res://assets/main/fond.png" id="1_5uyc5"]
+[ext_resource type="Script" uid="uid://bc5xyvem7g864" path="res://scripts_et_scenes/Main/main.gd" id="1_6pe1g"]
 [ext_resource type="PackedScene" uid="uid://ber48w8erdmsd" path="res://scripts_et_scenes/Manege/background_villes.tscn" id="2_lnwke"]
 [ext_resource type="Texture2D" uid="uid://blq7qxsdctpru" path="res://assets/main/InterieurVoiture.png" id="2_uv2y5"]
 [ext_resource type="Texture2D" uid="uid://dcp6tqmdyx6tl" path="res://assets/main/carnet.png" id="3_lnwke"]
 [ext_resource type="Texture2D" uid="uid://sjkmea80fxoh" path="res://assets/main/volant.png" id="4_k5sb2"]
 [ext_resource type="PackedScene" uid="uid://nhtt1tpikb5i" path="res://scripts_et_scenes/carnet/carnet_voyage.tscn" id="4_uv2y5"]
 [ext_resource type="PackedScene" uid="uid://jfm8js7ln7jw" path="res://scripts_et_scenes/Inventaire/inventaire.tscn" id="7_k5sb2"]
+[ext_resource type="PackedScene" uid="uid://dqm843vwqheo5" path="res://scripts_et_scenes/Menu/options.tscn" id="8_d108c"]
 
 [node name="Main" type="CanvasLayer" unique_id=280795415]
+script = ExtResource("1_6pe1g")
 
 [node name="FondRoadGame" type="CanvasLayer" parent="." unique_id=94566647]
 
@@ -68,3 +71,6 @@ expand_mode = 1
 
 [node name="Inventaire" parent="." unique_id=1765279565 instance=ExtResource("7_k5sb2")]
 key_in_inventory = true
+
+[node name="Options" parent="." unique_id=994255866 instance=ExtResource("8_d108c")]
+layer = 3

@@ -17,6 +17,15 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_in3sp")
 
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=523416288]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.3764706, 0.13333334, 0.09411765, 0.42745098)
+
 [node name="VBoxChoice" type="VBoxContainer" parent="Control" unique_id=1540555405]
 layout_mode = 1
 anchors_preset = 8
@@ -66,7 +75,14 @@ theme_override_constants/separation = 40
 
 [node name="Label" type="Label" parent="Control/VBoxCredits" unique_id=1718660463]
 layout_mode = 2
-text = "Tout le monde ah ah ah"
+text = "Jacques Emmanuelle
+
+Bouquinet Maël
+Decaesteker Elise
+Martinez Ben
+Nader Chloé
+Nestor Martin Raphaël
+Wolf Samuel"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -76,6 +92,7 @@ size_flags_horizontal = 4
 text = "Back"
 
 [node name="Options" parent="." unique_id=994255866 instance=ExtResource("3_3acy0")]
+layer = 2
 visible = false
 
 [connection signal="pressed" from="Control/VBoxChoice/Play" to="." method="_on_play_pressed"]
