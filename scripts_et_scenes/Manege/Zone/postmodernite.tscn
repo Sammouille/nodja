@@ -37,7 +37,7 @@ texture_region_size = Vector2i(265, 90)
 texture = ExtResource("5_b35hb")
 texture_region_size = Vector2i(265, 90)
 0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-132.5, 45, 0, 22.5, 132.5, 45, 132.5, 45, -132.5, 45)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-132.5, -22.5, 0, 45, 132.5, -22.5, 132.5, 45, -132.5, 45)
 
 [sub_resource type="TileSet" id="TileSet_q5rhr"]
 tile_size = Vector2i(265, 90)
