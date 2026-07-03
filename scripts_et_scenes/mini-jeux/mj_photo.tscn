@@ -29,9 +29,11 @@ son_valide = ExtResource("5_mubt0")
 
 [node name="Tampon" type="AudioStreamPlayer" parent="." unique_id=1196813601]
 stream = ExtResource("4_0s8k6")
+bus = &"Mini-Jeu"
 
 [node name="Gribouille" type="AudioStreamPlayer" parent="." unique_id=1893794227]
 stream = ExtResource("6_mubt0")
+bus = &"Mini-Jeu"
 
 [node name="Photo" type="Area2D" parent="." unique_id=794387947 groups=["photo"]]
 position = Vector2(1165, 465)
