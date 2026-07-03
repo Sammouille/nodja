@@ -3,11 +3,20 @@ extends Control
 @export var has_scotch : bool = false
 @export var has_key : bool = true
 
+@onready var PosPourTourner = $PosPourTourner
+@onready var PosMax = $PosMax
+
 @onready var Scotch = $Scotch
 @onready var Cle = $Cle
 
+@export var modif_max_pos : int = 0
+@export var modif_pos_pour_tourner : int = 0
+
 
 func _ready() -> void:
+	PosPourTourner.global_position.x += modif_pos_pour_tourner
+	PosMax.global_position.x += modif_max_pos
+	
 	if has_scotch:
 		Scotch.visible = true
 	else:
