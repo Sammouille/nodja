@@ -4,8 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://ce0nwxm2r7mcn" path="res://assets/mj_demarrer_voiture/cle_voiture.png" id="1_maobd"]
 
 [node name="cle_voiture_inventaire" type="TextureRect" unique_id=1275178487]
-offset_right = 40.0
-offset_bottom = 40.0
+custom_minimum_size = Vector2(70, 70)
+offset_right = 65.84615
+offset_bottom = 50.0
 texture = ExtResource("1_maobd")
 expand_mode = 3
 script = ExtResource("1_1bi30")

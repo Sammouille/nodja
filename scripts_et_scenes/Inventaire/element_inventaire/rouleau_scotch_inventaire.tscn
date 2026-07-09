@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bcxsegco6thgi" path="res://scripts_et_scenes/Inventaire/element_inventaire.gd" id="2_uxcm0"]
 
 [node name="rouleau_scotch_inventaire" type="TextureRect" unique_id=1070976149]
+custom_minimum_size = Vector2(70, 70)
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_qwa4g")
