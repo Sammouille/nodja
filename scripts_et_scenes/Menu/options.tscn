@@ -104,11 +104,6 @@ popup/item_0/id = 0
 popup/item_1/text = "English"
 popup/item_1/id = 1
 
-[node name="BackParam" type="Button" parent="ScrollGeneral/VBoxGeneral" unique_id=2121920948]
-visible = false
-layout_mode = 2
-text = "BUTTON_BACK"
-
 [node name="ScrollVideo" type="ScrollContainer" parent="." unique_id=1010092411]
 visible = false
 anchors_preset = -1
@@ -152,11 +147,6 @@ text = "BUTTON_WINDOW"
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 text = "BUTTON_FULLSCREEN"
-
-[node name="BackParam" type="Button" parent="ScrollVideo/VBoxVideo" unique_id=733062151]
-visible = false
-layout_mode = 2
-text = "BUTTON_BACK"
 
 [node name="ScrollSound" type="ScrollContainer" parent="." unique_id=1331123633]
 visible = false
@@ -278,11 +268,6 @@ max_value = 2.0
 step = 0.01
 value = 1.0
 
-[node name="BackParam" type="Button" parent="ScrollSound/VBoxSound" unique_id=2086327000]
-visible = false
-layout_mode = 2
-text = "BUTTON_BACK"
-
 [connection signal="pressed" from="Control/VBoxOptions/General" to="." method="_on_general_pressed"]
 [connection signal="pressed" from="Control/VBoxOptions/Video" to="." method="_on_video_pressed"]
 [connection signal="pressed" from="Control/VBoxOptions/Sound" to="." method="_on_sound_pressed"]
@@ -290,14 +275,11 @@ text = "BUTTON_BACK"
 [connection signal="pressed" from="Control/VBoxOptions/QuitMenu" to="." method="_on_quit_menu_pressed"]
 [connection signal="pressed" from="Control/VBoxOptions/QuitGame" to="." method="_on_quit_game_pressed"]
 [connection signal="item_selected" from="ScrollGeneral/VBoxGeneral/VBoxLocalization/OptionButtonLanguage" to="." method="_on_option_button_language_item_selected"]
-[connection signal="pressed" from="ScrollGeneral/VBoxGeneral/BackParam" to="." method="_on_back_param_pressed"]
 [connection signal="pressed" from="ScrollVideo/VBoxVideo/VBoxWindowMode/HBoxWindowMode/Window" to="." method="_on_window_pressed"]
 [connection signal="pressed" from="ScrollVideo/VBoxVideo/VBoxWindowMode/HBoxWindowMode/Fullscreen" to="." method="_on_fullscreen_pressed"]
-[connection signal="pressed" from="ScrollVideo/VBoxVideo/BackParam" to="." method="_on_back_param_pressed"]
 [connection signal="value_changed" from="ScrollSound/VBoxSound/VBoxVolume/VBoxGeneral/HSliderGeneral" to="." method="_on_h_slider_general_value_changed"]
 [connection signal="value_changed" from="ScrollSound/VBoxSound/VBoxVolume/VBoxCarnet/HSliderCarnet" to="." method="_on_h_slider_carnet_value_changed"]
 [connection signal="value_changed" from="ScrollSound/VBoxSound/VBoxVolume/VBoxAmbiance/HSliderAmbiance" to="." method="_on_h_slider_ambiance_value_changed"]
 [connection signal="value_changed" from="ScrollSound/VBoxSound/VBoxVolume/VBoxManege/HSliderManege" to="." method="_on_h_slider_manege_value_changed"]
 [connection signal="value_changed" from="ScrollSound/VBoxSound/VBoxVolume/VBoxMiniJeu/HSliderMiniJeu" to="." method="_on_h_slider_mini_jeu_value_changed"]
 [connection signal="value_changed" from="ScrollSound/VBoxSound/VBoxVolume/VBoxInventaire/HSliderInventaire" to="." method="_on_h_slider_inventaire_value_changed"]
-[connection signal="pressed" from="ScrollSound/VBoxSound/BackParam" to="." method="_on_back_param_pressed"]
