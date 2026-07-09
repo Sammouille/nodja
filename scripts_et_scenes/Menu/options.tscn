@@ -25,7 +25,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.3764706, 0.13333334, 0.09411765, 0.65882355)
+color = Color(0.3764706, 0.13333334, 0.09411765, 0.8666667)
 
 [node name="VBoxOptions" type="VBoxContainer" parent="Control" unique_id=434172406]
 layout_mode = 1
@@ -150,6 +150,7 @@ layout_mode = 2
 text = "Back"
 
 [node name="ScrollSound" type="ScrollContainer" parent="." unique_id=1331123633]
+visible = false
 anchors_preset = -1
 anchor_left = 0.36400002
 anchor_right = 0.892
