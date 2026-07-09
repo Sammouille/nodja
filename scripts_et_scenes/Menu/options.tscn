@@ -150,7 +150,6 @@ layout_mode = 2
 text = "Back"
 
 [node name="ScrollSound" type="ScrollContainer" parent="." unique_id=1331123633]
-visible = false
 anchors_preset = -1
 anchor_left = 0.36400002
 anchor_right = 0.892

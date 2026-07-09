@@ -1,5 +1,8 @@
 [gd_resource type="Theme" format=3 uid="uid://b4dohoj4c1cip"]
 
+[ext_resource type="Texture2D" uid="uid://dgcf02ha3enr8" path="res://assets/resource/Slider/grabber_4.png" id="1_im5ki"]
+[ext_resource type="Texture2D" uid="uid://sh8cu7ed7jr" path="res://assets/resource/Slider/grabber_3.png" id="2_66btf"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3flyk"]
 bg_color = Color(0.42501467, 0.60100967, 0.49554044, 1)
 skew = Vector2(0.1, 0)
@@ -50,6 +53,24 @@ expand_margin_top = 5.0
 expand_margin_right = 5.0
 expand_margin_bottom = 5.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d8nl4"]
+bg_color = Color(0.42352942, 0.6, 0.49411765, 1)
+skew = Vector2(0.5, 0)
+border_color = Color(0.62352943, 0.79607844, 0.6901961, 1)
+expand_margin_top = 6.0
+expand_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_muqv2"]
+bg_color = Color(0.42352942, 0.6, 0.49411765, 1)
+skew = Vector2(0.5, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.62352943, 0.79607844, 0.6901961, 1)
+expand_margin_top = 6.0
+expand_margin_bottom = 6.0
+
 [resource]
 Button/constants/outline_size = 16
 Button/font_sizes/font_size = 64
@@ -57,5 +78,9 @@ Button/styles/focus = SubResource("StyleBoxFlat_3flyk")
 Button/styles/hover = SubResource("StyleBoxFlat_jlljj")
 Button/styles/normal = SubResource("StyleBoxFlat_im5ki")
 Button/styles/pressed = SubResource("StyleBoxFlat_66btf")
+HSlider/icons/grabber = ExtResource("1_im5ki")
+HSlider/icons/grabber_highlight = ExtResource("2_66btf")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_d8nl4")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_muqv2")
 Label/constants/outline_size = 16
 Label/font_sizes/font_size = 64
