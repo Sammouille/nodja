@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dgcf02ha3enr8" path="res://assets/resource/Slider/grabber_4.png" id="1_im5ki"]
 [ext_resource type="Texture2D" uid="uid://sh8cu7ed7jr" path="res://assets/resource/Slider/grabber_3.png" id="2_66btf"]
+[ext_resource type="Texture2D" uid="uid://c2odj7r33qr26" path="res://assets/resource/OptionButton/Arrow_2.png" id="3_66btf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3flyk"]
 bg_color = Color(0.42501467, 0.60100967, 0.49554044, 1)
@@ -84,3 +85,4 @@ HSlider/styles/grabber_area = SubResource("StyleBoxFlat_d8nl4")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_muqv2")
 Label/constants/outline_size = 16
 Label/font_sizes/font_size = 64
+OptionButton/icons/arrow = ExtResource("3_66btf")

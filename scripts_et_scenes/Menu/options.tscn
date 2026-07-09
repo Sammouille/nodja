@@ -104,12 +104,6 @@ popup/item_0/id = 0
 popup/item_1/text = "English"
 popup/item_1/id = 1
 
-[node name="LabelGeneral" type="Label" parent="ScrollGeneral/VBoxGeneral" unique_id=404849738]
-custom_minimum_size = Vector2(800, 0)
-layout_mode = 2
-text = "Pas de paramètres généraux pour l'instant !"
-autowrap_mode = 3
-
 [node name="BackParam" type="Button" parent="ScrollGeneral/VBoxGeneral" unique_id=2121920948]
 visible = false
 layout_mode = 2
