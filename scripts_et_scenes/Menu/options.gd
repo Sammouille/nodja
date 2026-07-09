@@ -14,6 +14,7 @@ extends CanvasLayer
 signal back_option
 
 func _ready() -> void:
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	if get_tree().current_scene.name == "Menu":
 		ColorRectFond.visible = false
 		QuitGame.visible = false

@@ -66,7 +66,6 @@ layout_mode = 2
 text = "Quit to Desktop"
 
 [node name="ScrollGeneral" type="ScrollContainer" parent="." unique_id=67080981]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -87,8 +86,10 @@ layout_mode = 2
 text = "Back"
 
 [node name="LabelGeneral" type="Label" parent="ScrollGeneral/VBoxGeneral" unique_id=404849738]
+custom_minimum_size = Vector2(800, 0)
 layout_mode = 2
 text = "Pas de paramètres généraux pour l'instant !"
+autowrap_mode = 3
 
 [node name="ScrollVideo" type="ScrollContainer" parent="." unique_id=1010092411]
 visible = false
