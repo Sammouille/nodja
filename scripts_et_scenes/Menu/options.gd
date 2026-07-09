@@ -27,7 +27,7 @@ func _ready() -> void:
 
 @warning_ignore("unused_parameter")
 func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("Pause"):
+	if get_tree().current_scene.name != "Menu" and Input.is_action_just_pressed("Pause"):
 		self.visible = !self.visible
 		get_tree().paused = self.visible
 

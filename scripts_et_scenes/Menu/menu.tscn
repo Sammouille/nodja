@@ -42,18 +42,22 @@ grow_vertical = 2
 theme_override_constants/separation = 50
 
 [node name="Play" type="Button" parent="Control/VBoxChoice" unique_id=674038940]
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 text = "Play"
 
 [node name="Option" type="Button" parent="Control/VBoxChoice" unique_id=1049370135]
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 text = "Option"
 
 [node name="Credits" type="Button" parent="Control/VBoxChoice" unique_id=441601512]
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 text = "Credits"
 
 [node name="Quit" type="Button" parent="Control/VBoxChoice" unique_id=813549856]
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 text = "Quit"
 

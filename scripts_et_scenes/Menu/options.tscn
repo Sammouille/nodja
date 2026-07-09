@@ -42,28 +42,34 @@ size_flags_vertical = 6
 theme_override_constants/separation = 40
 
 [node name="General" type="Button" parent="Control/VBoxOptions" unique_id=793195937]
+custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 text = "General"
 
 [node name="Video" type="Button" parent="Control/VBoxOptions" unique_id=1043328660]
+custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 text = "Video"
 
 [node name="Sound" type="Button" parent="Control/VBoxOptions" unique_id=783553275]
+custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 text = "Sound"
 
 [node name="Back" type="Button" parent="Control/VBoxOptions" unique_id=1506255680]
+custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 text = "Back"
 
 [node name="QuitMenu" type="Button" parent="Control/VBoxOptions" unique_id=2120498399]
+custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
-text = "Quit to Menu"
+text = "Menu"
 
 [node name="QuitGame" type="Button" parent="Control/VBoxOptions" unique_id=25598042]
+custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
-text = "Quit to Desktop"
+text = "Desktop"
 
 [node name="ScrollGeneral" type="ScrollContainer" parent="." unique_id=67080981]
 visible = false
@@ -129,10 +135,12 @@ layout_mode = 2
 theme_override_constants/separation = 50
 
 [node name="Window" type="Button" parent="ScrollVideo/VBoxVideo/VBoxWindowMode/HBoxWindowMode" unique_id=1714914852]
+custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 text = "Window"
 
 [node name="Fullscreen" type="Button" parent="ScrollVideo/VBoxVideo/VBoxWindowMode/HBoxWindowMode" unique_id=715418487]
+custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 text = "Fullscreen"
 
