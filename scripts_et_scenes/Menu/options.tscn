@@ -66,10 +66,13 @@ layout_mode = 2
 text = "Quit to Desktop"
 
 [node name="ScrollGeneral" type="ScrollContainer" parent="." unique_id=67080981]
-anchors_preset = 15
-anchor_right = 1.0
+visible = false
+anchors_preset = -1
+anchor_left = 0.397
+anchor_right = 0.9250001
 anchor_bottom = 1.0
-offset_left = 730.0
+offset_left = -92.24005
+offset_right = -92.00012
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_imqpw")
@@ -93,10 +96,12 @@ autowrap_mode = 3
 
 [node name="ScrollVideo" type="ScrollContainer" parent="." unique_id=1010092411]
 visible = false
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = -1
+anchor_left = 0.377
+anchor_right = 0.90500003
 anchor_bottom = 1.0
-offset_left = 736.0
+offset_left = -53.840027
+offset_right = -53.600098
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_imqpw")
@@ -138,10 +143,12 @@ text = "Back"
 
 [node name="ScrollSound" type="ScrollContainer" parent="." unique_id=1331123633]
 visible = false
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = -1
+anchor_left = 0.36400002
+anchor_right = 0.892
 anchor_bottom = 1.0
-offset_left = 679.0
+offset_left = -28.880066
+offset_right = -28.640015
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
