@@ -24,6 +24,7 @@ func _ready() -> void:
 		QuitMenu.visible = true
 
 
+@warning_ignore("unused_parameter")
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("Pause"):
 		self.visible = !self.visible
@@ -44,6 +45,7 @@ func _on_back_pressed() -> void:
 func _on_window_pressed() -> void:
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	DisplayServer.window_set_size(Vector2i(1280,720))
+	@warning_ignore("integer_division")
 	var w_pos = DisplayServer.screen_get_position( 0 ) + DisplayServer.screen_get_size(0) /2 - DisplayServer.window_get_size() /2
 	DisplayServer.window_set_position(w_pos)
 
