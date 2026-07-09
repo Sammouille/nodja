@@ -8,6 +8,11 @@ extends CanvasLayer
 @export var tab_menu_hide_show : Array[Node]
 
 
+func _ready() -> void:
+	#TranslationServer.set_locale("eng")
+	pass
+
+
 func show_node(node) -> void:
 	for i in tab_menu_hide_show:
 		i.visible = false

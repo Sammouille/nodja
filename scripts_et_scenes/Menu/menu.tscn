@@ -44,22 +44,22 @@ theme_override_constants/separation = 50
 [node name="Play" type="Button" parent="Control/VBoxChoice" unique_id=674038940]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
-text = "Play"
+text = "BUTTON_PLAY"
 
 [node name="Option" type="Button" parent="Control/VBoxChoice" unique_id=1049370135]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
-text = "Option"
+text = "BUTTON_OPTION"
 
 [node name="Credits" type="Button" parent="Control/VBoxChoice" unique_id=441601512]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
-text = "Credits"
+text = "BUTTON_CREDITS"
 
 [node name="Quit" type="Button" parent="Control/VBoxChoice" unique_id=813549856]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
-text = "Quit"
+text = "BUTTON_QUIT"
 
 [node name="VBoxCredits" type="VBoxContainer" parent="Control" unique_id=1613319137]
 visible = false
@@ -79,21 +79,14 @@ theme_override_constants/separation = 40
 
 [node name="Label" type="Label" parent="Control/VBoxCredits" unique_id=1718660463]
 layout_mode = 2
-text = "Jacques Emmanuelle
-
-Bouquinet Maël
-Decaesteker Elise
-Martinez Ben
-Nader Chloé
-Nestor Martin Raphaël
-Wolf Samuel"
+text = "LABEL_CREDITS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BackCredits" type="Button" parent="Control/VBoxCredits" unique_id=1016559180]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Back"
+text = "BUTTON_BACK"
 
 [node name="Options" parent="." unique_id=994255866 instance=ExtResource("3_3acy0")]
 layer = 2

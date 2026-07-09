@@ -9,12 +9,16 @@ extends CanvasLayer
 @onready var QuitMenu = $Control/VBoxOptions/QuitMenu
 @onready var QuitGame = $Control/VBoxOptions/QuitGame
 
+@onready var OptionButtonLanguage = $ScrollGeneral/VBoxGeneral/VBoxLocalization/OptionButtonLanguage
+
 @export var tab_option_hide_show : Array[Node]
 
 signal back_option
 
 func _ready() -> void:
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	OptionButtonLanguage.select(0)
+	
 	if get_tree().current_scene.name == "Menu":
 		ColorRectFond.visible = false
 		QuitGame.visible = false
@@ -112,3 +116,7 @@ func _on_quit_menu_pressed() -> void:
 
 func _on_quit_game_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_option_button_language_item_selected(index: int) -> void:
+	TranslationServer.set_locale(Global.dict_index_language[index])

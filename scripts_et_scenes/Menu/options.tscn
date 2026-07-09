@@ -44,35 +44,34 @@ theme_override_constants/separation = 40
 [node name="General" type="Button" parent="Control/VBoxOptions" unique_id=793195937]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
-text = "General"
+text = "BUTTON_GENERAL"
 
 [node name="Video" type="Button" parent="Control/VBoxOptions" unique_id=1043328660]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
-text = "Video"
+text = "BUTTON_VIDEO"
 
 [node name="Sound" type="Button" parent="Control/VBoxOptions" unique_id=783553275]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
-text = "Sound"
+text = "BUTTON_SOUND"
 
 [node name="Back" type="Button" parent="Control/VBoxOptions" unique_id=1506255680]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
-text = "Back"
+text = "BUTTON_BACK"
 
 [node name="QuitMenu" type="Button" parent="Control/VBoxOptions" unique_id=2120498399]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
-text = "Menu"
+text = "BUTTON_MENU"
 
 [node name="QuitGame" type="Button" parent="Control/VBoxOptions" unique_id=25598042]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
-text = "Desktop"
+text = "BUTTON_DESKTOP"
 
 [node name="ScrollGeneral" type="ScrollContainer" parent="." unique_id=67080981]
-visible = false
 anchors_preset = -1
 anchor_left = 0.397
 anchor_right = 0.9250001
@@ -89,16 +88,32 @@ size_flags_horizontal = 6
 size_flags_vertical = 6
 theme_override_constants/separation = 40
 
-[node name="BackParam" type="Button" parent="ScrollGeneral/VBoxGeneral" unique_id=2121920948]
-visible = false
+[node name="VBoxLocalization" type="VBoxContainer" parent="ScrollGeneral/VBoxGeneral" unique_id=1598680299]
 layout_mode = 2
-text = "Back"
+
+[node name="LabelLocalization" type="Label" parent="ScrollGeneral/VBoxGeneral/VBoxLocalization" unique_id=1857731495]
+layout_mode = 2
+text = "LABEL_LANGUAGE"
+
+[node name="OptionButtonLanguage" type="OptionButton" parent="ScrollGeneral/VBoxGeneral/VBoxLocalization" unique_id=1000443651]
+layout_mode = 2
+alignment = 1
+item_count = 2
+popup/item_0/text = "Français"
+popup/item_0/id = 0
+popup/item_1/text = "English"
+popup/item_1/id = 1
 
 [node name="LabelGeneral" type="Label" parent="ScrollGeneral/VBoxGeneral" unique_id=404849738]
 custom_minimum_size = Vector2(800, 0)
 layout_mode = 2
 text = "Pas de paramètres généraux pour l'instant !"
 autowrap_mode = 3
+
+[node name="BackParam" type="Button" parent="ScrollGeneral/VBoxGeneral" unique_id=2121920948]
+visible = false
+layout_mode = 2
+text = "BUTTON_BACK"
 
 [node name="ScrollVideo" type="ScrollContainer" parent="." unique_id=1010092411]
 visible = false
@@ -127,7 +142,7 @@ alignment = 1
 
 [node name="LabelWindowMode" type="Label" parent="ScrollVideo/VBoxVideo/VBoxWindowMode" unique_id=66853156]
 layout_mode = 2
-text = "Window Mode"
+text = "LABEL_WINDOW_MODE"
 horizontal_alignment = 1
 
 [node name="HBoxWindowMode" type="HBoxContainer" parent="ScrollVideo/VBoxVideo/VBoxWindowMode" unique_id=1124998131]
@@ -137,17 +152,17 @@ theme_override_constants/separation = 50
 [node name="Window" type="Button" parent="ScrollVideo/VBoxVideo/VBoxWindowMode/HBoxWindowMode" unique_id=1714914852]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
-text = "Window"
+text = "BUTTON_WINDOW"
 
 [node name="Fullscreen" type="Button" parent="ScrollVideo/VBoxVideo/VBoxWindowMode/HBoxWindowMode" unique_id=715418487]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
-text = "Fullscreen"
+text = "BUTTON_FULLSCREEN"
 
 [node name="BackParam" type="Button" parent="ScrollVideo/VBoxVideo" unique_id=733062151]
 visible = false
 layout_mode = 2
-text = "Back"
+text = "BUTTON_BACK"
 
 [node name="ScrollSound" type="ScrollContainer" parent="." unique_id=1331123633]
 visible = false
@@ -176,7 +191,7 @@ theme_override_constants/separation = 20
 
 [node name="LabelVolume" type="Label" parent="ScrollSound/VBoxSound/VBoxVolume" unique_id=1023884881]
 layout_mode = 2
-text = "Sound Volume :"
+text = "LABEL_AUDIO_VOLUME"
 horizontal_alignment = 1
 
 [node name="VBoxGeneral" type="VBoxContainer" parent="ScrollSound/VBoxSound/VBoxVolume" unique_id=1677281993]
@@ -184,7 +199,7 @@ layout_mode = 2
 
 [node name="LabelGeneral" type="Label" parent="ScrollSound/VBoxSound/VBoxVolume/VBoxGeneral" unique_id=546247982]
 layout_mode = 2
-text = "General"
+text = "LABEL_GENERAL_VOLUME"
 horizontal_alignment = 1
 
 [node name="HSliderGeneral" type="HSlider" parent="ScrollSound/VBoxSound/VBoxVolume/VBoxGeneral" unique_id=381861917]
@@ -199,7 +214,7 @@ layout_mode = 2
 
 [node name="LabelCarnet" type="Label" parent="ScrollSound/VBoxSound/VBoxVolume/VBoxCarnet" unique_id=169431655]
 layout_mode = 2
-text = "Carnet"
+text = "LABEL_CARNET_VOLUME"
 horizontal_alignment = 1
 
 [node name="HSliderCarnet" type="HSlider" parent="ScrollSound/VBoxSound/VBoxVolume/VBoxCarnet" unique_id=499658507]
@@ -214,7 +229,7 @@ layout_mode = 2
 
 [node name="LabelAmbiance" type="Label" parent="ScrollSound/VBoxSound/VBoxVolume/VBoxAmbiance" unique_id=103587702]
 layout_mode = 2
-text = "Ambiance"
+text = "LABEL_AMBIANCE_VOLUME"
 horizontal_alignment = 1
 
 [node name="HSliderAmbiance" type="HSlider" parent="ScrollSound/VBoxSound/VBoxVolume/VBoxAmbiance" unique_id=764466303]
@@ -229,7 +244,7 @@ layout_mode = 2
 
 [node name="LabelManege" type="Label" parent="ScrollSound/VBoxSound/VBoxVolume/VBoxManege" unique_id=1985043122]
 layout_mode = 2
-text = "Manège"
+text = "LABEL_MANEGE_VOLUME"
 horizontal_alignment = 1
 
 [node name="HSliderManege" type="HSlider" parent="ScrollSound/VBoxSound/VBoxVolume/VBoxManege" unique_id=708948391]
@@ -244,7 +259,7 @@ layout_mode = 2
 
 [node name="LabelMiniJeu" type="Label" parent="ScrollSound/VBoxSound/VBoxVolume/VBoxMiniJeu" unique_id=865784820]
 layout_mode = 2
-text = "Mini-Jeux"
+text = "LABEL_MINIJEU_VOLUME"
 horizontal_alignment = 1
 
 [node name="HSliderMiniJeu" type="HSlider" parent="ScrollSound/VBoxSound/VBoxVolume/VBoxMiniJeu" unique_id=1468407411]
@@ -259,7 +274,7 @@ layout_mode = 2
 
 [node name="LabelInventaire" type="Label" parent="ScrollSound/VBoxSound/VBoxVolume/VBoxInventaire" unique_id=410579862]
 layout_mode = 2
-text = "Inventaire"
+text = "LABEL_INVENTORY_VOLUME"
 horizontal_alignment = 1
 
 [node name="HSliderInventaire" type="HSlider" parent="ScrollSound/VBoxSound/VBoxVolume/VBoxInventaire" unique_id=483642702]
@@ -272,6 +287,7 @@ value = 1.0
 [node name="BackParam" type="Button" parent="ScrollSound/VBoxSound" unique_id=2086327000]
 visible = false
 layout_mode = 2
+text = "BUTTON_BACK"
 
 [connection signal="pressed" from="Control/VBoxOptions/General" to="." method="_on_general_pressed"]
 [connection signal="pressed" from="Control/VBoxOptions/Video" to="." method="_on_video_pressed"]
@@ -279,6 +295,7 @@ layout_mode = 2
 [connection signal="pressed" from="Control/VBoxOptions/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Control/VBoxOptions/QuitMenu" to="." method="_on_quit_menu_pressed"]
 [connection signal="pressed" from="Control/VBoxOptions/QuitGame" to="." method="_on_quit_game_pressed"]
+[connection signal="item_selected" from="ScrollGeneral/VBoxGeneral/VBoxLocalization/OptionButtonLanguage" to="." method="_on_option_button_language_item_selected"]
 [connection signal="pressed" from="ScrollGeneral/VBoxGeneral/BackParam" to="." method="_on_back_param_pressed"]
 [connection signal="pressed" from="ScrollVideo/VBoxVideo/VBoxWindowMode/HBoxWindowMode/Window" to="." method="_on_window_pressed"]
 [connection signal="pressed" from="ScrollVideo/VBoxVideo/VBoxWindowMode/HBoxWindowMode/Fullscreen" to="." method="_on_fullscreen_pressed"]

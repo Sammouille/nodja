@@ -1,0 +1,42 @@
+key,fr,eng
+BUTTON_PLAY,Jouer,Play
+BUTTON_OPTION,Paramètres,Settings
+BUTTON_CREDITS,Crédits,Credits
+BUTTON_QUIT,Quitter,Quit
+,,
+BUTTON_BACK,Retour,Back
+LABEL_CREDITS,"Jacques Emmanuelle
+
+Bouquinet Maël
+Decaesteker Elise
+Martinez Ben
+Nader Chloé
+Nestor Martin Raphaël
+Wolf Samuel","Jacques Emmanuelle
+
+Bouquinet Maël
+Decaesteker Elise
+Martinez Ben
+Nader Chloé
+Nestor Martin Raphaël
+Wolf Samuel"
+,,
+BUTTON_GENERAL,Général,General
+BUTTON_VIDEO,Vidéo,Video
+BUTTON_SOUND,Audio,Audio
+BUTTON_MENU,Menu,Menu
+BUTTON_DESKTOP,Bureau,Desktop
+,,
+LABEL_WINDOW_MODE,Mode d’Affichage,Window Mode
+BUTTON_WINDOW,Fenêtré,Windowed
+BUTTON_FULLSCREEN,Plein Ecran,Fullscreen
+,,
+LABEL_AUDIO_VOLUME,Volume Audio :,Audio Volume :
+LABEL_GENERAL_VOLUME,Général,General
+LABEL_CARNET_VOLUME,Carnet,Notebook
+LABEL_AMBIANCE_VOLUME,Ambiance,Atmosphere
+LABEL_MANEGE_VOLUME,Manège,Carousel
+LABEL_MINIJEU_VOLUME,Mini-Jeux,Mini-Games
+LABEL_INVENTORY_VOLUME,Inventaire,Inventory
+,,
+LABEL_LANGUAGE,Langue :,Language :
