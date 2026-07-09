@@ -30,6 +30,7 @@ func _input(event: InputEvent) -> void:
 		position.x += temp_x *-1
 		position.y += temp_y *-1
 	
+	#Si le morceau de poster est drag mais que le clique est relâché, alors celui-ci est effacer du jeu.
 	if is_mouse_in and Input.is_action_just_released("clique_gauche"):
 		print("go inventaire ou faire un truc")
 		is_mouse_in = false
