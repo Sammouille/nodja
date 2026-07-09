@@ -7,6 +7,7 @@ var is_mouse_in : bool = false
 var mouse_drag_pos : Vector2 = Vector2(0.0, 0.0)
 
 
+@warning_ignore("unused_parameter")
 func _input(event: InputEvent) -> void:
 	#Vérifie l'input de drag.
 	if Input.is_action_just_pressed("clique_gauche"):
@@ -16,7 +17,8 @@ func _input(event: InputEvent) -> void:
 			mouse_drag_pos = get_viewport().get_mouse_position()
 			#print(mouse_drag_pos)
 			Global.draging_element_inventaire = self.name
-
+	
+	#Si la souris est en train de drag un objet mais que l'on relâche le clique, cela arrête le drag de l'objet et réinitialise certaines valeurs. Si l'objet est lâché en dehors des limites de l'inventaire, on recalcul une position pour l'objet.
 	if is_mouse_in and Input.is_action_just_released("clique_gauche"):
 		is_mouse_in = false
 		get_parent().is_draging = false
@@ -26,6 +28,7 @@ func _input(event: InputEvent) -> void:
 			get_parent().random_pos_in_inventary(self)
 
 
+@warning_ignore("unused_parameter")
 func _physics_process(delta: float) -> void:
 	
 	#Si la souris drag l'affiche et qu'elle bouge, alors l'affiche bouge aussi.
