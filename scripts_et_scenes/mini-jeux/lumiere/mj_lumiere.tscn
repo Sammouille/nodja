@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://cmauougvv6lp8"]
+
+[ext_resource type="Script" uid="uid://bt4x5ilsyhq7i" path="res://scripts_et_scenes/mini-jeux/lumiere/mj_lumiere.gd" id="1_wfcno"]
+[ext_resource type="Script" uid="uid://bytbi7ulmlh6g" path="res://scripts_et_scenes/mini-jeux/lumiere/lumiere.gd" id="2_fp83x"]
+[ext_resource type="Texture2D" uid="uid://ca2f5fg8viuj8" path="res://assets/mj_lumiere/lampe_eteinte_temp.png" id="3_2a3cl"]
+[ext_resource type="Texture2D" uid="uid://dcl8d3t4hrjax" path="res://assets/mj_lumiere/lampe_temp.png" id="3_ntunp"]
+[ext_resource type="Script" uid="uid://dywkt0faew4le" path="res://scripts_et_scenes/mini-jeux/lumiere/fond.gd" id="4_leyej"]
+[ext_resource type="Texture2D" uid="uid://c8jpiw5efokj8" path="res://assets/mj_lumiere/lampe_allumee_temp.png" id="4_r7wce"]
+[ext_resource type="Texture2D" uid="uid://di5i0xofn4h8c" path="res://assets/mj_lumiere/lumieres_allumees_temp.png" id="5_lvabc"]
+[ext_resource type="Texture2D" uid="uid://bch4x5xvkvyf3" path="res://assets/mj_lumiere/lumieres_eteintes_temp.png" id="6_714it"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ntunp"]
+
+[node name="MJLumiere" type="Node2D" unique_id=1161786353]
+script = ExtResource("1_wfcno")
+
+[node name="lumiere" type="Area2D" parent="." unique_id=47616885 groups=["lumiere"]]
+position = Vector2(137, 169)
+script = ExtResource("2_fp83x")
+lampe_eteinte = ExtResource("3_2a3cl")
+lampe_allumee = ExtResource("4_r7wce")
+
+[node name="Sprite2D" type="Sprite2D" parent="lumiere" unique_id=1490418396]
+texture = ExtResource("3_ntunp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lumiere" unique_id=479223629]
+scale = Vector2(5, 5)
+shape = SubResource("CircleShape2D_ntunp")
+
+[node name="lumiere2" type="Area2D" parent="." unique_id=864006361 groups=["lumiere"]]
+position = Vector2(433, 317)
+script = ExtResource("2_fp83x")
+lampe_eteinte = ExtResource("3_2a3cl")
+lampe_allumee = ExtResource("4_r7wce")
+
+[node name="Sprite2D" type="Sprite2D" parent="lumiere2" unique_id=1805919894]
+texture = ExtResource("3_ntunp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lumiere2" unique_id=383255079]
+scale = Vector2(5, 5)
+shape = SubResource("CircleShape2D_ntunp")
+
+[node name="lumiere3" type="Area2D" parent="." unique_id=918690105 groups=["lumiere"]]
+position = Vector2(621, 126)
+script = ExtResource("2_fp83x")
+lampe_eteinte = ExtResource("3_2a3cl")
+lampe_allumee = ExtResource("4_r7wce")
+
+[node name="Sprite2D" type="Sprite2D" parent="lumiere3" unique_id=1253205903]
+texture = ExtResource("3_ntunp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lumiere3" unique_id=1458686494]
+scale = Vector2(5, 5)
+shape = SubResource("CircleShape2D_ntunp")
+
+[node name="lumiere4" type="Area2D" parent="." unique_id=29501549 groups=["lumiere"]]
+position = Vector2(919, 312)
+script = ExtResource("2_fp83x")
+lampe_eteinte = ExtResource("3_2a3cl")
+lampe_allumee = ExtResource("4_r7wce")
+
+[node name="Sprite2D" type="Sprite2D" parent="lumiere4" unique_id=1726292664]
+texture = ExtResource("3_ntunp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lumiere4" unique_id=1157205278]
+scale = Vector2(5, 5)
+shape = SubResource("CircleShape2D_ntunp")
+
+[node name="lumiere5" type="Area2D" parent="." unique_id=539423802 groups=["lumiere"]]
+position = Vector2(244, 518)
+script = ExtResource("2_fp83x")
+lampe_eteinte = ExtResource("3_2a3cl")
+lampe_allumee = ExtResource("4_r7wce")
+
+[node name="Sprite2D" type="Sprite2D" parent="lumiere5" unique_id=412342173]
+texture = ExtResource("3_ntunp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lumiere5" unique_id=720172572]
+scale = Vector2(5, 5)
+shape = SubResource("CircleShape2D_ntunp")
+
+[node name="lumiere6" type="Area2D" parent="." unique_id=83421408 groups=["lumiere"]]
+position = Vector2(735, 520)
+script = ExtResource("2_fp83x")
+lampe_eteinte = ExtResource("3_2a3cl")
+lampe_allumee = ExtResource("4_r7wce")
+
+[node name="Sprite2D" type="Sprite2D" parent="lumiere6" unique_id=1612994670]
+texture = ExtResource("3_ntunp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lumiere6" unique_id=287039202]
+scale = Vector2(5, 5)
+shape = SubResource("CircleShape2D_ntunp")
+
+[node name="Fond" type="Sprite2D" parent="." unique_id=1774844994]
+z_index = -1
+position = Vector2(576, 324)
+texture = ExtResource("6_714it")
+script = ExtResource("4_leyej")
+fond_allume = ExtResource("5_lvabc")
+fond_eteint = ExtResource("6_714it")
+
+[connection signal="lights_on" from="." to="Fond" method="_fond_allume"]
+[connection signal="mouse_entered" from="lumiere" to="lumiere" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="lumiere" to="lumiere" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="lumiere2" to="lumiere2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="lumiere2" to="lumiere2" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="lumiere3" to="lumiere3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="lumiere3" to="lumiere3" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="lumiere4" to="lumiere4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="lumiere4" to="lumiere4" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="lumiere5" to="lumiere5" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="lumiere5" to="lumiere5" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="lumiere6" to="lumiere6" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="lumiere6" to="lumiere6" method="_on_mouse_exited"]
