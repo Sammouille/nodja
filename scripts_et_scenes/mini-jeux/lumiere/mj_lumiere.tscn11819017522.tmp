@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://cmauougvv6lp8"]
+
+[ext_resource type="Script" uid="uid://bt4x5ilsyhq7i" path="res://scripts_et_scenes/mini-jeux/lumiere/mj_lumiere.gd" id="1_wfcno"]
+[ext_resource type="Script" uid="uid://bytbi7ulmlh6g" path="res://scripts_et_scenes/mini-jeux/lumiere/lumiere.gd" id="2_fp83x"]
+[ext_resource type="Texture2D" uid="uid://dcl8d3t4hrjax" path="res://assets/mj_lumiere/lampe_temp.png" id="3_ntunp"]
+[ext_resource type="Script" uid="uid://dywkt0faew4le" path="res://scripts_et_scenes/mini-jeux/lumiere/fond.gd" id="4_leyej"]
+[ext_resource type="Texture2D" uid="uid://di5i0xofn4h8c" path="res://assets/mj_lumiere/lumieres_allumees_temp.png" id="5_lvabc"]
+[ext_resource type="Texture2D" uid="uid://bch4x5xvkvyf3" path="res://assets/mj_lumiere/lumieres_eteintes_temp.png" id="6_714it"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ntunp"]
+
+[node name="MJLumiere" type="Node2D" unique_id=1161786353]
+script = ExtResource("1_wfcno")
+
+[node name="lumiere" type="Area2D" parent="." unique_id=47616885]
+position = Vector2(244, 518)
+script = ExtResource("2_fp83x")
+
+[node name="Sprite2D" type="Sprite2D" parent="lumiere" unique_id=1490418396]
+texture = ExtResource("3_ntunp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lumiere" unique_id=479223629]
+scale = Vector2(5, 5)
+shape = SubResource("CircleShape2D_ntunp")
+
+[node name="lumiere2" type="Area2D" parent="." unique_id=2016412266]
+position = Vector2(129, 109)
+script = ExtResource("2_fp83x")
+
+[node name="Sprite2D" type="Sprite2D" parent="lumiere2" unique_id=1751691921]
+texture = ExtResource("3_ntunp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lumiere2" unique_id=808899194]
+scale = Vector2(5, 5)
+shape = SubResource("CircleShape2D_ntunp")
+
+[node name="lumiere3" type="Area2D" parent="." unique_id=1087432627]
+position = Vector2(404, 304)
+script = ExtResource("2_fp83x")
+
+[node name="Sprite2D" type="Sprite2D" parent="lumiere3" unique_id=1264883015]
+texture = ExtResource("3_ntunp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lumiere3" unique_id=519151162]
+scale = Vector2(5, 5)
+shape = SubResource("CircleShape2D_ntunp")
+
+[node name="lumiere4" type="Area2D" parent="." unique_id=2073045495]
+position = Vector2(657, 124)
+script = ExtResource("2_fp83x")
+
+[node name="Sprite2D" type="Sprite2D" parent="lumiere4" unique_id=459891466]
+texture = ExtResource("3_ntunp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lumiere4" unique_id=831675971]
+scale = Vector2(5, 5)
+shape = SubResource("CircleShape2D_ntunp")
+
+[node name="lumiere5" type="Area2D" parent="." unique_id=673493720]
+position = Vector2(771, 498)
+script = ExtResource("2_fp83x")
+
+[node name="Sprite2D" type="Sprite2D" parent="lumiere5" unique_id=182991114]
+texture = ExtResource("3_ntunp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lumiere5" unique_id=1187231795]
+scale = Vector2(5, 5)
+shape = SubResource("CircleShape2D_ntunp")
+
+[node name="lumiere6" type="Area2D" parent="." unique_id=1065945759]
+position = Vector2(945, 256)
+script = ExtResource("2_fp83x")
+
+[node name="Sprite2D" type="Sprite2D" parent="lumiere6" unique_id=1566594462]
+texture = ExtResource("3_ntunp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lumiere6" unique_id=992511654]
+scale = Vector2(5, 5)
+shape = SubResource("CircleShape2D_ntunp")
+
+[node name="Fond" type="Sprite2D" parent="." unique_id=1774844994]
+script = ExtResource("4_leyej")
+fond_allume = ExtResource("5_lvabc")
+fond_eteint = ExtResource("6_714it")
+
+[connection signal="lights_on" from="." to="Fond" method="_fond_allume"]
+[connection signal="mouse_entered" from="lumiere" to="lumiere" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="lumiere" to="lumiere" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="lumiere2" to="lumiere2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="lumiere2" to="lumiere2" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="lumiere3" to="lumiere3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="lumiere3" to="lumiere3" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="lumiere4" to="lumiere4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="lumiere4" to="lumiere4" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="lumiere5" to="lumiere5" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="lumiere5" to="lumiere5" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="lumiere6" to="lumiere6" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="lumiere6" to="lumiere6" method="_on_mouse_exited"]
