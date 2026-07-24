@@ -9,14 +9,10 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+## Permet d'avoir l'effet où la voiture suit les pneus.
 func _process(delta: float) -> void:
 	if position.y != jantes.position.y:
 		position.y = lerpf(position.y, jantes.position.y, vitesse)
 	else:
 		position.y = jantes.position.y
 	position.x = jantes.position.x
-
-func _draw() -> void:
-	pass
-	#draw_rect(Rect2(Vector2(-75,-50), Vector2(150,80)), Color(0.584, 0.396, 0.183, 1.0), true)

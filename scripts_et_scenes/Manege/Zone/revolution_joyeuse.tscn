@@ -2,48 +2,12 @@
 
 [ext_resource type="Script" uid="uid://bd7yf1at4klrm" path="res://scripts_et_scenes/Manege/Zone/tilemaps.gd" id="1_unn66"]
 [ext_resource type="Texture2D" uid="uid://bd8v5b155ckia" path="res://assets/manege/essaitoptop2.png" id="2_cfo73"]
-[ext_resource type="Texture2D" uid="uid://gxy2wsaft1se" path="res://assets/tests/nodja_road.svg" id="3_smp1h"]
-[ext_resource type="Texture2D" uid="uid://dx534hvxem42s" path="res://assets/manege/route.png" id="4_qa6ps"]
+[ext_resource type="TileSet" uid="uid://cscp21p472sji" path="res://scripts_et_scenes/Manege/Zone/tileset_nodja_manege.tres" id="3_75bmu"]
 [ext_resource type="PackedScene" uid="uid://3sgwne8seqdl" path="res://scripts_et_scenes/Manege/Outils_Manege/zone_de_chargement.tscn" id="5_77xfx"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tqdjm"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wqsis"]
-texture = ExtResource("3_smp1h")
-texture_region_size = Vector2i(265, 90)
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-132.5, 0, 132.5, 0, 132.5, 45, -132.5, 45)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1dko6"]
-texture = ExtResource("4_qa6ps")
-texture_region_size = Vector2i(265, 90)
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-132.5, -22.5, 132.5, -22.5, 132.5, 45, -132.5, 45)
-1:0/0 = 0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-132.5, -22.5, 132.5, -22.5, 132.5, 45, -132.5, 45)
-2:0/0 = 0
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-132.5, -22.5, 132.5, -22.5, 132.5, 45, -132.5, 45)
-3:0/0 = 0
-3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-132.5, -22.5, 132.5, -22.5, 132.5, 45, -132.5, 45)
-4:0/0 = 0
-4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-132.5, -22.5, 132.5, -22.5, 132.5, 45, -132.5, 45)
-5:0/0 = 0
-5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-132.5, -22.5, 132.5, -22.5, 132.5, 45, -132.5, 45)
-6:0/0 = 0
-6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-132.5, -22.5, 132.5, -22.5, 132.5, 45, -132.5, 45)
-
-[sub_resource type="TileSet" id="TileSet_q5rhr"]
-tile_size = Vector2i(265, 90)
-physics_layer_0/collision_layer = 1
-physics_layer_0/physics_material = SubResource("PhysicsMaterial_tqdjm")
-sources/0 = SubResource("TileSetAtlasSource_wqsis")
-sources/1 = SubResource("TileSetAtlasSource_1dko6")
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_wqsis"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_ktfxo"]
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_g8nr7"]
 
 [node name="Tilemaps" type="Node2D" unique_id=2030232881 node_paths=PackedStringArray("parallax", "ct_couche_haute", "ct_couche_milieu", "ct_couche_basse", "route", "zone_de_chargement")]
 script = ExtResource("1_unn66")
@@ -52,10 +16,11 @@ ct_couche_haute = NodePath("CouchesHaute")
 ct_couche_milieu = NodePath("CouchesMilieu")
 ct_couche_basse = NodePath("CouchesBasse")
 route = NodePath("Route_Asphalt")
-nom_ville = "Revolutionjoyeuse"
 zone_de_chargement = NodePath("ZoneDeChargement")
+nom_ville = "Revolutionjoyeuse"
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=371945855]
+z_index = -1
 repeat_size = Vector2(12600, 0)
 autoscroll = Vector2(-8, 0)
 repeat_times = 7
@@ -68,8 +33,8 @@ centered = false
 
 [node name="Route_Asphalt" type="TileMapLayer" parent="." unique_id=2097407131]
 position = Vector2(0, 580)
-tile_map_data = PackedByteArray("AAAAAAAAAQABAAAAAAABAAAAAQABAAAAAAACAAAAAQABAAAAAAADAAAAAQABAAAAAAAEAAAAAQABAAAAAAAFAAAAAQABAAAAAAAGAAAAAQABAAAAAAAHAAAAAQABAAAAAAAIAAAAAQABAAAAAAAJAAAAAQABAAAAAAAKAAAAAQABAAAAAAALAAAAAQABAAAAAAAMAAAAAQABAAAAAAANAAAAAQABAAAAAAD//wAAAQAAAAAAAAA=")
-tile_set = SubResource("TileSet_q5rhr")
+tile_map_data = PackedByteArray("AAAAAAAAAQABAAAAAAABAAAAAQABAAAAAAACAAAAAQABAAAAAAADAAAAAQABAAAAAAAEAAAAAQABAAAAAAAFAAAAAQABAAAAAAAGAAAAAQABAAAAAAAHAAAAAQABAAAAAAAIAAAAAQABAAAAAAAJAAAAAQABAAAAAAAKAAAAAQABAAAAAAALAAAAAQABAAAAAAAMAAAAAQABAAAAAAANAAAAAQABAAAAAAA=")
+tile_set = ExtResource("3_75bmu")
 
 [node name="CouchesHaute" type="Area2D" parent="." unique_id=69197741]
 position = Vector2(0, 680)
@@ -84,7 +49,7 @@ shape = SubResource("SegmentShape2D_wqsis")
 debug_color = Color(1, 0.6, 0.69803923, 0.83137256)
 
 [node name="CouchesMilieu" type="Area2D" parent="." unique_id=1484568401]
-position = Vector2(0, 1138.891)
+position = Vector2(0, 1487)
 scale = Vector2(0.69144326, 0.42636004)
 collision_layer = 2
 collision_mask = 2
@@ -95,14 +60,11 @@ scale = Vector2(1.2026014, 1.5314815)
 shape = SubResource("SegmentShape2D_ktfxo")
 debug_color = Color(1, 0.6, 0.69803923, 0.83137256)
 
-[node name="CouchesBasse" type="Area2D" parent="." unique_id=51490212]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CouchesBasse" unique_id=606846020]
-shape = SubResource("SegmentShape2D_g8nr7")
+[node name="CouchesBasse" type="Node2D" parent="." unique_id=767541327]
+position = Vector2(0, 2320)
 
 [node name="ZoneDeChargement" parent="." unique_id=731542611 instance=ExtResource("5_77xfx")]
 position = Vector2(3750, 277)
 
 [connection signal="body_entered" from="CouchesHaute" to="." method="_on_couches_haute_body_entered"]
 [connection signal="body_entered" from="CouchesMilieu" to="." method="_on_couches_milieu_body_entered"]
-[connection signal="body_entered" from="CouchesBasse" to="." method="_on_couches_basse_body_entered"]

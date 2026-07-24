@@ -11,18 +11,14 @@ size = Vector2(150, 100)
 
 [node name="Garage" type="Node2D" unique_id=273094417]
 
-[node name="Jantes" type="CharacterBody2D" parent="." unique_id=845951390 node_paths=PackedStringArray("voiture_collision")]
+[node name="Jantes" type="CharacterBody2D" parent="." unique_id=845951390]
 position = Vector2(197, 86)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_4sqe4")
-voiture_collision = NodePath("CollisionShape2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Jantes" unique_id=1831562991]
 shape = SubResource("RectangleShape2D_g1xx7")
-
-[node name="hauteur_voiture" type="RayCast2D" parent="Jantes" unique_id=1185638275]
-target_position = Vector2(0, 1000)
 
 [node name="Roue1" type="Sprite2D" parent="Jantes" unique_id=702382363]
 position = Vector2(-81, 37)

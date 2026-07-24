@@ -1,5 +1,7 @@
 extends Node
 
+## Cette scène est pas encore prête, à garder pour le futur de la production.
+
 var res_horizontal = [1152,1920]
 var res_vertical = [648,1080]
 

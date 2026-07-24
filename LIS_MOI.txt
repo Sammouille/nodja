@@ -1,0 +1,38 @@
+
+Créer des nouveaux niveaux de voiture :
+	La scène tilemaps.tscn est une scène par défaut prévue pour être dupliquée. 
+	Toutes les autres scènes dans le fichier "scripts_et_scenes/Manege/Zone" en sont des exemples.
+	Elles partagent toutes le même script, "tilemaps.gd". Je les appellent les Zones, ou Villes.
+	
+Structures des scènes Zone :
+	- Le noeud en haut de l'arbre contient le code de "tilemaps.gd".
+	- Parallax2D va faire défiler son enfin Sprite2D et le fait répéter tout le long de la scène.
+	- Route_Asphalt est une tilemap. Elle permet de placer des images avec potentiellement des collisions.
+		- Pour rajouter une tuile :
+			Dans les fichiers, allez dans "scripts_et_scenes/Manege/Zone/tileset_nodja_manege". Cliquer sur Tileset en bas de l'écran. Faire glisser les images dans la liste des assets affichées.
+			Cliquer alors sur Tilemap dans la scène Zone que vous voulez, puis sur la tuile que l'on désire. Cliquer sur la tuile qui apparait à droite, sélectionner le bon outil au dessus, et il suffit de peindre !
+			- Attention à respecter la taille des cellules du tileset ! Celles là font 265 horizontale par 90 verticale. Ces infos peuvent être changé dans "tileset_nodja_manege".
+			- Attention quand on rajoute une tuile au tileset ! Elles sont découpées en 2 parties, les tuiles sans effets et les tuiles obstacles.
+			  Quand vous cliquez sur "tileset_nodja_manege", à droite dans l'éditeur apparaît "ID Debut Tuile Obstacle". Vous devez indiquez ici à partir de quelle ID les premiers obstacles sont listés dans la tileset (en incluant le premier obstacle.)
+			  Les IDs doivent être croissante numériquement de 1 en 1. Faire bien attention à les ordonner correctement, et à modifier la valeur de "ID Debut Tuile Obstacle" correctement.
+		- Pour rajouter une hitbox a une tuile : 
+			Cliquer sur la tuile, puis sur peindre. Appuyer sur "Selectionner un éditeur de propriété", et choisir Calque physique 0.
+			Un nouveau sous-menu apparait. Tu peux alors définir la forme de ta hitbox telle qu'elle remplirait ta cellule. 
+			Une fois la forme choisis, cliquée sur la tuile à droite pour lui appliquer cette nouvelle hitbox. 
+			Attention à ce que les bords des hitbox s'harmonisent bien l'une avec l'autre !
+	- CouchesHaute, CouchesMilieu, CouchesBasse sont des hitboxs qui servent à notifier le programme qu'on change de hauteur.
+		- Pour rajouter une transition entre les différents étages :
+				- Rajouter en enfant de la couche qu'on désire une CollisionShape2D, avec une hitbox de type segment.
+				La positionner à la même hauteur (donc en y = 0) que son parent, et le mettre aux endroits choisis.
+	- ZoneDeChargement est une aire qui sert à passer au niveau suivant. 
+		Quand on passe dedans, il envoie un signal à background_villes, qui passe au niveau suivant, et qui tourne en boucle.
+		(Postmodernite -> Bidonville -> Modernite Ancrée -> Manifestations -> Révolutions joyeuses)
+		
+Précision Tileset :
+	
+
+Background villes :
+	C'est la scène principale du manege. Elle contient les scènes tilemaps, un garage qui inclut l'éléphanture, et un mini écran de chargement entre les zones.
+	C'est elle qui change les scènes de Zones.
+	
+		

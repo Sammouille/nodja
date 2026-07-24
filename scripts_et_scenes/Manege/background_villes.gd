@@ -1,11 +1,11 @@
 extends Node2D
 
+## Scène trouvable dans scripts_et_scenes/Manege/Chargements. Modifiable à souhait.
 @export var ecran_de_chargement : Control
-@export var garage: Node2D
 
+@export var garage: Node2D
 @export var tilemaps : Node2D
 
-@export var height_route_asphalt := 580.0
 @onready var jantes := garage.get_child(0)
 
 @export var camera : Camera2D
@@ -26,10 +26,15 @@ var chemin_fichier_revolution_joyeuse = "res://scripts_et_scenes/Manege/Zone/rev
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	## Permet d'avoir la caméra un peu décalé en fonction de la voiture.
 	dist_moyenne_voiture_cam_x = jantes.position.x - camera.position.x
-	tilemaps.route.position.y = height_route_asphalt
+	
+	## Connecte l'échelle des objets aux changements de résolutions. (n'est pas encore utilisé).
 	ManagerResolution.adapt_res_scale.connect(adapt_display.bind())
+	
 	chargement_disparait()
+	
+	## Connectes les fonctions de tilemaps et de ces obstacles avec des fonctions dans ce script.
 	tilemaps.zone_de_chargement.load_zone.connect(charge_ville_suivante.bind())
 	tilemaps.vers_couche.connect(change_camera_height.bind())
 	for m in tilemaps.asperite_hitbox:
@@ -39,19 +44,21 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	actualiser_camera()
-	pass
-	#if jantes.position.y >= route_asphalt.position.y:
-		##parallax.scroll_offset.y = jantes.position.y - 580.0
-		#var p_sc = jantes.hauteur_voiture.get_collision_point().y / height_route_asphalt
-		#parallax.scale = Vector2(p_sc,p_sc)
 
+## S'assurer de la bonne taille de l'écran si la résolution change. Pas encore utilisé.
+## TODO : S'assurer que les mini-jeux fonctionnent bien aussi avec les changements de résolutions. 
 func adapt_display(scale_adapte):
 	self.scale = Vector2(scale_adapte,scale_adapte)
 
 ## Appelé quand la voiture entre dans une zone de chargement
 func charge_ville_suivante():
-	await chargement_apparait()
+	var scene_charge
 	var chemin_fichier
+	
+	## Attends que la transition au noir apparaisse.
+	await chargement_apparait()
+	
+	## Assigne une ville à charger en fonction de la ville actuelle.
 	match tilemaps.nom_ville :
 		"Postmodernite":
 			chemin_fichier = chemin_fichier_bidonville
@@ -63,36 +70,48 @@ func charge_ville_suivante():
 			chemin_fichier = chemin_fichier_revolution_joyeuse
 		"Revolutionjoyeuse":
 			chemin_fichier = chemin_fichier_postmodernite
+			
+	## Retire la ville actuelle.
 	tilemaps.queue_free()
-	var scene_charge = load(chemin_fichier)
+	
+	## Charge et fait apparaitre la nouvelle ville.
+	scene_charge = load(chemin_fichier)
 	tilemaps = scene_charge.instantiate()
 	add_child(tilemaps)
+	
+	## Retire l'écran de chargement.
 	chargement_disparait()
+	
+	## Connectes les fonctions entre elles et s'assure que la voiture commece à 0 vitesse et à la position par défaut.
 	tilemaps.zone_de_chargement.load_zone.connect(charge_ville_suivante.bind())
 	tilemaps.vers_couche.connect(change_camera_height.bind())
 	jantes.position = Vector2.ZERO
 	jantes.velocite = Vector2.ZERO
+	for m in tilemaps.asperite_hitbox:
+		m.body_entered.connect(asperites_collision.bind())
 			
-## Quand on passe dans une zone de chargement, on fait apparaître l'écran de chargement
+## Quand on passe dans une zone de chargement, on fait apparaître l'écran de chargement.
 func chargement_apparait() -> void:
 	var tween_chargement = get_tree().create_tween()
 	tween_chargement.tween_property(ecran_de_chargement,"modulate:a",1.0,1.0)
 	await tween_chargement.finished
 	return
 
-## Quand on le chargement d'une nouvelle ville est fini, on fait disparaître
-## l'écran de chargement.
+## Quand on le chargement d'une nouvelle ville est fini, on fait disparaître l'écran de chargement.
 func chargement_disparait() -> void:
 	var tween_chargement = get_tree().create_tween()
 	tween_chargement.tween_property(ecran_de_chargement,"modulate:a",0.0,1.0)
 
-func change_camera_height(couche,hauteur_ville):
+## Change la hauteur de la caméra par rapport à la ville.
+func change_camera_height(hauteur_ville):
 	var cam_tween = get_tree().create_tween()
 	cam_tween.tween_property(camera,"position:y",hauteur_ville - cam_distance_y,1.0)
 
+## S'assure que la caméra suit la voiture.
 func actualiser_camera():
 	camera.position.x = jantes.position.x - dist_moyenne_voiture_cam_x
 	
+## Envoie à jantes comment changer sa vitesse.
 func asperites_collision(useless):
 	if jantes.jumping :
 		jantes.changer_vitesse(+1)

@@ -1,0 +1,45 @@
+[gd_resource type="TileSet" format=3 uid="uid://cscp21p472sji"]
+
+[ext_resource type="Texture2D" uid="uid://gxy2wsaft1se" path="res://assets/tests/nodja_road_test.svg" id="1_qegul"]
+[ext_resource type="Script" uid="uid://c5gtqmwkbujrl" path="res://scripts_et_scenes/Manege/Zone/tilesets_info.gd" id="1_yc0ot"]
+[ext_resource type="Texture2D" uid="uid://bf0e6jbfuxbju" path="res://assets/manege/nodja_bump.svg" id="1_yvt5y"]
+[ext_resource type="Texture2D" uid="uid://dx534hvxem42s" path="res://assets/manege/route.png" id="2_qegul"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pf8h4"]
+texture = ExtResource("1_qegul")
+texture_region_size = Vector2i(265, 90)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-132.5, -22.5, 132.5, -22.5, 132.5, 45, -132.5, 45)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v3ea7"]
+texture = ExtResource("2_qegul")
+texture_region_size = Vector2i(265, 90)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-132.5, -22.5, 132.5, -22.5, 132.5, 45, -132.5, 45)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-132.5, -22.5, 132.5, -22.5, 132.5, 45, -132.5, 45)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-132.5, -22.5, 132.5, -22.5, 132.5, 45, -132.5, 45)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-132.5, -22.5, 132.5, -22.5, 132.5, 45, -132.5, 45)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-132.5, -22.5, 132.5, -22.5, 132.5, 45, -132.5, 45)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-132.5, -22.5, 132.5, -22.5, 132.5, 45, -132.5, 45)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-132.5, -22.5, 132.5, -22.5, 132.5, 45, -132.5, 45)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yc0ot"]
+texture = ExtResource("1_yvt5y")
+texture_region_size = Vector2i(265, 90)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-132.5, -22.5, 0, 45, 132.5, -22.5, 132.5, 45, -132.5, 45)
+
+[resource]
+tile_size = Vector2i(265, 90)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_pf8h4")
+sources/2 = SubResource("TileSetAtlasSource_yc0ot")
+sources/1 = SubResource("TileSetAtlasSource_v3ea7")
+script = ExtResource("1_yc0ot")
+id_debut_tuile_obstacle = 2
