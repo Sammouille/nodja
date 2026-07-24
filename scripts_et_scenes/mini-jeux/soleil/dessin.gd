@@ -1,15 +1,20 @@
 extends Sprite2D
 
+## Couleur de dessin lors de la premiere ouverture de la page
 @export var paint_color:= Color(1.0, 0.741, 0.0, 1.0)
 
+## Taille du pinceau à définir dans l'inspecteur de la node
 @export var paint_size:= 3
 
+# Référence à l'image qui contient les dessins.
 var img: Image
 
+# Boolean changé dans le script la node parent lorsque la page s'ouvre.
 var actif:= false
 
-# Called when the node enters the scene tree for the first time.
+# Fonction appelée au démarrage de l'execution.
 func _ready() -> void:
+	# On crée l'image de base qui est un carré transparent
 	img = Image.create_empty(1920, 1080, false, Image.FORMAT_RGBA8)
 	img.fill(Color.TRANSPARENT)
 	texture = ImageTexture.create_from_image(img)

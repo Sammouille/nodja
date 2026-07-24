@@ -1,4 +1,6 @@
 extends Page
+# Script pour une page qui rendrait un signet visible
+
 
 @export var signet_unlock: Control
 
