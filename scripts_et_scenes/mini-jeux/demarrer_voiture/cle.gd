@@ -35,6 +35,7 @@ func _input(event: InputEvent) -> void:
 		if is_on_good_pos and get_parent().has_scotch:
 			print("voiture demarre")
 			has_win = true
+			%Starter.play()
 			Global.je_suis_voiture_jante.demarrer_voiture()
 		else:
 			TimerCle.start()

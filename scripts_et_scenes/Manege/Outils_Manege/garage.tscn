@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://go64g2t3k1c8" path="res://scripts_et_scenes/Manege/Outils_Manege/voiture.gd" id="2_p4axg"]
 [ext_resource type="Texture2D" uid="uid://brpc2j8jdtoiy" path="res://assets/manege/Calque 213.png" id="3_ui4w3"]
 [ext_resource type="Texture2D" uid="uid://b3fntp02qbc66" path="res://assets/manege/elap1.png" id="5_l8hvq"]
+[ext_resource type="AudioStream" uid="uid://dtes8yaavt32q" path="res://assets/manege/sons/demarrage_elephanture.ogg" id="6_a225d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g1xx7"]
 size = Vector2(150, 100)
@@ -39,3 +40,7 @@ jantes = NodePath("../Jantes")
 [node name="Sprite2D" type="Sprite2D" parent="Voiture" unique_id=1648492085]
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("5_l8hvq")
+
+[node name="Embrayage" type="AudioStreamPlayer" parent="." unique_id=573814227]
+unique_name_in_owner = true
+stream = ExtResource("6_a225d")

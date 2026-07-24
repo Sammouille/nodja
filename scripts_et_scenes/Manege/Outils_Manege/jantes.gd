@@ -84,7 +84,10 @@ func assurer_voiture_avance():
 ## A chaque fois que l'on saute par dessus un obstacle, on accélère et notre vitesse maximum augmente. 
 ## A chaque fois que l'on se prends un obstacle, on perds de la vitesse max sans descendre en dessous du seuil normal.
 func changer_vitesse(value):
+	var ancienne_vitesse:= vitesse_x_max
 	vitesse_x_max = clamp(vitesse_x_max + boost_vitesse * value,boost_vitesse, boost_vitesse * 20.0)
+	if ancienne_vitesse < vitesse_x_max:
+		%Embrayage.play()
 	if vitesse_x_max != boost_vitesse:
 		appliquer_impulsion(Vector2(boost_vitesse * value,0.0))
 
@@ -98,6 +101,8 @@ func _process(delta: float) -> void:
 	if au_sol and moteur_allume:
 		## Changer l'acceleration en fonction de l'appuie des touches.
 		if Input.is_action_pressed("gauche") or Input.is_action_pressed("droite"):
+			if velocite.length() < 80.0 and Input.is_action_pressed("droite"):
+				%Embrayage.play()
 			var trajectoire_horizontale:= Input.get_axis("gauche", "droite")
 			appliquer_force(Vector2(trajectoire_horizontale * poussee_horizontale, 0.0))
 		
