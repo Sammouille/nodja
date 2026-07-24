@@ -4,12 +4,18 @@ extends Control
 @onready var element_test = preload("res://scripts_et_scenes/Inventaire/element_test.tscn")
 @onready var cle_voiture_inventaire = preload("res://scripts_et_scenes/Inventaire/element_inventaire/cle_voiture_inventaire.tscn")
 @onready var rouleau_scotch_inventaire = preload("res://scripts_et_scenes/Inventaire/element_inventaire/rouleau_scotch_inventaire.tscn")
+@onready var peluche_inventaire = preload("res://scripts_et_scenes/Inventaire/element_inventaire/peluche_inventaire.tscn")
+@onready var crayon_inventaire = preload("res://scripts_et_scenes/Inventaire/element_inventaire/crayon_inventaire.tscn")
+@onready var tampon_inventaire = preload("res://scripts_et_scenes/Inventaire/element_inventaire/tampon_inventaire.tscn")
 
 #Dictionnaire reliant le nom de l'objet et l'objet à faire exister dans l'inventaire.
 @onready var dict_str_obj = {
 	"element_test" : element_test,
 	"cle_voiture_inventaire" : cle_voiture_inventaire,
 	"rouleau_scotch_inventaire" : rouleau_scotch_inventaire,
+	"peluche_inventaire" : peluche_inventaire,
+	"crayon_inventaire" : crayon_inventaire,
+	"tampon_inventaire" : tampon_inventaire
 }
 
 #Tableau qui regroupe les zones de l'inventaire. Zone qui délimite l'inventaire, et donc où les objets peuvent apparaître etc.

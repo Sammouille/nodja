@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cxurg6rgk8hix"]
+
+[ext_resource type="Texture2D" uid="uid://brgarjqsl1lfv" path="res://assets/items/item 1.png" id="1_kl6lk"]
+[ext_resource type="Script" uid="uid://bcxsegco6thgi" path="res://scripts_et_scenes/Inventaire/element_inventaire.gd" id="2_mc83n"]
+
+[node name="tampon_inventaire" type="TextureRect" unique_id=1070976149]
+custom_minimum_size = Vector2(70, 70)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_kl6lk")
+expand_mode = 3
+script = ExtResource("2_mc83n")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

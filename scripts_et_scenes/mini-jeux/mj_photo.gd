@@ -33,8 +33,11 @@ func _instantiate_photo_retouchee():
 func _on_photo_retouchee_clicked():
 	stream_tampon.stream = son_valide
 	stream_tampon.play()
-	print("BRAVO")
 	var sprite_tampon = Sprite2D.new()
 	sprite_tampon.texture = sprite_tampon_valide
 	sprite_tampon.position = pos_der_photo
 	add_child(sprite_tampon)
+	
+	# Quand le bruit de validation est fini on ajoute le tampon à l'inventaire
+	await stream_tampon.finished
+	get_tree().get_first_node_in_group("Inventaire").get_child(0).on_signal_to_add_object_from_str("tampon_inventaire")

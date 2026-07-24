@@ -23,3 +23,5 @@ func _turn_on_lights():
 		i.visible = false
 	lights_on.emit()
 	print("lumières allumées")
+	
+	get_tree().get_first_node_in_group("Inventaire").get_child(0).on_signal_to_add_object_from_str("peluche_inventaire")

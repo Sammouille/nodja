@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://x6no3s4pt1tq" path="res://assets/carnet/premiere_page.png" id="3_4lklj"]
 [ext_resource type="Script" uid="uid://5s6atf1yfedf" path="res://scripts_et_scenes/carnet/page_mj_debug.gd" id="4_u3f38"]
 [ext_resource type="Texture2D" uid="uid://sgvkyt058lti" path="res://assets/carnet/signet4.png" id="7_fgnlk"]
+[ext_resource type="Texture2D" uid="uid://bts7u7t17nayy" path="res://assets/carnet/signet1.png" id="7_gcbmt"]
 [ext_resource type="Texture2D" uid="uid://6251tlovxhff" path="res://assets/carnet/signet3.png" id="8_g2mpa"]
 [ext_resource type="Texture2D" uid="uid://dcp6tqmdyx6tl" path="res://assets/main/carnet.png" id="9_g2mpa"]
 [ext_resource type="Texture2D" uid="uid://leflcj837hec" path="res://assets/carnet/signet2.png" id="10_wyfrh"]
@@ -13,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://b7wth5pynlljm" path="res://scripts_et_scenes/mini-jeux/affiche/mj_affiche.tscn" id="12_4misd"]
 [ext_resource type="Texture2D" uid="uid://bwwisl023igg3" path="res://assets/carnet/signet5.png" id="13_dg1ef"]
 [ext_resource type="PackedScene" uid="uid://cksqulq2tmghd" path="res://scripts_et_scenes/mini-jeux/demarrer_voiture/mj_demarrer_voiture.tscn" id="14_dg1ef"]
+[ext_resource type="PackedScene" uid="uid://cmauougvv6lp8" path="res://scripts_et_scenes/mini-jeux/lumiere/mj_lumiere.tscn" id="15_lre11"]
 
 [node name="CarnetVoyage" type="Control" unique_id=1173689453 node_paths=PackedStringArray("pages")]
 layout_mode = 3
@@ -23,7 +25,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_58231")
-pages = [NodePath("Pages/PagesPhotos"), NodePath("Pages/DoublePage2"), NodePath("Pages/DoublePageUnlock"), NodePath("Pages/PageSoleil"), NodePath("Pages/PagesAffiche"), NodePath("Pages/PagesDemar")]
+pages = [NodePath("Pages/PagesPhotos"), NodePath("Pages/DoublePage2"), NodePath("Pages/PageLumiere"), NodePath("Pages/PageSoleil"), NodePath("Pages/PagesAffiche"), NodePath("Pages/PagesDemar")]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1459639798]
 layout_mode = 1
@@ -46,7 +48,6 @@ mouse_filter = 2
 
 [node name="PremierePage" type="Control" parent="Pages" unique_id=818951584]
 unique_name_in_owner = true
-visible = false
 z_index = 1
 layout_mode = 1
 anchor_left = 0.5
@@ -82,8 +83,8 @@ grow_vertical = 2
 script = ExtResource("2_evnu1")
 contenu_visuel = [NodePath("PageGauche"), NodePath("PageGauche/MjAffiche")]
 signet = NodePath("Signet")
-x_signet_gauche = -253.0
-x_signet_droite = 78.0
+x_signet_gauche = -201.0
+x_signet_droite = 48.0
 
 [node name="PageGauche" type="Control" parent="Pages/PagesAffiche" unique_id=1292656532]
 visible = false
@@ -114,10 +115,10 @@ anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -253.5
-offset_top = -105.0
-offset_right = -137.5
-offset_bottom = -622.5
+offset_left = 48.5
+offset_top = -104.0
+offset_right = 164.5
+offset_bottom = -621.5
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(58, 77)
@@ -127,7 +128,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1.5258789e-05
+offset_right = 18.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("13_dg1ef")
@@ -145,8 +146,8 @@ script = ExtResource("2_evnu1")
 contenu_visuel = [NodePath("PageGauche"), NodePath("PageGauche/MjDemarrerVoiture")]
 index = 2
 signet = NodePath("Signet")
-x_signet_gauche = -337.0
-x_signet_droite = 242.0
+x_signet_gauche = -318.0
+x_signet_droite = 193.0
 
 [node name="PageGauche" type="Control" parent="Pages/PagesDemar" unique_id=1804334055]
 visible = false
@@ -172,9 +173,9 @@ anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -337.5
+offset_left = 193.5
 offset_top = -105.0
-offset_right = -221.5
+offset_right = 309.5
 offset_bottom = -622.5
 grow_horizontal = 2
 grow_vertical = 2
@@ -185,7 +186,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1.5258789e-05
+offset_left = -12.0
+offset_right = 5.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_fgnlk")
@@ -200,21 +202,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("4_u3f38")
-signet_unlock = NodePath("../DoublePageUnlock/Signet")
+signet_unlock = NodePath("../PageLumiere/Signet")
 contenu_visuel = [NodePath("MJPhoto")]
 index = 3
 signet = NodePath("Signet")
-x_signet_gauche = -441.0
-x_signet_droite = 326.0
+x_signet_gauche = -451.0
+x_signet_droite = 316.0
 
 [node name="Signet" type="Control" parent="Pages/PagesPhotos" unique_id=244834085]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_left = -441.5
-offset_top = -86.0
-offset_right = -338.5
-offset_bottom = -595.0
+offset_left = 316.5
+offset_top = -88.0
+offset_right = 419.5
+offset_bottom = -597.0
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
 
@@ -248,8 +250,8 @@ script = ExtResource("2_evnu1")
 contenu_visuel = [NodePath("MJ_Soleil")]
 index = 6
 signet = NodePath("Signet")
-x_signet_gauche = -628.0
-x_signet_droite = 500.0
+x_signet_gauche = -573.0
+x_signet_droite = 429.0
 
 [node name="MJ_Soleil" parent="Pages/PageSoleil" unique_id=577902707 instance=ExtResource("11_lre11")]
 visible = false
@@ -265,9 +267,9 @@ anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -628.5
+offset_left = 429.5
 offset_top = -118.0
-offset_right = -512.5
+offset_right = 545.5
 offset_bottom = -635.5
 grow_horizontal = 2
 grow_vertical = 2
@@ -281,7 +283,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -3.9999943
 offset_top = 131.0
-offset_right = -1.9999771
+offset_right = 9.000008
 offset_bottom = 126.5
 grow_horizontal = 2
 grow_vertical = 2
@@ -289,7 +291,7 @@ rotation = -1.5707964
 texture = ExtResource("8_g2mpa")
 expand_mode = 1
 
-[node name="DoublePageUnlock" type="Control" parent="Pages" unique_id=1153004739 node_paths=PackedStringArray("signet")]
+[node name="PageLumiere" type="Control" parent="Pages" unique_id=1153004739 node_paths=PackedStringArray("contenu_visuel", "signet")]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -298,34 +300,42 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_evnu1")
+contenu_visuel = [NodePath("MJLumiere")]
 index = 8
 signet = NodePath("Signet")
+x_signet_gauche = -681.0
+x_signet_droite = 561.0
 
-[node name="Signet" type="Control" parent="Pages/DoublePageUnlock" unique_id=827273055]
+[node name="Signet" type="Control" parent="Pages/PageLumiere" unique_id=827273055]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 662.5
-offset_top = 242.0
-offset_right = 778.5
-offset_bottom = -303.0
+offset_left = 561.5
+offset_top = -101.0
+offset_right = 677.5
+offset_bottom = -646.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(58, 77)
 
-[node name="TextureRect" type="TextureRect" parent="Pages/DoublePageUnlock/Signet" unique_id=579971288]
-visible = false
+[node name="TextureRect" type="TextureRect" parent="Pages/PageLumiere/Signet" unique_id=579971288]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1.5258789e-05
+offset_right = 8.0
+offset_bottom = 17.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("8_g2mpa")
+texture = ExtResource("7_gcbmt")
 expand_mode = 5
+
+[node name="MJLumiere" parent="Pages/PageLumiere" unique_id=1161786353 instance=ExtResource("15_lre11")]
+visible = false
+z_index = 100
+position = Vector2(-561.5, 4)
 
 [node name="DoublePage2" type="Control" parent="Pages" unique_id=120834702 node_paths=PackedStringArray("signet_unlock", "signet")]
 layout_mode = 1

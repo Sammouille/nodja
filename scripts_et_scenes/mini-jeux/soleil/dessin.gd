@@ -12,6 +12,9 @@ var img: Image
 # Boolean changé dans le script la node parent lorsque la page s'ouvre.
 var actif:= false
 
+# Boolean pour ne pas donner plusieurs fois le crayon
+var one_item:= true
+
 # Fonction appelée au démarrage de l'execution.
 func _ready() -> void:
 	# On crée l'image de base qui est un carré transparent
@@ -31,6 +34,11 @@ func _input(event: InputEvent) -> void:
 		
 		peindre(impos)
 		texture.update(img)
+		
+		if get_parent().index >= 2 and one_item:
+			one_item = false
+			get_tree().get_first_node_in_group("Inventaire").get_child(0).on_signal_to_add_object_from_str("crayon_inventaire")
+		
 	elif event is InputEventMouseMotion:
 		if event.button_mask ==  MOUSE_BUTTON_LEFT:
 			var lpos = to_local(event.position)

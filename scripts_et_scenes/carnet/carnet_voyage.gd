@@ -9,6 +9,9 @@ var page_active: Page
 ## Liste à remplir grâce à l'inspecteur en séléctionnant la node dans la scène.
 @export var pages: Array[Page]
 
+## Liste à remplir des signets que l'on veut rendre visible à partir d'un moment donné
+@export var signets_unlock: Array[Control]
+
 # Fonction qui se lance au début de l'execution et qui s'occupe d'une part 
 # de bien placer les signets mais aussi de connecter leur signaux.
 func _ready() -> void:
